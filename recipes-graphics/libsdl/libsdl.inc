@@ -36,7 +36,3 @@ do_configure_append () {
 	mv ${HOST_SYS}-libtool.tmp ${HOST_SYS}-libtool
 }
 
-do_stage() {
-	autotools_stage_all		
-	rm ${STAGING_LIBDIR}/libSDL.la
-}
