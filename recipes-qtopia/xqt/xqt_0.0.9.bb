@@ -82,12 +82,9 @@ do_install() {
 
 	install -m 0644 programs/Xserver/hw/xqt/Xqt.png ${D}${palmtopdir}/pics/Xqt
 	install -m 0644 IPKG/Xqt.desktop ${D}${palmtopdir}/apps/Applications
-}
 
-do_stage() {
-	install -d ${STAGING_INCDIR}/xserver-xqt
-	install -m 0644 programs/Xserver/hw/xfree86/common/fourcc.h ${STAGING_INCDIR}/xserver-xqt
+	install -d ${D}${includedir}/xserver-xqt
+	install -m 0644 programs/Xserver/hw/xfree86/common/fourcc.h ${D}${includedir}/xserver-xqt
 }
-
 
 FILES_${PN} = " ${palmtopdir}/apps/Applications/Xqt.desktop ${palmtopdir}/pics/Xqt/Xqt.png ${bindir}/Xqt "
