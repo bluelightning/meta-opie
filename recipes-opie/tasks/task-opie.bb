@@ -93,7 +93,7 @@ RDEPENDS_task-opie-base-pim = "opie-addressbook opie-datebook opie-drawpad \
                       task-opie-base-todayplugins \
                       opie-datebook-birthdayplugin"
 
-RDEPENDS_task-opie-bluetooth = "bluez-utils obexftp obexpush libopieobex0 \
+RDEPENDS_task-opie-bluetooth = "bluez4 obexftp obexpush libopieobex0 \
                        opie-bluepin opie-bluetoothmanager opie-bluetoothapplet"
 
 RDEPENDS_task-opie-irda = "irda-utils libopieobex0 obexftp obexpush"
