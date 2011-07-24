@@ -44,16 +44,6 @@ do_configure () {
 
 }
 
-do_stage() {
-	oe_libinstall -a -so -C builds/.libs libmk4 ${STAGING_LIBDIR}
-	install -d ${STAGING_INCDIR}/
-	for X in mk4.h mk4.inl
-	do
-		install -m 0644 include/${X} ${STAGING_INCDIR}/${X}
-	done
-
-}
-
 do_compile () {
 	cd builds
 	oe_runmake
@@ -61,6 +51,11 @@ do_compile () {
 
 do_install() {
 	oe_libinstall -so -C builds/.libs libmk4 ${D}${libdir}
+	install -d ${D}${includedir}/
+	for X in mk4.h mk4.inl
+	do
+		install -m 0644 include/${X} ${D}${includedir}/${X}
+	done
 }
 
 
