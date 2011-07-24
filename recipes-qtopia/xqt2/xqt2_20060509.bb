@@ -92,11 +92,6 @@ do_compile() {
 	make -C programs/Xserver CC="${CC}" LD="${LD}" CC_STAGING="-I${STAGING_INCDIR}" LD_STAGING="-L${STAGING_LIBDIR}" INSTALLED_LIBS=""
 }
 
-do_stage() {
-	install -d ${STAGING_INCDIR}/xserver-xqt
-	install -m 0644 programs/Xserver/hw/xfree86/common/fourcc.h ${STAGING_INCDIR}/xserver-xqt
-}
-
 do_install() {
 	oe_runmake -C programs/Xserver DESTDIR="${D}" CC="${CC}" LD="${LD}" \
                    CC_STAGING="-I${STAGING_INCDIR}" LD_STAGING="-L${STAGING_LIBDIR}" INSTALLED_LIBS="" install
@@ -107,6 +102,9 @@ do_install() {
 	install -m 0644 ${WORKDIR}/xqt2/xfree86/files/Xqt.desktop ${D}${palmtopdir}/apps/Applications
 	install -d ${D}${palmtopdir}/pics
 	install -m 0644 programs/Xserver/hw/xqt/Xqt.png ${D}${palmtopdir}/pics
+
+	install -d ${D}${includedir}/xserver-xqt
+	install -m 0644 programs/Xserver/hw/xfree86/common/fourcc.h ${D}${includedir}/xserver-xqt
 }
 
 PACKAGE_ARCH_c7x0 = "${MACHINE_ARCH}"
