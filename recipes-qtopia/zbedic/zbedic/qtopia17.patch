@@ -1,0 +1,21 @@
+--- zbedic/src/main.cpp.old	2008-09-20 14:40:57.000000000 -0500
++++ zbedic/src/main.cpp	2008-09-20 14:51:11.000000000 -0500
+@@ -48,8 +48,16 @@ int main( int argc, char **argv )
+ 
+ #include <qpe/qpeapplication.h>
+ 
+-QTOPIA_ADD_APPLICATION("zbedic", ZBEDic)
+-QTOPIA_MAIN
++int main(int argc, char** argv)
++{
++  QPEApplication app( argc, argv );
++  
++  ZBEDic mainWindow( NULL, NULL );
++  app.setMainWidget( &mainWindow );
++
++  mainWindow.show();
++  return app.exec();
++}
+ 
+ #endif
+ 

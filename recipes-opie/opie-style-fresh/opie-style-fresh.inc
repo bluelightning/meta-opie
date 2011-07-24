@@ -1,0 +1,15 @@
+DESCRIPTION = "Opie widget style"
+SECTION = "opie/styles"
+PRIORITY = "optional"
+LICENSE = "GPL"
+APPNAME = "freshstyle"
+
+
+S = "${WORKDIR}/fresh"
+
+inherit opie
+
+# FILES plugins/styles/libfreshstyle.so*
+do_install() {
+}
+

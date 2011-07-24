@@ -1,0 +1,21 @@
+
+#
+# Patch managed by http://www.mn-logistik.de/unsupported/pxa250/patcher
+#
+
+Index: qt-2.3.10/src/kernel/kernelkeyboard.cpp
+===================================================================
+--- qt-2.3.10.orig/src/kernel/kernelkeyboard.cpp	2006-04-05 23:04:30.000000000 +0200
++++ qt-2.3.10/src/kernel/kernelkeyboard.cpp	2006-04-05 23:09:40.514650408 +0200
+@@ -568,7 +568,11 @@
+     case Qt::Key_Down:
+         unicode = 0xffff;
+         mod_key = false;
++#if QT_QWS_SLCXK
++	if (qt_screen->transformOrientation() != 3)
++#else
+         if (qt_screen->isTransformed())
++#endif
+             qtKeyCode = static_cast<Qt::Key>( xform_dirkey(static_cast<int>( qtKeyCode ) ) );
+         break;
+     /*

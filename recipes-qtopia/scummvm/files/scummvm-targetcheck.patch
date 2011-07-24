@@ -1,0 +1,17 @@
+upstream: http://sourceforge.net/tracker/index.php?func=detail&aid=1959138&group_id=37116&atid=418820
+status: accepted in revision 31912 (less than an hour for turnaround, fantastic!)
+origin: adapted from http://bugs.openembedded.net/show_bug.cgi?id=3522
+comment: the strict check for targets needs to be relaxed to compile for some of OE targets
+
+diff -uNr scummvm-0.9.1.vanilla/configure scummvm-0.9.1/configure
+--- scummvm-0.9.1.vanilla/configure	2007-12-23 00:08:23.000000000 +0100
++++ scummvm-0.9.1/configure	2007-12-23 00:08:35.000000000 +0100
+@@ -763,7 +763,7 @@
+ 			type_2_byte='short'
+ 			type_4_byte='int'
+ 			;;
+-		arm-linux|arm-*-linux-gnueabi)
++		arm-linux|arm*-linux-gnueabi|arm-*-linux|*-angstrom-linux)
+ 			echo "Cross-compiling to $_host, forcing endianness, alignment and type sizes"
+ 			DEFINES="$DEFINES -DUNIX"
+ 			#not true for all ARM systems, but the interesting ones are all LE. Most (if not all) BE arm devices don't have a screen

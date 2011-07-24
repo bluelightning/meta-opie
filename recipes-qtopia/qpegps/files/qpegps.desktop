@@ -1,0 +1,6 @@
+[Desktop Entry]
+Comment=Moving Map
+Exec=qpegps
+Icon=qpegps
+Type=Application
+Name=qpeGPS

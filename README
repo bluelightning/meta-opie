@@ -1,0 +1,36 @@
+meta-opie
+=========
+
+This layer provides the metadata necessary to build Opie, Qt/Embedded 2.3.10,
+related libraries and 3rd-party Qtopia applications. Initially based on
+recipes developed within OpenEmbedded master.
+
+
+Dependencies
+------------
+
+This layer depends on:
+
+URI: git://git.openembedded.org/openembedded-core
+branch: master
+revision: HEAD
+
+
+Maintenance
+-----------
+
+Send patches / pull requests to openembedded-devel@lists.openembedded.org
+with '[meta-opie]' in the subject.
+
+Main layer maintainer: Paul Eggleton <paul.eggleton@linux.intel.com>
+
+
+License
+-------
+
+All metadata is MIT licensed unless otherwise stated. Source code included 
+in tree for individual recipes is under the LICENSE stated in each recipe
+(.bb file) unless otherwise stated.
+
+This README document is Copyright (C) 2011 Intel Corporation.
+
