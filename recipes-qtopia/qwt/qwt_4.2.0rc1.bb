@@ -12,11 +12,6 @@ inherit palmtop
 
 EXTRA_QMAKEVARS_POST += "LIBS-=qpe"
 
-do_stage() {
-	oe_libinstall -so -C lib libqwt ${STAGING_LIBDIR}
-	cp -pPR include/* ${STAGING_INCDIR}
-}
-
 do_install() {
 	install -d ${D}${libdir} \
 		   ${D}${includedir}
