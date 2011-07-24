@@ -40,7 +40,6 @@ EXTRA_OECONF = '--prefix=${palmtopdir} \
 	--with-qt-libraries=${STAGING_DIR_HOST}/qt2/lib \
 	--enable-fontsubs \
 	--with-konq-tmp-prefix=/tmp/kde-cache \
-#	--enable-static \
 	--disable-static \
 	--enable-shared \
 	--disable-debug \

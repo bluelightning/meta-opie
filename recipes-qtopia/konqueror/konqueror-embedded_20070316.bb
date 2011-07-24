@@ -34,7 +34,6 @@ export EXTRA_OEMAKE = "EXTRA_LDFLAGS='${EXTRAFLAGS}'"
 
 EXTRA_OECONF = '--prefix=${palmtopdir} \
 	--exec-prefix=${palmtopdir} \
-#	--includedir=${STAGING_INCDIR} \
 	--includedir=/usr/include \
 	--with-extra-includes=${STAGING_INCDIR} \
 	--with-extra-libs=${STAGING_LIBDIR} \
@@ -46,20 +45,17 @@ EXTRA_OECONF = '--prefix=${palmtopdir} \
 	--with-qt-dir=${QTDIR} \
 	--enable-fontsubs \
 	--with-konq-tmp-prefix=/tmp/kde-cache \
-#	--enable-static \
 	--disable-static \
 	--enable-shared \
 	--disable-debug \
 	--with-gui=road \
 	--with-ipv6-lookup=no \
 	--without-xinerama \
-#	--disable-scrollbars \
 	--disable-selection \
 	--disable-bookmarks \
 	--with-javascript=static \
 	--enable-debug=yes \
 	--disable-printing \
-#	--enable-pcre \
 	--disable-pcre \
 	--without-arts \
 	--enable-jshostext \
@@ -72,6 +68,7 @@ EXTRA_OECONF = '--prefix=${palmtopdir} \
 	--enable-qt-mt \
 	--enable-fwnewepg=yes \
 	--enable-embedded '
+
 
 do_configure_prepend() {
 	cd ${S}
