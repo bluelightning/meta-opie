@@ -42,12 +42,12 @@ SUBDIRS="qtcompat libical/src/libical libical/src/libicalss microkde libkcal lib
         kabc/formats/binary kabc/plugins/qtopia \
         gammu/emb/common \
         gammu/emb/gammu \
+        "
 #        pwmanager/libcrypt/mpi  \
 #        pwmanager/libcrypt/error  \
 #        pwmanager/libcrypt/cipher  \
 #        pwmanager/libcrypt/zlib \
 #        pwmanager/pwmanager \
-        "
 
 inherit palmtop
 
@@ -93,22 +93,6 @@ do_unstage() {
     done
 }
 
-addtask unstage before do_configure
-
-do_stage() {
-
-	for dir in ${HEADERS_DIRS};
-	do
-		install -d ${STAGING_INCDIR}/kdepimpi/$dir
-		install -m 0644 ${S}/$dir/*.h ${STAGING_INCDIR}/kdepimpi/$dir/
-	done
-
-    for f in libmicrokde libmicrokdepim libmicrokabc libmicrokcal libmicroqtcompat
-    do
-        oe_libinstall -so -C ${S}/dest/ $f ${STAGING_LIBDIR}/kdepimpi/
-    done
-}
-
 do_install() {
     install -d ${D}${bindir} \
                ${D}${palmtopdir}/lib \
@@ -134,6 +118,12 @@ do_install() {
     for f in libmicrokde libmicrokdepim libmicrokabc libmicrokcal libmicroqtcompat libmicrokabc_file libmicrokabc_dir libmicrokabcformat_binary libmicrokabc_qtopia 
     do
         oe_libinstall -so -C ${S}/dest/ $f ${D}${palmtopdir}/lib
+    done
+
+    for dir in ${HEADERS_DIRS};
+    do
+        install -d ${D}${includedir}/kdepimpi/$dir
+        install -m 0644 ${S}/$dir/*.h ${D}${includedir}/kdepimpi/$dir/
     done
 
     install -m 0755 ${S}/dest/kopi ${D}${bindir}/kopi

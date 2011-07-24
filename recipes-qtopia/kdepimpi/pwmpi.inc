@@ -13,15 +13,6 @@ INCLUDEPATH+=${STAGING_INCDIR}/kdepimpi/ \
 LIBS+=-L${STAGING_LIBDIR}/kdepimpi/ \
 "
 
-do_configure_prepend() {
-}
-
-do_stage() {
-}
-
-do_unstage() {
-}
-
 do_install() {
     install -d ${D}${bindir} \
                ${D}${palmtopdir}/apps/Applications \
