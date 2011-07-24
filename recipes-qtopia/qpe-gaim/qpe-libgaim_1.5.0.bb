@@ -23,11 +23,11 @@ EXTRA_OE_CONF = "--disable-audio --disable-gtkspell --disable-perl \
 
 CFLAGS_append = " -I${STAGING_INCDIR}/glib-2.0 -I${STAGING_LIBDIR}/glib-2.0/include"
 
-do_stage() {
-	oe_libinstall -so -C src libgaim ${QTDIR}/lib
+do_install() {
+	oe_libinstall -so -C src libgaim ${D}${libdir}
 
 	# install headers
-	GAIM_DIR=${STAGING_INCDIR}/gaim
+	GAIM_DIR=${D}${includedir}/gaim
 	install -d $GAIM_DIR
 
 	for header in account.h accountopt.h away.h blist.h buddyicon.h cmds.h config.h connection.h conversation.h core.h debug.h eventloop.h ft.h gaim.h imgstore.h log.h md5.h network.h notify.h plugin.h pluginpref.h pounce.h prefix.h prefs.h privacy.h proxy.h prpl.h request.h roomlist.h server.h sha.h signals.h sound.h sslconn.h status.h stringref.h util.h value.h version.h xmlnode.h
