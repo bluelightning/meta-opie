@@ -10,9 +10,9 @@ inherit opie
 
 QMAKE_PROFILES = "qscintilla.pro"
 
-do_stage() {
-	install -m 0644 qextscintilla*.h ${STAGING_INCDIR}/
-	install -m 0644 libqscintilla.a ${STAGING_LIBDIR}/
+do_install() {
+	install -m 0644 qextscintilla*.h ${D}${includedir}/
+	install -m 0644 libqscintilla.a ${D}${includedir}/
 }
 
 SRC_URI[md5sum] = "3823bdfc40af13adcfd5f44e6dae5cf0"
