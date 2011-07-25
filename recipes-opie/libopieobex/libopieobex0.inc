@@ -2,7 +2,7 @@ DESCRIPTION = "IrDA obex support library"
 SECTION = "opie/libs"
 PRIORITY = "optional"
 LICENSE = "LGPL"
-DEPENDS = "libopietooth1 opie-taskbar openobex-apps"
+DEPENDS = "libopietooth1 opie-taskbar openobex"
 RDEPENDS_${PN} = "openobex-apps"
 APPNAME = "obex"
 
