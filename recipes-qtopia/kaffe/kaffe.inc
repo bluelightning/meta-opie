@@ -37,10 +37,10 @@ oe_runconf () {
 		    --mandir=${mandir} \
 			${EXTRA_OECONF} \
 		    $@"
-		oenote "Running $cfgcmd..."
-		$cfgcmd || oefatal "oe_runconf failed" 
+		bbnote "Running $cfgcmd..."
+		$cfgcmd || bbfatal "oe_runconf failed"
 	else
-		oefatal "no configure script found"
+		bbfatal "no configure script found"
 	fi
 }
 

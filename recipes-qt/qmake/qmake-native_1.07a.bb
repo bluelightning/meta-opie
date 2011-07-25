@@ -27,7 +27,7 @@ do_configure() {
 	QMAKESPEC=
 	PLATFORM=${HOST_OS}-oe-g++
 	export PLATFORM
-	oenote ./configure ${EXTRA_OECONF}
+	bbnote ./configure ${EXTRA_OECONF}
 	echo yes | ./configure ${EXTRA_OECONF} || die "Configuring qt failed"
 }
 
