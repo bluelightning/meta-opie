@@ -5,6 +5,8 @@ PR = "r3"
 
 inherit task
 
+LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=3f40d7994397109285ec7b81fdeb3b58"
+
 PACKAGES = "task-opie-applets task-opie-inputmethods task-opie-styles \
             task-opie-decorations task-opie-multimedia task-opie-wlan \
             task-opie-settings task-opie-pim task-opie-datebookplugins \

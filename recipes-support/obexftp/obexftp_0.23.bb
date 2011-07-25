@@ -8,6 +8,9 @@ PR = "r1"
 SRC_URI = "${SOURCEFORGE_MIRROR}/openobex/obexftp-${PV}.tar.bz2 \
 	  "
 
+LIC_FILES_CHKSUM = "file://COPYING;md5=59530bdf33659b29e73d4adb9f9f6552 \
+                    file://obexftp/obexftp_io.c;beginline=8;endline=19;md5=eaffa3b561e1a0f240e4277a6a2f1e66"
+
 inherit autotools
 
 EXTRA_OECONF += "--enable-bluetooth \

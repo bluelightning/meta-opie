@@ -15,6 +15,9 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/portabase/portabase_${PV}.tar.gz \
 
 S = "${WORKDIR}/portabase"
 
+LIC_FILES_CHKSUM = "file://COPYING;md5=2d0dd973fa1720a3bd3265926fb19675 \
+                    file://main.cpp;beginline=1;endline=9;md5=5ac88094cf0e596136cd701f80c5ebb4"
+
 inherit palmtop
 
 do_configure_prepend() {

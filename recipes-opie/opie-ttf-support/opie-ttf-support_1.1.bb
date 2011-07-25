@@ -8,6 +8,8 @@ SRC_URI = "file://update-qtttffontdir.c \
            file://02qtttffont-update"
 S = "${WORKDIR}"
 
+LIC_FILES_CHKSUM = "file://update-qtttffontdir.c;beginline=4;endline=7;md5=84d4335f8f9e85774e2a15b2dff91401"
+
 do_compile() {
         ${CC} ${CFLAGS} ${LDFLAGS} -I${STAGING_INCDIR}/freetype2 -lfreetype -o update-qtttffontdir update-qtttffontdir.c
 }

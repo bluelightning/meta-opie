@@ -11,6 +11,8 @@ SRC_URI = "http://www.caside.lancs.ac.uk/bt/obexpush.tar.gz \
            file://opd_args"
 S = "${WORKDIR}/obexpush"
 
+LIC_FILES_CHKSUM = "file://opd/main.c;beginline=16;endline=29;md5=0c9407c30554ca893bffa8bb82396f1e"
+
 inherit update-rc.d
 
 INITSCRIPT_NAME = "opd"

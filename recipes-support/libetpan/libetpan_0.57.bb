@@ -12,6 +12,9 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/libetpan/libetpan-${PV}.tar.gz \
 
 inherit autotools pkgconfig gettext binconfig
 
+LIC_FILES_CHKSUM = "file://COPYRIGHT;md5=f18ebe7e452708c26f83954f81062ba7 \
+                    file://src/engine/mailengine.c;beginline=7;endline=29;md5=2cb1057a004588965254de2eee0b15a6"
+
 EXTRA_OECONF = "--without-openssl --with-gnutls --disable-db"
 
 PARALLEL_MAKE = ""

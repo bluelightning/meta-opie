@@ -14,6 +14,9 @@ SRC_URI = "ftp://ftp.trolltech.com/pub/qt/source/qt-embedded-${PV}-free.tar.gz \
 	   file://kernel-asm-page.patch"
 S = "${WORKDIR}/qt-${PV}"
 
+LIC_FILES_CHKSUM = "file://LICENSE.GPL;md5=aea7d119b7f7d798464fa2b1aae005f8 \
+                    file://README;beginline=1;endline=7;md5=d3e237af71522cc2a3c89dbaf48b345d"
+
 inherit native qmake_base
 
 export QTDIR = "${S}"

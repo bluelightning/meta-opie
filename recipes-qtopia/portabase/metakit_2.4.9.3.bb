@@ -10,6 +10,8 @@ SRC_URI = "http://www.equi4.com/pub/mk/metakit-${PV}.tar.gz \
 	   file://metakit-2.4.9.3.patch"
 PR = "r3"
 
+LIC_FILES_CHKSUM = "file://README;beginline=128;endline=151;md5=de6cb08350982d56e0349fd5acb35621"
+
 FILES_${PN} += " ${libdir}/*.so"
 
 do_configure_prepend() {

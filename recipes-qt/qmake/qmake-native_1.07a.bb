@@ -11,6 +11,9 @@ SRC_URI = "ftp://ftp.trolltech.com/pub/qt/source/${QTEVER}.tar.bz2 \
            file://linux-oe-qmake.conf"
 S = "${WORKDIR}/${QTEVER}"
 
+LIC_FILES_CHKSUM = "file://LICENSE.GPL;md5=629178675a7d49c9fa19dfe9f43ea256 \
+                    file://README;beginline=1;endline=7;md5=a85582a7befb26735438461afd8559af"
+
 inherit autotools native
 
 export QTDIR = "${S}"
