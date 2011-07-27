@@ -10,6 +10,9 @@ S = "${WORKDIR}"
 
 LIC_FILES_CHKSUM = "file://update-qtttffontdir.c;beginline=4;endline=7;md5=84d4335f8f9e85774e2a15b2dff91401"
 
+# Seems to break linking
+ASNEEDED = ""
+
 do_compile() {
         ${CC} ${CFLAGS} ${LDFLAGS} -I${STAGING_INCDIR}/freetype2 -lfreetype -o update-qtttffontdir update-qtttffontdir.c
 }
