@@ -2,6 +2,8 @@ DESCRIPTION = "Opie PIM database converter"
 SECTION = "opie/pim"
 PRIORITY = "optional"
 LICENSE = "GPL"
+# FIXME stopgap until split archives have license files included
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 DEPENDS = "sqlite3 sqlite" 
 RDEPENDS_${PN} = "sqlite3 sqlite-bin" 
 

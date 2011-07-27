@@ -1,5 +1,7 @@
 DESCRIPTION = "The classic Opie media player (core+plugins)."
 LICENSE = "GPL"
+# FIXME stopgap until split archives have license files included
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 ALLOW_EMPTY = "1"
 PACKAGE_ARCH = "all"
 RDEPENDS_${PN} = "opie-mediaplayer1-core"

@@ -2,6 +2,8 @@ DESCRIPTION = "Base libraries for the Open Palmtop Integrated Environment"
 HOMEPAGE = "http://opie.handhelds.org"
 SECTION = "opie/libs"
 LICENSE = "LGPL"
+# FIXME stopgap until split archives have license files included
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/LGPL-2.0;md5=03f2b9deed35802bc1aae2ae3dc6d9ed"
 I18N_FILES = "libopiecore2.ts libopiesecurity2.ts"
 DEPENDS = "libqpe-opie libpcap sqlite3 bluez4"
 PROVIDES = "libopiecore2 libopiedb2 libopiemm2 libopiesecurity2 libopienet2 libopiepim2 libopieui2"
