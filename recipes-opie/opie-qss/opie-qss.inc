@@ -9,6 +9,9 @@ S = "${WORKDIR}/qss"
 
 inherit opie
 
+# Seems to break linking
+ASNEEDED = ""
+
 do_install() {
 	install -d ${D}${bindir}
 	install -m 0755 ${S}/qss ${D}${bindir}/qss
