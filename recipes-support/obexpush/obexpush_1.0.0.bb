@@ -1,7 +1,7 @@
 DESCRIPTION = "Obex Push Utilities"
 HOMEPAGE = "http://www.caside.lancs.ac.uk/java_bt.php"
 SECTION = "console/network"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 DEPENDS = "glib-2.0 openobex bluez4"
 PR = "r7"
 
