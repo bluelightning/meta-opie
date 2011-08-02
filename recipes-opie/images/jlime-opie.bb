@@ -56,7 +56,8 @@ merge_feeds() {
         fi
 }
 
-# merge feed-sources into ipkg.conf and create /etc/timestamp from build date
-IMAGE_PREPROCESS_COMMAND = "merge_feeds; create_etc_timestamp"
-
 inherit image
+
+# merge feed-sources into ipkg.conf and create /etc/timestamp from build date
+ROOTFS_POSTPROCESS_COMMAND += "merge_feeds; rootfs_update_timestamp ; "
+

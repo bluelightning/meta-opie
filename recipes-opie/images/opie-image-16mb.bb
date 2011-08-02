@@ -15,7 +15,8 @@ IMAGE_INSTALL = "task-boot \
                     task-opie-16mb-pim \
                     ${ANGSTROM_EXTRA_INSTALL} "
 
-# create /etc/timestamp from build date
-IMAGE_PREPROCESS_COMMAND = "create_etc_timestamp"
-
 inherit image
+
+# Create /etc/timestamp during image construction to give a reasonably sane default time setting
+ROOTFS_POSTPROCESS_COMMAND += "rootfs_update_timestamp ; "
+
