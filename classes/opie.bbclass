@@ -102,4 +102,4 @@ python opie_do_opie_install() {
 }
 
 EXPORT_FUNCTIONS do_opie_install
-addtask opie_install after do_compile before do_package
+addtask opie_install after do_install before do_populate_sysroot do_package
