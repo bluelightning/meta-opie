@@ -7,7 +7,7 @@ APPTYPE = "binary"
 APPDESKTOP = "${WORKDIR}"
 PR = "r1"
 
-SRC_URI = "http://www.vanille.de/mirror/zudoku-${PV}.tar.gz \
+SRC_URI = "http://sources.openembedded.org/zudoku-${PV}.tar.gz \
            file://zudoku.html \
            file://zudoku.desktop"
 

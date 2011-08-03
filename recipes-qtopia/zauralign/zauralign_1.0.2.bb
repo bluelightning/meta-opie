@@ -4,7 +4,7 @@ SECTION = "opie/games"
 PRIORITY = "optional"
 LICENSE = "GPL"
 
-SRC_URI = "http://www.Vanille.de/mirror/zauralign-${PV}.tar.gz"
+SRC_URI = "http://sources.openembedded.org/zauralign-${PV}.tar.gz"
 S = "${WORKDIR}/zauralign"
 
 inherit palmtop

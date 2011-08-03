@@ -4,7 +4,7 @@ PRIORITY = "optional"
 LICENSE = "GPL"
 PR = "r1"
 
-SRC_URI = "http://www.Vanille.de/mirror/flexis-zaurus-${PV}.tar.bz2"
+SRC_URI = "http://sources.openembedded.org/flexis-zaurus-${PV}.tar.bz2"
 S = "${WORKDIR}/flexis-zaurus"
 
 inherit palmtop

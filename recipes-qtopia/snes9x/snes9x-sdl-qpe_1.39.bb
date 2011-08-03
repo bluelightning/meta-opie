@@ -5,7 +5,7 @@ DEPENDS = "libsdl-qpe"
 LICENSE = "snes9x"
 PR = "r4"
 
-SRC_URI = "http://www.vanille.de/mirror/snes9x-sdl-${PV}.tar.bz2 \
+SRC_URI = "http://sources.openembedded.org/snes9x-sdl-${PV}.tar.bz2 \
 	   file://compile.patch"
 S = "${WORKDIR}/snes9x-sdl-${PV}"
 

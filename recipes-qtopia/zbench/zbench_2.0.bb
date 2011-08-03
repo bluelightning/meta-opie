@@ -5,7 +5,7 @@ LICENSE = "GPL"
 HOMEPAGE = "http://www.aa.alpha-net.ne.jp/satoshic/dw_zbnch.htm"
 PR = "r1"
 
-SRC_URI = "http://www.vanille.de/mirror/zbench-${PV}.tar.bz2"
+SRC_URI = "http://sources.openembedded.org/zbench-${PV}.tar.bz2"
 
 inherit palmtop
 

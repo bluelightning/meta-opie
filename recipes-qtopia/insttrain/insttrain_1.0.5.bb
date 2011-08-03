@@ -7,7 +7,7 @@ APPDESKTOP = "../Qtopia/opt/QtPalmtop/apps/Applications"
 
 inherit opie
 
-SRC_URI = "http://www.Vanille.de/mirror/insttrain-${PV}.tgz \
+SRC_URI = "http://sources.openembedded.org/insttrain-${PV}.tgz \
            file://gcc3.patch"
 S = "${WORKDIR}/insttrain-${PV}/src"
 

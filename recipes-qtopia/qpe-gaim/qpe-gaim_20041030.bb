@@ -10,7 +10,7 @@ LICENSE = "GPL"
 APPDESKTOP = "${S}"
 PR = "r3"
 
-SRC_URI = "http://www.vanille.de/mirror/qpe-gaim_20041030.tar.bz2 \
+SRC_URI = "http://sources.openembedded.org/qpe-gaim_20041030.tar.bz2 \
            file://qpe-gaim.patch \
 	   file://buzzer-notification.patch \
 	   file://vit.patch"

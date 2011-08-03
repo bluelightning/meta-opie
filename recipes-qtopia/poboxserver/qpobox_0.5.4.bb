@@ -5,7 +5,7 @@ LICENSE = "GPL"
 HOMEPAGE = "http://takahr.dhis.portside.net/cgi-bin/rwiki.cgi?cmd=view;name=QPOBox"
 PR = "r3"
 
-SRC_URI = "http://www.vanille.de/mirror/qpobox-${PV}.tar.gz \
+SRC_URI = "http://sources.openembedded.org/qpobox-${PV}.tar.gz \
            file://qpobox-0.5.4-opie.patch \
            file://qpobox.patch"
 S = "${WORKDIR}/qpobox"
