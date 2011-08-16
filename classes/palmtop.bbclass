@@ -24,3 +24,6 @@ FILES_${PN} += " ${palmtopdir} "
 FILES_${PN}-dbg += " ${palmtopdir}/lib/.debug \
                      ${palmtopdir}/bin/.debug \
                      ${palmtopdir}/plugins/*/.debug "
+
+# Desktop files don't need to be checked for Qtopia applications
+INSANE_SKIP_${PN} += "desktop"
