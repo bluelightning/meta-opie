@@ -27,6 +27,11 @@ EXTRA_QMAKEVARS_POST += " DESTDIR=${S} "
 # Opie standard TAG value
 TAG = "${@'v' + bb.data.getVar('PV',d,1).replace('.', '_')}"
 
+do_configure_prepend() {
+	# Ensure we find include.pro in the right place
+	find -name "*.pro" -exec sed -i 's!$(OPIEDIR)/include.pro!/${STAGING_DIR_HOST}${palmtopdir}/include.pro!' {} \;
+}
+
 # plan for later:
 # add common scopes for opie applications, see qmake-native/common.pro
 # qmake should care about all the details then. qmake can do that, i know it :)

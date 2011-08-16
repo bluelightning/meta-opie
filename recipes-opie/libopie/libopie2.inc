@@ -69,7 +69,8 @@ do_install() {
 		oe_libinstall -so libopie$f ${D}${libdir}
 	done
 
-	install -m 0644 ${WORKDIR}/include.pro ${OPIEDIR}/include.pro
+	install -d ${D}${palmtopdir}
+	install -m 0644 ${WORKDIR}/include.pro ${D}${palmtopdir}/include.pro
 
 	install -d ${D}${includedir}/opie2/
 	for module in ${MODULES}
@@ -92,6 +93,8 @@ do_install() {
 	rm ${D}${includedir}/opie2/udp_ports.h
 	rm ${D}${includedir}/opie2/odevice_*.h
 }
+
+FILES_${PN}-dev += "${palmtopdir}/include.pro"
 
 PACKAGES_prepend = " libopiecore2 libopiedb2 libopiesecurity2 libopiemm2 libopienet2 libopiepim2 libopieui2 libopiebluez2 "
 
