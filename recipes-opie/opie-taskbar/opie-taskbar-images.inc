@@ -30,6 +30,8 @@ PIXMAP_SIZE_palmt5      = "-320x480"
 PIXMAP_SIZE_palmtx      = "-320x480"
 PIXMAP_SIZE_palmld      = "-320x480"
 
+AVAILABLE_SIZES         = "240x240 240x320 320x320 320x480 480x320 480x640 640x480 800x600"
+
 do_configure() {
         :
 }
@@ -37,18 +39,18 @@ do_configure() {
 do_install() {
         install -d ${D}${palmtopdir}/pics/launcher
 	
-        install -m 0644 ${WORKDIR}/pics/launcher/firstuse.jpg ${D}${palmtopdir}/pics/launcher/firstuse-240x320.jpg
-        install -m 0644 ${WORKDIR}/pics/launcher/opie-background.jpg ${D}${palmtopdir}/pics/launcher/opie-background-240x320.jpg
+        # Allow us to be lazy with the loop below
+        mv ${WORKDIR}/pics/launcher/firstuse.jpg ${WORKDIR}/pics/launcher/firstuse-240x320.jpg
+        mv ${WORKDIR}/pics/launcher/opie-background.jpg ${WORKDIR}/pics/launcher/opie-background-240x320.jpg
 
-#        for res in 320x240 240x320 320x320 320x480 480x320 480x640 640x480 600x800 800x600; do
-        for res in 240x240 320x320 320x480 480x320 480x640 640x480 800x600; do
+        for res in ${AVAILABLE_SIZES}; do
                 install -m 0644 ${WORKDIR}/pics/launcher/firstuse-${res}.jpg ${D}${palmtopdir}/pics/launcher/firstuse-${res}.jpg
                 install -m 0644 ${WORKDIR}/pics/launcher/opie-background-${res}.jpg ${D}${palmtopdir}/pics/launcher/opie-background-${res}.jpg
         done
 }
 
-python do_package_prepend () {
-    reslist = ['240x320','320x240', '320x320', '320x480', '480x320', '480x640','640x480', '800x600','600x800']
+python __anonymous () {
+    reslist = bb.data.getVar('AVAILABLE_SIZES', d, True).split()
     dir = bb.data.expand('${palmtopdir}/pics/launcher/', d)
     ft = bb.data.expand('${palmtopdir}/pics/*/*-%s.*', d)
     pn = bb.data.getVar('PN', d, 1)
@@ -65,13 +67,12 @@ python do_package_prepend () {
 }
 
 PACKAGE_ARCH = "all"
-PACKAGES = "${PN}-dbg ${PN}-320x480 ${PN}-480x320 ${PN}-480x640 ${PN}-640x480 ${PN}-800x600 ${PN}-600x800 ${PN}-320x240 ${PN}-240x320 ${PN}-320x320"
+PACKAGES = "${PN}-dbg ${PN}-240x240 ${PN}-240x320 ${PN}-320x320 ${PN}-320x480 ${PN}-480x320 ${PN}-480x640 ${PN}-640x480 ${PN}-800x600"
+RPROVIDES_${PN}-240x240 = "opie-taskbar-images"
+RPROVIDES_${PN}-240x320 = "opie-taskbar-images"
+RPROVIDES_${PN}-320x320 = "opie-taskbar-images"
 RPROVIDES_${PN}-320x480 = "opie-taskbar-images"
 RPROVIDES_${PN}-480x320 = "opie-taskbar-images"
 RPROVIDES_${PN}-480x640 = "opie-taskbar-images"
 RPROVIDES_${PN}-640x480 = "opie-taskbar-images"
 RPROVIDES_${PN}-800x600 = "opie-taskbar-images"
-RPROVIDES_${PN}-600x800 = "opie-taskbar-images"
-RPROVIDES_${PN}-320x240 = "opie-taskbar-images"
-RPROVIDES_${PN}-240x320 = "opie-taskbar-images"
-RPROVIDES_${PN}-320x320 = "opie-taskbar-images"
