@@ -4,8 +4,10 @@ IMAGE_LINGUAS = ""
 
 DEPENDS = "task-base task-opie"
 
+IMAGE_FEATURES = "ssh-server-dropbear"
+
 ANGSTROM_EXTRA_INSTALL ?= ""
-IMAGE_INSTALL = "task-base-extended task-opie-base task-opie-base-applets \
+IMAGE_INSTALL = "task-core-boot ${ROOTFS_PKGMANAGE} task-opie-base task-opie-base-applets \
 		    task-opie-base-inputmethods task-opie-base-apps \
 		    task-opie-base-settings task-opie-base-decorations \
 		    task-opie-base-styles task-opie-base-pim \
@@ -14,8 +16,5 @@ IMAGE_INSTALL = "task-base-extended task-opie-base task-opie-base-applets \
   ${@base_contains("COMBINED_FEATURES", "irda", "task-opie-irda", "",d)} \
                     ${ANGSTROM_EXTRA_INSTALL} "
 
-inherit image
-
-# Create /etc/timestamp during image construction to give a reasonably sane default time setting
-ROOTFS_POSTPROCESS_COMMAND += "rootfs_update_timestamp ; "
+inherit core-image
 
