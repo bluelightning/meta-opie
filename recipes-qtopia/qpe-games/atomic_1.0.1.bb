@@ -1,6 +1,5 @@
 DESCRIPTION = "Atomic"
 SECTION = "opie/games"
-PRIORITY = "optional"
 
 LICENSE = "GPL"
 AUTHOR = "Andre Wuest"

@@ -1,6 +1,5 @@
 DESCRIPTION = "Opie BluePin"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 DEPENDS = "libopietooth1"
 LICENSE = "GPL"
 # FIXME stopgap until split archives have license files included

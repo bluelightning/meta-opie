@@ -1,6 +1,5 @@
 DESCRIPTION = "Pressure-Sensitive Paint Program for Opie/Qtopia"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 HOMEPAGE = "http://sun.dhis.portside.net/~sakira/wiki/index.cgi?cmd=view;name=LinuxZaurus%3APetitePeinture+en"
 LICENSE = "GPL"
 APPTYPE = "binary"

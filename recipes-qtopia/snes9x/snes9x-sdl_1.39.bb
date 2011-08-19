@@ -1,6 +1,5 @@
 DESCRIPTION = "Super Nintendo Emulator based on SDL"
 SECTION = "games"
-PRIORITY = "optional"
 DEPENDS = "virtual/libsdl zlib"
 LICENSE = "snes9x"
 PR = "r3"

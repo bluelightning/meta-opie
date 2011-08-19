@@ -1,6 +1,5 @@
 DESCRIPTION = "opie-scummvm"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 APPNAME = "opie-scummvm"
 APPTYPE = "binary"

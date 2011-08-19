@@ -1,6 +1,5 @@
 DESCRIPTION = "Checkers"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Crossword.html"

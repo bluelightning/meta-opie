@@ -1,6 +1,5 @@
 DESCRIPTION = "DVI Viewer for Opie/Qtopia"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://www013.upp.so-net.ne.jp/hn43o/dviviewer/"
 PR = "r1"

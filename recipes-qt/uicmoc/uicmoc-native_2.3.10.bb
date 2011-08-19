@@ -1,7 +1,6 @@
 DESCRIPTION = "User Interface Generator and Meta Object Compiler (moc) for Qt(E) 2.x"
 HOMEPAGE = "http://www.trolltech.com"
 SECTION = "devel"
-PRIORITY = "optional"
 LICENSE = "GPL QPL"
 PR = "r5"
 

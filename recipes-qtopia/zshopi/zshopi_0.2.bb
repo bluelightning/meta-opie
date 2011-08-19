@@ -1,7 +1,6 @@
 DESCRIPTION = "Shopping manager"
 SECTION = "opie/applications"
 DEPENDS = "sqlite opie-lrelease-native"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://www.lachner-net.de/"
 AUTHOR = "Bernd Lachner <dev@lachner-net.de>"

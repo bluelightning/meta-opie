@@ -1,6 +1,5 @@
 DESCRIPTION = "Tickypip"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Christian Hammond"
 HOMEPAGE = "http://www.chipx86.com/projects/tickypip/"

@@ -1,6 +1,5 @@
 DESCRIPTION = "Alarm Clock"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Dafydd Walters & Anton Maslovsky"
 HOMEPAGE = "http://my-zaurus.narod.ru/"

@@ -1,6 +1,5 @@
 DESCRIPTION = "Nime Mens Morris"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Dirk Farin, Port by Rober Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Nine-Mens-Morris.html"

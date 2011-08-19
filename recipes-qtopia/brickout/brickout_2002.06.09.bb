@@ -1,6 +1,5 @@
 DESCRIPTION = "Clone of the classic arcade game Asteroids for Qt/Embedded based palmtop environments w/ SDL"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 DEPENDS = "libsdl-qpe libsdl-mixer libsdl-image"
 PR = "r4"

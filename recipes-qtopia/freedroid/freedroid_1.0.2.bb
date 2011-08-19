@@ -1,6 +1,5 @@
 DESCRIPTION = "Clone of the classic Paradroid from C64 - SDL version."
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://freedroid.sourceforge.net/"
 PR = "r2"

@@ -1,6 +1,5 @@
 DESCRIPTION = "A tool to calculate Ohm resistor values"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://www.pellicosystems.com/zaurus/applications/index.html"
 APPNAME = "resistorUI"

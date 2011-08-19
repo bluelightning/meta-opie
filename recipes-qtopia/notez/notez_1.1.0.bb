@@ -1,6 +1,5 @@
 DESCRIPTION = "simple note-taking application"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Henning Holtschneider <hh@holtschneider.com>"
 HOMEPAGE = "http://www.holtschneider.com/notez/"

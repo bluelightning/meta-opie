@@ -1,6 +1,5 @@
 DESCRIPTION = "Auto-Correction Paint Program for Opie/Qtopia"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 APPNAME = "FreeNote"
 APPTYPE = "binary"

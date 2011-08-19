@@ -1,6 +1,5 @@
 DESCRIPTION = "Timetracker to track time spent on different projects"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Martin Henne <martin.henne@web.de>"
 HOMEPAGE = "http://www.martinhenne.de/temtor/"

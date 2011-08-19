@@ -9,7 +9,6 @@ DESCRIPTION_libmicrokammu    = "KDE Pim/PI fork of libGammu"
 DESCRIPTION_kammu            = "KDE Pim/PI fork of gammu"
 
 SECTION = "opie/pim"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://www.pi-sync.net/ http://sf.net/projects/kdepimpi/"
 MAINTAINER = "Marcin Juszkiewicz <openembedded@hrw.one.pl>"

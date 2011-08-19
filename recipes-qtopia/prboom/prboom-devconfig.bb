@@ -1,6 +1,5 @@
 DESCRIPTION = "Device specific configuration for prboom"
 SECTION = "games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 PR = "r1"
 

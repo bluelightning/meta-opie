@@ -1,6 +1,5 @@
 DESCRIPTION = "Clone of the classic arcade game Asteroids - SDL edition."
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 PR = "r2"
 

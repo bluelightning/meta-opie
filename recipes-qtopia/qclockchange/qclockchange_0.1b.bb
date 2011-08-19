@@ -1,6 +1,5 @@
 DESCRIPTION = "Program that allows you to set the CCCR registers on PXA Zauruses."
 SECTION = "opie/settings"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "piro <piro400@occn.zaq.ne.jp>"
 HOMEPAGE = "http://piro.sytes.net/~piro/zaurus/"

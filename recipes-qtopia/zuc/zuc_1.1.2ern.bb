@@ -1,6 +1,5 @@
 DESCRIPTION = "A Unit Conversion Tool"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 APPTYPE = "binary"
 APPNAME = "zuc"

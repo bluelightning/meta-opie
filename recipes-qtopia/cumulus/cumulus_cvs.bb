@@ -1,6 +1,5 @@
 DESCRIPTION = "A flightcomputer application for Qt/E based Palmtop Environments"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 APPTYPE = "binary"
 APPNAME = "cumulus"

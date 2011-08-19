@@ -1,7 +1,6 @@
 DESCRIPTION = "Painting program. Small picture editor."
 HOMEPAGE = "http://zaurus.colognearts.de/qpphoto/"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 APPNAME = "qpPhoto"
 APPTYPE = "binary"

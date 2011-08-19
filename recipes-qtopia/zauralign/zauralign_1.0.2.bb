@@ -1,7 +1,6 @@
 DESCRIPTION = "Zauralign - a game for one player. The player has to align pieces to remove them from the \
 board fighting against new pieces which appear after each move."
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 
 SRC_URI = "http://sources.openembedded.org/zauralign-${PV}.tar.gz"

@@ -1,6 +1,5 @@
 DESCRIPTION = "Time Sleuth"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Dafydd Walters"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/applications-TimeSleuth.html"

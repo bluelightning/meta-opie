@@ -1,7 +1,6 @@
 DESCRIPTION = "Custom Keyboard \
 Keyboard that can be customized to include exactly the characters that the user uses, but which is not available on his physical keyboard."
 SECTION = "opie/inputmethods"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://www.blackie.dk/Zaurus/custominput/"
 AUTHOR = "Jesper Kjaer Pedersen <blackie@blackie.dk>"

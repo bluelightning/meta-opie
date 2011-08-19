@@ -1,6 +1,5 @@
 DESCRIPTION = "Zaurus D20 Gaming Dice for Qt/Embedded based Palmtop Environments"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 PR = "r1"
 

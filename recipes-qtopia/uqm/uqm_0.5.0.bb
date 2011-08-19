@@ -1,9 +1,7 @@
 DESCRIPTION = "Star Control 2 source port using SDL (see sc2.sourceforge.net)"
 SECTION = "games"
-PRIORITY = "optional"
 DEPENDS = "virtual/libsdl libsdl-image libsdl-net libvorbis libogg zlib"
 SECTION = "games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 
 PR = "r2"

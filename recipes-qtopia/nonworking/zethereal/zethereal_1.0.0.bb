@@ -1,6 +1,5 @@
 DESCRIPTION = "The network packet dissector Ethereal, Qt/Embedded based Palmtop Environments Edition"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 DEPENDS = "glib-1.2 openssl"
 HOMEPAGE = "http://www.cartel-info.fr/pbiondi/zaurus/"

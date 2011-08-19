@@ -1,6 +1,5 @@
 DESCRIPTION = "KDE Stars: The Universe, in your hands! QtE based Palmtop Environments Edition"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 APPNAME = "kstars"
 APPTYPE = "binary"

@@ -1,6 +1,5 @@
 DESCRIPTION = "Benchmark for Opie/Qtopia"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://www.aa.alpha-net.ne.jp/satoshic/dw_zbnch.htm"
 PR = "r1"

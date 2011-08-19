@@ -1,6 +1,5 @@
 DESCRIPTION = "Developer Examples for Opie"
 SECTION = "opie/base"
-PRIORITY = "optional"
 DEPENDS = "opie-networksettings"
 LICENSE = "GPL"
 # FIXME stopgap until split archives have license files included

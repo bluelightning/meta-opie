@@ -1,6 +1,5 @@
 DESCRIPTION = "Password manager"
 SECTION = "opie/applications"
-PRIORITY    = "optional"
 LICENSE     = "GPL"
 RCONFLICTS_${PN}  = "opie-zsafe"
 APPNAME     = "zsafe"

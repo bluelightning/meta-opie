@@ -1,7 +1,6 @@
 DESCRIPTION = "ZauRSS is an RSS aggregator for Qtopia. It can manage multiple RSS feeds. \
 It can also work with NetFront3, and you can see RDF items with it. "
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://www.daionet.gr.jp/~knok/software/zaurss/"
 APPNAME = "zaurss"

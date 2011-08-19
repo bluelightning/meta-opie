@@ -1,6 +1,5 @@
 DESCRIPTION = "Stores accounts and passwords in an encrypted file."
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 DEPENDS = "gdbm"
 PR = "r2"

@@ -1,7 +1,6 @@
 DESCRIPTION = "Japanese input method plugin"
 HOMEPAGE = "http://www.sikigami.com/nunome-Qtopia-1.0/"
 SECTION = "opie/inputmethods"
-PRIORITY = "optional"
 LICENSE = "GPL"
 RDEPENDS_${PN} = "virtual-japanese-font"
 PR = "r5"

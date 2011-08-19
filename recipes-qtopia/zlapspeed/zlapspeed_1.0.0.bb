@@ -1,6 +1,5 @@
 DESCRIPTION = "Zaurus Race Lap Speed Measuring Application for Qt/Embedded based Palmtop Environments"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 
 SRC_URI = "http://www.cinlug.org/modules/Static_Docs/data/db/zlaps/zlaps_${PV}_arm.src.tar.gz \

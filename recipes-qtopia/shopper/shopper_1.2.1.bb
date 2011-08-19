@@ -1,6 +1,5 @@
 DESCRIPTION = "Shopping list manager"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 
 PR = "r1"

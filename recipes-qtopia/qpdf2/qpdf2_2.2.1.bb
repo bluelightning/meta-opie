@@ -1,5 +1,4 @@
 DESCRIPTION = "QPDF2 is a Viewer for PDF documents. An unnecessary fork based on opie-qpdf."
-PRIORITY = "optional"
 SECTION = "opie/applications"
 HOMEPAGE = "http://qpdf2.sf.net"
 LICENSE = "GPL"

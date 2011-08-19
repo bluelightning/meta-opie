@@ -1,6 +1,5 @@
 DESCRIPTION = "OpenOffice.org Impress presentation viewer for Qt/E based Palmtop environments"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://poqetp.sourceforge.net/"
 PR = "r2"

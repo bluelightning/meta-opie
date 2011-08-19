@@ -1,6 +1,5 @@
 DESCRIPTION = "Pairs"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Rober Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Pairs.html"

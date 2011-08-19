@@ -1,7 +1,6 @@
 DESCRIPTION = "Chess Game for Qt/Embedded based palmtop environments. \
 Uses the Phalanx chess engine."
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 DEPENDS = "phalanx"
 RDEPENDS_${PN} = "phalanx"

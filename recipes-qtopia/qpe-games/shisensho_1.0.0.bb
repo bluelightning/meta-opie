@@ -1,6 +1,5 @@
 DESCRIPTION = "Shisensho"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Mario Weilguni"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Shisen-Sho.html"

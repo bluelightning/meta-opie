@@ -1,6 +1,5 @@
 DESCRIPTION = "Pairs"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Anders Widell, Steve Dunham, Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Sokoban.html"

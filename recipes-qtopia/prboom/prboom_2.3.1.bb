@@ -1,6 +1,5 @@
 DESCRIPTION = "A Doom Clone based on SDL"
 SECTION = "opie/games"
-PRIORITY = "optional"
 DEPENDS = "libsdl-qpe libsdl-mixer libsdl-net"
 LICENSE = "GPL"
 

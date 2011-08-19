@@ -1,6 +1,5 @@
 DESCRIPTION = "Checkers"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Walter Rawdanik"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Checkers.html"

@@ -1,6 +1,5 @@
 DESCRIPTION = "Puzz-le is a colorful arcade logic game for Qt/Embedded based Palmtop Environments."
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 
 PR = "r1"

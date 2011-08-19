@@ -1,6 +1,5 @@
 DESCRIPTION = "Maki"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Henry So, Jr."
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Maki.html"

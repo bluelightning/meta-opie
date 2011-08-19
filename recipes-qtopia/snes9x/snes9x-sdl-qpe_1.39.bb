@@ -1,6 +1,5 @@
 DESCRIPTION = "Super Nintendo Emulator based on SDL, QtE Palmtop Environments Edition"
 SECTION = "opie/games"
-PRIORITY = "optional"
 DEPENDS = "libsdl-qpe"
 LICENSE = "snes9x"
 PR = "r4"

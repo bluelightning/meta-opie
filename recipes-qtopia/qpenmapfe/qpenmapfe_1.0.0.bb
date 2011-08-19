@@ -1,6 +1,5 @@
 DESCRIPTION = "A frontend for the nmap port scanner, Qt/Embedded based Palmtop Environments Edition"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Dennis Webb"
 APPNAME = "qpenmapfe"

@@ -1,6 +1,5 @@
 DESCRIPTION = "Alien ShootOut"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Bill Kendrick"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Aliens.html"

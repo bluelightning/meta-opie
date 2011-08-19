@@ -1,6 +1,5 @@
 DESCRIPTION = "C64 Emulator based on SDL"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 DEPENDS = "libsdl-qpe"
 LICENSE = "GPL"
 SRCDATE = "20040801"

@@ -1,6 +1,5 @@
 DESCRIPTION = "Qt/Embedded Version ${PV}"
 SECTION = "libs"
-PRIORITY = "optional"
 HOMEPAGE = "http://www.trolltech.com"
 LICENSE = "GPL"
 DEPENDS = "zlib libpng jpeg tslib uicmoc-native"

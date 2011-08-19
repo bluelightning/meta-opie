@@ -1,6 +1,5 @@
 DESCRIPTION = "Time tracking program"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://www.pi-sync.net"
 PR = "r1"

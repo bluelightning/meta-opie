@@ -1,6 +1,5 @@
 DESCRIPTION = "Tx Drug Database"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 DEPENDS = "sqlite"
 PR = "r3"

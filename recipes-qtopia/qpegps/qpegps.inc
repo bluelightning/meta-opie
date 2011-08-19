@@ -1,6 +1,5 @@
 DESCRIPTION = "A GPS navigation application for the Opie environment"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://qpegps.sourceforge.net/"
 

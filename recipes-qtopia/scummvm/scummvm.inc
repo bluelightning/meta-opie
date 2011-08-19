@@ -1,7 +1,6 @@
 DESCRIPTION = "Virtual Machine for several classic graphical point-and-click adventure games"
 HOMEPAGE = "http://www.scummvm.org"
 SECTION = "games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 
 INC_PR = "r7"

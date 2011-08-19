@@ -1,6 +1,5 @@
 DESCRIPTION = "A frontend for the nmap port scanner, Qt/Embedded Palmtop Environment"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 RDEPENDS_${PN} = "nmap"
 PR = "r1"

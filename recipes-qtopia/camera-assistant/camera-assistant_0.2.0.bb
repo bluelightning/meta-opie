@@ -9,7 +9,6 @@ It currently has the following features: \
 SECTION = "opie/applications"
 
 
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "zaurus@bredband.net"
 HOMEPAGE = "http://cameraassistant.sourceforge.net/"

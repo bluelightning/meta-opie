@@ -1,6 +1,5 @@
 DESCRIPTION = "QPlot is an Advanced Matematical Calculator for Qt/Embedded based Palmtop Environments"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://qplot.sourceforge.net/"
 SRCDATE = "20020420"

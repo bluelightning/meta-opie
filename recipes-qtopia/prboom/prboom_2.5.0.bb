@@ -1,6 +1,5 @@
 DESCRIPTION = "A Doom Clone based on SDL"
 SECTION = "games"
-PRIORITY = "optional"
 DEPENDS = "virtual/libsdl libsdl-mixer libsdl-net"
 LICENSE = "GPL"
 

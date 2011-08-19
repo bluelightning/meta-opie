@@ -1,6 +1,5 @@
 DESCRIPTION = "Tx Image Viewer"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://community.zaurus.com/projects/tximage/"
 PR = "r2"

@@ -1,6 +1,5 @@
 DESCRIPTION = "A Qtopia/Opie Input Method plugin for the Flexis FX100 Keyboard."
 SECTION = "opie/inputmethods"
-PRIORITY = "optional"
 LICENSE = "GPL"
 PR = "r1"
 

@@ -1,6 +1,5 @@
 DESCRIPTION = "An E-Books reader for Qt/Embedded based Palmtop Environments"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://justreader.sourceforge.net/"
 PR = "r3"

@@ -1,6 +1,5 @@
 DESCRIPTION = "A SID Player for the Qt/Embedded based Palmtop Environments"
 SECTION = "opie/multimedia"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://sidplayer.sourceforge.net/"
 DEPENDS = "libsidplay"

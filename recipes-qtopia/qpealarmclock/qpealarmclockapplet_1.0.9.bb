@@ -1,6 +1,5 @@
 DESCRIPTION = "Alarm Clock Applet"
 SECTION = "opie/applets"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Anton Maslovsky"
 HOMEPAGE = "http://my-zaurus.narod.ru/"

@@ -2,7 +2,6 @@ DESCRIPTION = "U-Bahn Navigator helps you navigating through foreign public \
 transport networks. It finds the shortest or direct route from a start to a \
 destination station of the loaded subway map. U-Bahn Navigator is extensible \
 to support each public transport network."
-PRIORITY = "optional"
 SECTION = "opie/applications"
 AUTHOR = "Dimitri Brukakis"
 HOMEPAGE = "http://ubahnstation.net"

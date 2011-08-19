@@ -1,6 +1,5 @@
 DESCRIPTION = "Puzzle Game for Qt/Embedded based palmtop environments."
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 PR = "r1"
 

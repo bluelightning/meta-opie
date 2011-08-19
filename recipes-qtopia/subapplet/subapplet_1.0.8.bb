@@ -2,7 +2,6 @@ DESCRIPTION = "Applet for the Qtopia environment taskbar that provides an extens
 for the taskbar that let's you load lot's of applet's without taking up space \
 in the normal taskbar."
 SECTION = "opie/applets"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://sourceforge.net/projects/subapplet/"
 PR = "r7"

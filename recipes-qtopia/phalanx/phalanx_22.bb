@@ -1,6 +1,5 @@
 DESCRIPTION = "Phalanx is a chess playing engine."
 SECTION = "opie/libs"
-PRIORITY = "optional"
 PR = "r5"
 LICENSE = "GPL"
 SRC_URI = "http://ftp.debian.org/debian/pool/main/p/phalanx/phalanx_22+d051004.orig.tar.gz \

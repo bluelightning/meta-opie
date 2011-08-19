@@ -1,6 +1,5 @@
 DESCRIPTION = "Simple DirectMedia Layer - X11 Edition"
 SECTION = "libs"
-PRIORITY = "optional"
 DEPENDS = "alsa-lib virtual/libgl virtual/libx11 libxext"
 DEPENDS_avr32 = "alsa-lib virtual/libx11 libxext"
 PROVIDES = "virtual/libsdl"

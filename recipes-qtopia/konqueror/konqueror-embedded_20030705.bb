@@ -1,7 +1,6 @@
 DESCRIPTION = "KDE Web Browser Konqueror, QtE based Palmtop Environments Edition"
 HOMEPAGE = "http://www.konqueror.org/embedded"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 DEPENDS = "libqpe-opie openssl libpcre"
 LICENSE = "LGPL GPL"
 PR = "r5"

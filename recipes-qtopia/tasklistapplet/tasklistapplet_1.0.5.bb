@@ -1,6 +1,5 @@
 DESCRIPTION = "TaskList Applet"
 SECTION = "opie/applets"
-PRIORITY = "optional"
 LICENSE = "GPL"
 HOMEPAGE = "http://sourceforge.net/projects/subapplet/"
 

@@ -2,7 +2,6 @@ DESCRIPTION = "Wine cellar manager. Allows you to record details of wines and \
 those you have in your cellar. The Food Assistant will make suggestions of wines \
 suitable for your meal, and indicate those in your cellar that match."
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 PR = "r3"
 

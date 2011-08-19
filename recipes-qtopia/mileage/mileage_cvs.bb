@@ -1,7 +1,6 @@
 DESCRIPTION = "A Car Mileage Calculator."
 HOMEPAGE = "http://mileage.sourceforge.net"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 #Change to form x.y.z+cvs${SRCDATE} when 4.2.0 changes in PV
 SRCDATE = "20060814"

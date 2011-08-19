@@ -1,6 +1,5 @@
 DESCRIPTION = "Militaryalphabet"
 SECTION = "opie/applications"
-PRIORITY = "optional"
 LICENSE = "GPL"
 APPNAME = "militaryalphabet"
 APPTYPE = "binary"

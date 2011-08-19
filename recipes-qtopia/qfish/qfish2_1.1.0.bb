@@ -1,7 +1,6 @@
 DESCRIPTION = "A Game with fishes, Qt/Embedded based Palmtop Environments Edition"
 SECTION = "opie/games"
 LICENSE = "GPL"
-PRIORITY = "optional"
 PR = "r2"
 
 SRC_URI = "http://taiga0818.hp.infoseek.co.jp/rpms/qfish2-${PV}.tar.gz"

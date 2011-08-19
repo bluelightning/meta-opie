@@ -1,6 +1,5 @@
 DESCRIPTION = "ZTappy"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Kart Bartel, Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-ZTappy.html"

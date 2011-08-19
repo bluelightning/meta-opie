@@ -1,6 +1,5 @@
 DESCRIPTION = "Mahjongg"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Mario Weilguni, Port by Rober Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Mahjongg.html"

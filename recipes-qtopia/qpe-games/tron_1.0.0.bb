@@ -1,6 +1,5 @@
 DESCRIPTION = "Tron"
 SECTION = "opie/games"
-PRIORITY = "optional"
 LICENSE = "GPL"
 AUTHOR = "Matthias Kiefer"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Tron.html"

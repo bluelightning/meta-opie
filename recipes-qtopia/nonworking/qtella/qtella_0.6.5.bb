@@ -1,6 +1,5 @@
 DESCRIPTION = "A GNet Client for Qtopia/Opie based Palmtop Environments"
 SECTION = "opie"
-PRIORITY = "optional"
 
 SRC_URI = "${SOURCEFORGE_MIRROR}/qtella/qtella-${PV}.tar.gz"
 
