@@ -20,6 +20,19 @@ branch: master
 revision: HEAD
 
 
+Usage
+-----
+
+To build Opie you need to 'require' an appropriate .inc file from
+conf/distro/include within your distro conf file or local.conf, e.g.:
+
+require conf/distro/include/preferred-opie-versions-1.2.5.inc
+
+Then you should be able to build an Opie image:
+
+$ bitbake opie-image
+
+
 Maintenance
 -----------
 
