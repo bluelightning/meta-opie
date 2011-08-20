@@ -15,8 +15,6 @@
 
 inherit palmtop
 
-OPIE_SRCREV ?= "8c3beef263bc9c34443eacfc821e99813e17554f"
-OPIE_GIT_PV ?= "1.2.4+gitr${OPIE_SRCREV}"
 DEPENDS_prepend = "${@["libopie2 ", ""][(bb.data.getVar('PN', d, 1) == 'libopie2')]}"
 
 # to be consistent, put all targets into workdir

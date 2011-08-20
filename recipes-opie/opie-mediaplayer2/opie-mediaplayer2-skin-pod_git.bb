@@ -5,7 +5,6 @@ LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 APPNAME = "opieplayer2"
 RPROVIDES_${PN} = "opie-mediaplayer2-skin"
-OPIE_GIT_PV ?= "1.2.2+cvs${SRCDATE}"
 PV = "${OPIE_GIT_PV}"
 PR = "r3"
 

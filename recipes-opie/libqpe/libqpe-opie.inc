@@ -12,6 +12,13 @@ S = "${WORKDIR}/library"
 
 inherit palmtop
 
+python __anonymous() {
+    # This doesn't need to be in this recipe specifically, but it's as good
+    # a place as any since it has to be parsed if Opie is going to be built
+    if not bb.data.getVar("OPIE_VERSION", d, True):
+        bb.warn("OPIE_VERSION has not been set; if you are going to build Opie, you need to 'require' an appropriate .inc file from meta-opie/conf/distro/include")
+}
+
 OE_QMAKE_CXXFLAGS := "${@oe_filter_out('-fno-rtti', '${OE_QMAKE_CXXFLAGS}', d)}"
 QMAKE_PROFILES = "library.pro"
 EXTRA_QMAKEVARS_PRE += "CONFIG+=LIBQPE_WITHROHFEEDBACK"

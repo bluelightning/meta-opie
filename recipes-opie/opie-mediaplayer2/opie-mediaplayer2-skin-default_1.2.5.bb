@@ -6,8 +6,6 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425
 APPNAME = "opieplayer2"
 RPROVIDES_${PN} = "opie-mediaplayer2-skin"
 
-OPIE_SRCREV ?= "8c3beef263bc9c34443eacfc821e99813e17554f"
-
 PR = "r0"
 
 SRC_URI = "http://sources.openembedded.org/opie-1.2.5-split_pics.tar.bz2;name=split_pics"
