@@ -6,11 +6,12 @@ LICENSE = "GPL"
 DEPENDS = "libbedic"
 APPTYPE = "binary"
 APPDESKTOP = "${WORKDIR}/misc"
-PR = "r3"
+PR = "r4"
 
 SRC_URI = "${SOURCEFORGE_MIRROR}/bedic/zbedic_${PV}-2.tgz;subdir=${BPN}-${PV} \
            file://opie-icons.patch \
-           file://qtopia17.patch"
+           file://qtopia17.patch \
+           file://stdlib_h.patch"
 
 inherit opie
 export OE_QMAKE_LINK="${CXX}"

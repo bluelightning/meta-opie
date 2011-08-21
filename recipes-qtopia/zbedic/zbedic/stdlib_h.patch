@@ -1,0 +1,14 @@
+Include stdlib.h for the abs() function.
+
+Signed-off-by: Paul Eggleton <paul.eggleton@linux.intel.com>
+
+--- zbedic-1.2.orig/src/settings.cpp
++++ zbedic-1.2/src/settings.cpp
+@@ -23,6 +23,7 @@
+ ****************************************************************************/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #include <qlabel.h>
+ #include <qhbox.h>
