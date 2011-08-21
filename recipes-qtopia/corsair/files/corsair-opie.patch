@@ -42,7 +42,7 @@
 -LIBS=-lqte -lqpe -lqtopia -ljpeg -luuid
 -
 + 
-+INCLUDES=-I$(QTDIR)/include
++INCLUDES=-I$(OE_QMAKE_INCDIR_QT)
 +CXXFLAGS += $(INCLUDES) -DQWS -fno-rtti -fno-exceptions
 +LDFLAGS +=-L $(QTDIR)/lib/
 +
