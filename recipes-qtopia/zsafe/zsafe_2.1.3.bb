@@ -1,6 +1,6 @@
 DESCRIPTION = "Password manager"
 SECTION = "opie/applications"
-LICENSE     = "GPL"
+LICENSE     = "GPLv2"
 RCONFLICTS_${PN}  = "opie-zsafe"
 APPNAME     = "zsafe"
 APPTYPE     = "binary"
@@ -9,6 +9,8 @@ SRC_URI     = "http://zcarsten.dyndns.org/carsten/zaurus/zsafe/zsafe_2.1.3.tgz \
                file://stream_h.patch"
 S           = "${WORKDIR}"
 PR = "r2"
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=cbbd794e2a0a289b9dfcc9f513d1996e"
 
 inherit opie
 

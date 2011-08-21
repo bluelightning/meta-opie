@@ -26,6 +26,8 @@ S = "${WORKDIR}/"
 # http://www.palmgamingworld.com/add-in/netwalk.shtml
 #
 
+LIC_FILES_CHKSUM = "file://levels/NetWalk_levels.README;md5=9c3436af551b6c58d4799068ec7def0f"
+
 do_install () {
 	install -d ${D}${palmtopdir}/share/tickypip/levels
 	install -m 0644 levels/* ${D}${palmtopdir}/share/tickypip/levels/

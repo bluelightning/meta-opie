@@ -10,6 +10,10 @@ SRC_URI = "http://sources.openembedded.org/ztappy_V0.9.3ern.tar.gz "
 
 S = "${WORKDIR}/ztappy_V${PV}"
 
+# No license files present in the source distribution, although there are
+# some comments embedded in the source/build script confirming it is GPL;
+# however it's not really practical to checksum them in this case
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
 APPNAME = "ztappy"
 APPTYPE = "binary"

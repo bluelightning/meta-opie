@@ -1,6 +1,6 @@
 DESCRIPTION = "Timetracker to track time spent on different projects"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "Martin Henne <martin.henne@web.de>"
 HOMEPAGE = "http://www.martinhenne.de/temtor/"
 APPNAME = "temtor"
@@ -8,6 +8,8 @@ APPTYPE = "binary"
 APPDESKTOP = "${S}/ipk"
 
 SRC_URI = "http://leapingcat.org/martinhenne.de/temtor/files/temtor-0.0.1.tar.gz"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=0b2f854fc9108ac1ebedcd520f7908a3"
 
 inherit opie
 

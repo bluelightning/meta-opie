@@ -7,6 +7,9 @@ PR = "r2"
 SRC_URI = "${SOURCEFORGE_MIRROR}/poqetp/poqetp_${PV}_src.tar.gz"
 S = "${WORKDIR}/poqetp"
 
+LIC_FILES_CHKSUM = "file://COPYING;md5=393a5ca445f6965873eca0259a17f833 \
+                    file://poqetp/poqetp.cpp;beginline=9;endline=16;md5=8e0469de3d41b77e1dbbd8a6c242bd8d"
+
 inherit palmtop
 
 do_configure_prepend() {

@@ -1,6 +1,6 @@
 DESCRIPTION = "ZIQ"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "Bill Wetter"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-ZIQ.html"
 
@@ -11,6 +11,8 @@ SRC_URI = "http://sources.openembedded.org/ziq_V1.1ern.tar.gz \
 PR = "r1"
 S = "${WORKDIR}/ziq_V${PV}"
 
+LIC_FILES_CHKSUM = "file://LICENSE;md5=33994abd59dbf0ac2baa657e9f174dae \
+                    file://mainwidget.cpp;beginline=6;endline=17;md5=7da0e7ce6bf5981858f5b4c8525cf12f"
 
 APPNAME = "ziq"
 APPTYPE = "binary"

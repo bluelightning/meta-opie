@@ -1,12 +1,15 @@
 DESCRIPTION = "Qt/Embedded bindings for the Scintilla source code editor component"
 SECTION = "opie/libs"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 PR = "r1"
 
 SRC_URI = "http://www.mneuroth.de/privat/zaurus/qscintilla-${PV}_zaurus.tar.gz \
            file://no-external-lexers.patch;patchdir=..;striplevel=0"
 
 S = "${WORKDIR}/qscintilla-${PV}/qt"
+
+LIC_FILES_CHKSUM = "file://../LICENSE;md5=cbbd794e2a0a289b9dfcc9f513d1996e \
+                    file://ScintillaQt.cpp;beginline=8;endline=20;md5=c90be97c814ae9c8f916f058622079d5"
 
 inherit opie
 

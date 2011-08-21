@@ -1,7 +1,7 @@
 DESCRIPTION = "Zauralign - a game for one player. The player has to align pieces to remove them from the \
 board fighting against new pieces which appear after each move."
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 
 PR = "r1"
 
@@ -9,6 +9,9 @@ SRC_URI = "http://sources.openembedded.org/zauralign-${PV}.tar.gz"
 S = "${WORKDIR}/zauralign"
 
 inherit palmtop
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=4c4bc67b93b226b9295ca016dfed1b7c \
+                    file://main.cpp;beginline=1;endline=10;md5=c6c2cad0797b7930358ca67868b3305d"
 
 TARGET_CFLAGS += "-DNO_DEBUG"
 export OE_QMAKE_LINK="${CXX}"

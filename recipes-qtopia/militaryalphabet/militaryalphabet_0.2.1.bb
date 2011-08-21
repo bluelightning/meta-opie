@@ -1,12 +1,14 @@
 DESCRIPTION = "Militaryalphabet"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 APPNAME = "militaryalphabet"
 APPTYPE = "binary"
 APPDESKTOP = "${S}"
 
 SRC_URI = "http://sources.openembedded.org/militaryalphabet_0.2.1-r0_arm.tar.bz2"
 S = "${WORKDIR}/militaryalphabet"
+
+LIC_FILES_CHKSUM = "file://main.cpp;beginline=5;endline=18;md5=1f24440f0fe27d63c68b6d7cbf8358fd"
 
 inherit opie
 

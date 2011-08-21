@@ -1,6 +1,6 @@
 DESCRIPTION = "Nime Mens Morris"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "Dirk Farin, Port by Rober Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Nine-Mens-Morris.html"
 
@@ -9,6 +9,9 @@ SRC_URI = "http://sources.openembedded.org/nmm_V0.0.2.tar.gz \
 	   file://nmm.patch"
 
 S = "${WORKDIR}/nmm_V${PV}"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \
+                    file://Nmm.cpp;beginline=4;endline=12;md5=865e24c089f008b0e12624a42687cac4"
 
 APPNAME = "nmm"
 APPTYPE = "binary"

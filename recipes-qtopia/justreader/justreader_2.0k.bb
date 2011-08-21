@@ -1,6 +1,6 @@
 DESCRIPTION = "An E-Books reader for Qt/Embedded based Palmtop Environments"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 HOMEPAGE = "http://justreader.sourceforge.net/"
 PR = "r3"
 
@@ -9,6 +9,9 @@ file://correct-settings-path.patch \
 file://missing-include.patch"
 
 S = "${WORKDIR}/TextReader2"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \
+                    file://main.cpp;beginline=9;endline=16;md5=8e0469de3d41b77e1dbbd8a6c242bd8d"
 
 inherit palmtop
 

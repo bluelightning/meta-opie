@@ -1,7 +1,7 @@
 DESCRIPTION = "Pen action mini game. You fight evil Iai-Master and must survive. \
 (Iai is a kind of the samurai fighting style)"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 APPNAME = "${PN}"
 APPTYPE = "binary"
 APPDESKTOP = "${WORKDIR}"
@@ -10,6 +10,8 @@ SRC_URI = "http://www.urban.ne.jp/home/kanemori/zaurus/IaiMaster_${PV}.tar.gz \
            file://iaimaster.desktop \
            file://iaimaster.png"
 S = "${WORKDIR}/IaiMaster"
+
+LIC_FILES_CHKSUM = "file://main.cpp;beginline=4;endline=16;md5=d1dc505deb3ef549c8ed6f9f9ad6a5d5"
 
 inherit opie
 

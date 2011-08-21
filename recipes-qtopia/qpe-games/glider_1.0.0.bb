@@ -1,6 +1,6 @@
 DESCRIPTION = "Glider"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Glider.html"
 
@@ -10,6 +10,9 @@ SRC_URI = "http://sources.openembedded.org/glider_V1.0.0.tar.gz \
 	   file://glider.patch"
 
 S = "${WORKDIR}/glider_V${PV}"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \
+                    file://Glider.cpp;beginline=4;endline=12;md5=865e24c089f008b0e12624a42687cac4"
 
 APPNAME = "glider"
 APPTYPE = "binary"

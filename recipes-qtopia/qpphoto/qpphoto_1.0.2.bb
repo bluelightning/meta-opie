@@ -1,7 +1,7 @@
 DESCRIPTION = "Painting program. Small picture editor."
 HOMEPAGE = "http://zaurus.colognearts.de/qpphoto/"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 APPNAME = "qpPhoto"
 APPTYPE = "binary"
 APPDESKTOP = "${S}"
@@ -14,6 +14,10 @@ SRC_URI = "http://sources.openembedded.org/qpPhoto_1.0.2_src.tar.gz \
            file://draw.patch \
            file://drawview.patch \
            file://drawwidget.patch "
+
+LIC_FILES_CHKSUM = "file://LICENSE.GPL;md5=e4b548a2ac0ab71019d381e8ff18b4a9 \
+                    file://qpPhoto.cpp;beginline=8;endline=11;md5=9fa1e19adf19df036b8209aa847f2f36"
+
 
 S = "${WORKDIR}/qpPhoto_1.0.2"
 

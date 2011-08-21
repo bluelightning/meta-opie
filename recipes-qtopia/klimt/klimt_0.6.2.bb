@@ -6,6 +6,10 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/klimt/klimt-src-${PV}.zip"
 do_unpack[depends] += "unzip-native:do_populate_sysroot"
 S = "${WORKDIR}/klimt/build/LinuxQTE"
 
+LIC_FILES_CHKSUM = "file://../../../LICENSE.GPL;md5=fdafc691aa5fb7f8e2a9e9521fef771b \
+                    file://../../src/klMain.cpp;beginline=11;endline=22;md5=9e4ee606ac0def9411d0134aab33c8f4"
+
+
 EXTRA_QMAKEVARS_POST += " QMAKE_CXXFLAGS+=-fpermissive"
 
 inherit opie

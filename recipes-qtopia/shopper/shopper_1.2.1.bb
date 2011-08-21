@@ -1,6 +1,6 @@
 DESCRIPTION = "Shopping list manager"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 
 PR = "r1"
 
@@ -8,6 +8,8 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/zaurus-shopper/Shopper-${PV}.tar.gz \
            file://gcc3.patch \
            file://path_fix.patch"
 S = "${WORKDIR}/Shopper"
+
+LIC_FILES_CHKSUM = "file://main.cpp;beginline=5;endline=17;md5=ebfeda955de80d31560b3e5b28b6c981"
 
 inherit palmtop
 

@@ -2,7 +2,7 @@ DESCRIPTION = "A dictionary application for Qt/E based Palmtop Environments"
 HOMEPAGE = "http://bedic.sourceforge.net/"
 AUTHOR = "Rafal Mantiuk <rafm@users.sourceforge.net>"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 DEPENDS = "libbedic"
 APPTYPE = "binary"
 APPDESKTOP = "${WORKDIR}/misc"
@@ -12,6 +12,9 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/bedic/zbedic_${PV}-2.tgz;subdir=${BPN}-${PV} \
            file://opie-icons.patch \
            file://qtopia17.patch \
            file://stdlib_h.patch"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=c00465d31e9747ffe39d09a26ad57b6b \
+                    file://src/zbedic.cpp;beginline=10;endline=22;md5=3a9fd497ac9af3b08b0e76a308b68107"
 
 inherit opie
 export OE_QMAKE_LINK="${CXX}"

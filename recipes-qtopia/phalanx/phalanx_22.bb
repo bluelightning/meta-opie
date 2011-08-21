@@ -1,11 +1,14 @@
 DESCRIPTION = "Phalanx is a chess playing engine."
 SECTION = "opie/libs"
 PR = "r5"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 SRC_URI = "http://ftp.debian.org/debian/pool/main/p/phalanx/phalanx_22+d051004.orig.tar.gz \
            file://capabilities \
            file://description"
 S = "${WORKDIR}/Phalanx-XXII/"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=33994abd59dbf0ac2baa657e9f174dae \
+                    file://README;beginline=5;endline=18;md5=4c61e95ba5157e3e35319745fbb3fb3d"
 
 do_compile() {
 	oe_runmake CC="${CC}" CFLAGS="${CFLAGS}" STRIP=echo LD="${CC}"

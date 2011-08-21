@@ -1,10 +1,13 @@
 DESCRIPTION = "A matrix Game, Qt/Embedded based Palmtop Environments Edition"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 PR = "r3"
 
 SRC_URI = "http://www.geocities.co.jp/SiliconValley-Oakland/8074/src/qmatrix-${PV}.tar.gz"
 S = "${WORKDIR}/qmatrix"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \
+                    file://qmatrixMainWin.cpp;beginline=7;endline=19;md5=5830e2819450665682be4afe0096bc46"
 
 inherit palmtop
 

@@ -6,6 +6,9 @@ PR = "r2"
 SRC_URI = "http://www.linux-games.com/zmerlin/zmerlin.tar.gz"
 S = "${WORKDIR}/zmerlin"
 
+# This is thin but it's all we've got to go on...
+LIC_FILES_CHKSUM = "file://ipk/CONTROL/control;beginline=8;endline=8;md5=cced8b49901709fa7b9968bb88dac559"
+
 inherit palmtop
 
 do_install() {

@@ -1,7 +1,7 @@
 DESCRIPTION = "Scientific calculator with user definable constants and functions."
 HOMEPAGE = "http://homepage3.nifty.com/cam/slcalc.htm"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 PR = "r2"
 
 APPTYPE = "binary"
@@ -13,6 +13,8 @@ SRC_URI = "http://zaufan.net/file_arc/slcalc_1.2.1_arm.tar.gz \
 inherit opie
 
 S = "${WORKDIR}/slcalc_source"
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=53c430d0c3bf57b50b80cbc4d5197540"
 
 do_install() {
 	install -d ${D}${palmtopdir}/pics

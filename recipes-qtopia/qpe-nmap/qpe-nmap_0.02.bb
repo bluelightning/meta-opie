@@ -1,6 +1,6 @@
 DESCRIPTION = "A frontend for the nmap port scanner, Qt/Embedded Palmtop Environment"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 RDEPENDS_${PN} = "nmap"
 PR = "r1"
 
@@ -11,6 +11,8 @@ APPTYPE = "binary"
 APPDESKTOP = "${WORKDIR}"
 
 S = "${WORKDIR}/qpe-nmap"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=878e3965c7b52d85827c75f5a2f3b314"
 
 inherit opie
 

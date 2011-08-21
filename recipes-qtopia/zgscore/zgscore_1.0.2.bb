@@ -1,12 +1,14 @@
 DESCRIPTION = "Zaurus Golf Score Application for Qt/Embedded based Palmtop Environments"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 HOMEPAGE = "http://nuke.cinlug.org/modules/Static_Docs/data/db/zgs/"
 PR = "r0"
 
 SRC_URI = "http://www.cinlug.org/modules/Static_Docs/data/db/zgs/zgscore_${PV}_arm.src.tar.gz \
            file://qtopia17.patch"
 S = "${WORKDIR}/zgscore-src"
+
+LIC_FILES_CHKSUM = "file://GPL.txt;md5=1cfa72ff66994450fc8e5e3a4dd3200d"
 
 inherit palmtop
 

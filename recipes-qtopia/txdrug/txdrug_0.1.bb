@@ -8,6 +8,8 @@ SRC_URI = "http://teax.sourceforge.net/txdrug-${PV}.tar.gz \
            file://opt/QtPalmtop"
 S = "${WORKDIR}/txdrug-tar"
 
+LIC_FILES_CHKSUM = "file://COPYING;md5=8ca43cbc842c2336e835926c2166c28b"
+
 inherit palmtop
 
 EXTRA_QMAKEVARS_POST += "LIBS+=-lsqlite TARGET=txdrug"

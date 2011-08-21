@@ -10,6 +10,9 @@ SRC_URI = "http://piro.sytes.net/~piro/zaurus/etc/qclockchange-${PV}.tar.gz \
 	   file://qclockchange.png \
 	   file://qclockchange.desktop "
 
+# No license files present in the source distribution, assume GPL based on LICENSE above
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
+
 inherit palmtop
 
 do_install() {

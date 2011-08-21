@@ -2,7 +2,7 @@ DESCRIPTION = "Wine cellar manager. Allows you to record details of wines and \
 those you have in your cellar. The Food Assistant will make suggestions of wines \
 suitable for your meal, and indicate those in your cellar that match."
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 PR = "r3"
 
 SRC_URI = "http://sources.openembedded.org/pocketcellar-1.1.tar.gz \
@@ -14,6 +14,9 @@ SRC_URI = "http://sources.openembedded.org/pocketcellar-1.1.tar.gz \
 inherit palmtop
 
 EXTRA_QMAKEVARS_POST += " DESTDIR=pkg-cellar/home/QtPalmtop/bin/"
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=7d7c232d655fd1c91af00d34b00de5df \
+                    file://main.cpp;beginline=6;endline=17;md5=3d9b2857e2e23649cac285d9fbbbc9ca"
 
 do_install() {
         install -d ${D}${palmtopdir}/bin \

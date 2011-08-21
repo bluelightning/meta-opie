@@ -1,6 +1,6 @@
 DESCRIPTION = "Tron"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "Matthias Kiefer"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Tron.html"
 
@@ -9,6 +9,8 @@ SRC_URI = "http://sources.openembedded.org/tron_V1.0.0.tar.gz \
            file://tron.patch"
 
 S = "${WORKDIR}/tron_V${PV}"
+
+LIC_FILES_CHKSUM = "file://Tron.cpp;beginline=4;endline=12;md5=865e24c089f008b0e12624a42687cac4"
 
 APPNAME = "tron"
 APPTYPE = "binary"

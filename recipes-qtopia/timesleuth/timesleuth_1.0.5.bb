@@ -1,6 +1,6 @@
 DESCRIPTION = "Time Sleuth"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 AUTHOR = "Dafydd Walters"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/applications-TimeSleuth.html"
 PR = "r1"
@@ -9,6 +9,9 @@ SRC_URI = "http://sources.openembedded.org/timesleuth_V1.05ern.tar.gz "
 
 PV = "1.05ern"
 S = "${WORKDIR}/timesleuth_V${PV}"
+
+LIC_FILES_CHKSUM = "file://gpl.txt;md5=393a5ca445f6965873eca0259a17f833 \
+                    file://MainWidget.cpp;beginline=6;endline=12;md5=5a2bcc91f648d652c626c8d3447213ab"
 
 APPNAME = "timesleuthqpe"
 APPTYPE = "binary"

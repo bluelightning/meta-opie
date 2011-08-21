@@ -9,7 +9,7 @@ It currently has the following features: \
 SECTION = "opie/applications"
 
 
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "zaurus@bredband.net"
 HOMEPAGE = "http://cameraassistant.sourceforge.net/"
 
@@ -21,6 +21,8 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/cameraassistant/camera-assistant_0.2.0.tar.gz \
 
 
 S = "${WORKDIR}/CameraAssistant"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f"
 
 APPNAME = "ca"
 APPTYPE = "binary"

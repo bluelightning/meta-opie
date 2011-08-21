@@ -1,6 +1,6 @@
 DESCRIPTION = "TaskList Applet"
 SECTION = "opie/applets"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 HOMEPAGE = "http://sourceforge.net/projects/subapplet/"
 
 PR = "r1"
@@ -8,6 +8,9 @@ PR = "r1"
 SRC_URI = "${SOURCEFORGE_MIRROR}/subapplet/tasklist-105.tar.gz"
 
 S = "${WORKDIR}/TaskList-1.0.5"
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=393a5ca445f6965873eca0259a17f833 \
+                    file://tasklistappletimpl.cpp;beginline=6;endline=18;md5=31e6c1441632f6ca6a025a94331158a2"
 
 inherit palmtop
 

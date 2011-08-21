@@ -1,12 +1,14 @@
 DESCRIPTION = "Stores accounts and passwords in an encrypted file."
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 DEPENDS = "gdbm"
 PR = "r2"
 
 SRC_URI = "http://www.scrypt.net/~celer/kweb/Keyring-0.6.8.tgz \
 	   file://keyring-0.6.8-datatype.patch"
 S = "${WORKDIR}/Keyring"
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=cbbd794e2a0a289b9dfcc9f513d1996e"
 
 inherit palmtop
 

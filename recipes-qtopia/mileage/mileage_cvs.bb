@@ -1,7 +1,7 @@
 DESCRIPTION = "A Car Mileage Calculator."
 HOMEPAGE = "http://mileage.sourceforge.net"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 #Change to form x.y.z+cvs${SRCDATE} when 4.2.0 changes in PV
 SRCDATE = "20060814"
 PV = "4.2.0-cvs-${SRCDATE}"
@@ -9,6 +9,8 @@ PR = "r2"
 
 SRC_URI = "cvs://anonymous@mileage.cvs.sourceforge.net/cvsroot/mileage;module=mileage"
 S = "${WORKDIR}/mileage"
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=8ca43cbc842c2336e835926c2166c28b"
 
 inherit palmtop
 export OE_QMAKE_LINK="${CXX}"

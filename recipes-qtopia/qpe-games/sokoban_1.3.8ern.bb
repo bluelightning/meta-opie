@@ -1,6 +1,6 @@
 DESCRIPTION = "Sokoban"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "Anders Widell, Steve Dunham, Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Sokoban.html"
 
@@ -9,6 +9,9 @@ SRC_URI = "http://sources.openembedded.org/sokoban_V1.3.8ern.tar.gz \
            file://sokoban.patch"
 
 S = "${WORKDIR}/sokoban_V${PV}"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \
+                    file://main.C;beginline=6;endline=14;md5=f2ed6543478c351305caf0337285d513"
 
 APPNAME = "sokoban"
 APPTYPE = "binary"

@@ -15,6 +15,9 @@ SRC_URI = "http://www.mneuroth.de/privat/zaurus/visiscript_src_${PV}.tar.gz \
 
 S = "${WORKDIR}/visiscript-${PV}"
 
+LIC_FILES_CHKSUM = "file://COPYING;md5=cbbd794e2a0a289b9dfcc9f513d1996e \
+                    file://main.cpp;beginline=31;endline=42;md5=1ce315a630a5d0b42c6e2f51c2ee5636"
+
 inherit opie
 
 QMAKE_PROFILES = "zvisiscript.pro"

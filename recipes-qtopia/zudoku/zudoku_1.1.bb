@@ -11,6 +11,9 @@ SRC_URI = "http://sources.openembedded.org/zudoku-${PV}.tar.gz \
            file://zudoku.html \
            file://zudoku.desktop"
 
+# No license files present in the source distribution, assume GPL based on LICENSE above
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
+
 inherit opie
 
 EXTRA_QMAKEVARS_POST += "TARGET=zudoku"

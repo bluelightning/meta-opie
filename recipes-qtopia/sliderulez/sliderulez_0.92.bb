@@ -10,6 +10,11 @@ APPDESKTOP = "pkg/opt/QtPalmtop/apps/Applications"
 
 SRC_URI = "http://www.gelhaus.net/zaurus/sliderulez-${PV}.tar.gz"
 
+# No license files present in the source distribution, although there are
+# is one notice embedded in the HTML documentation confirming it is GPL;
+# however it's not really practical to checksum that in this case
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
+
 inherit opie
 
 EXTRA_QMAKEVARS_POST += "TARGET=sliderulez"

@@ -10,6 +10,9 @@ SRC_URI = "http://www.kflog.org/fileadmin/user_upload/cumulus_downloads/${PV}/cu
 	file://open_max.patch"
 S = "${WORKDIR}/cumulus_${PV}/cumulus"
 
+LIC_FILES_CHKSUM = "file://../COPYING;md5=cbbd794e2a0a289b9dfcc9f513d1996e \
+                    file://main.cpp;beginline=10;endline=13;md5=ed0dbbe8a528ed308f02acc5e0658e3f"
+
 inherit opie
 
 export OE_QMAKE_LINK="${CXX}"

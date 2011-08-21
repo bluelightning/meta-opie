@@ -11,6 +11,10 @@ SRC_URI = "http://www.openzaurus.org/download/3.5.4/sources/tickypip-0.1.2.tar.g
            file://tickypip.desktop \
            file://tickypip.png"
 
+# No license files present in the source distribution, assume GPL based on LICENSE above and
+# wayback archived copy of above web link
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
+
 APPNAME = "tickypip"
 APPTYPE = "binary"
 APPDESKTOP = "${WORKDIR}"

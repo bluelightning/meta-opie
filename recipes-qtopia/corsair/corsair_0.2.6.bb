@@ -1,6 +1,6 @@
 DESCRIPTION = "RSS aggregator for Qtopia"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 AUTHOR = "Joe Rumsey <joe@rumsey.org>"
 HOMEPAGE = "http://corsair.sf.net/"
 RDEPENDS_${PN} = "opie-pics"
@@ -13,6 +13,9 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/corsair/corsair-${PV}.tar.gz \
            file://corsair-opie.patch"
 
 S = "${WORKDIR}/corsair"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=eb723b61539feef013de476e68b5c50a \
+                    file://main.cpp;beginline=5;endline=17;md5=8eb5203ac0642eb7d4ca61622b845f6e"
 
 do_configure() {
 }

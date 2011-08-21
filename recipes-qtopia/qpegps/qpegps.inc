@@ -1,6 +1,6 @@
 DESCRIPTION = "A GPS navigation application for the Opie environment"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 HOMEPAGE = "http://qpegps.sourceforge.net/"
 
 DEPENDS = "gpsd"
@@ -10,6 +10,8 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/qpegps/qpegps_${PV}_src.zip \
            file://qpegps.desktop \
            file://qpegps.png"
 S = "${WORKDIR}/qpegps"
+
+LIC_FILES_CHKSUM = "file://qpegps.cpp;beginline=7;endline=20;md5=563af16ebf3d5fd673f203c54a3875af"
 
 inherit palmtop
 

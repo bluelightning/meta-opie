@@ -1,6 +1,6 @@
 DESCRIPTION = "A Unit Conversion Tool"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 APPTYPE = "binary"
 APPNAME = "zuc"
 APPDESKTOP = "${S}"
@@ -11,6 +11,9 @@ SRC_URI = "http://sources.openembedded.org/zuc_V${PV}.tar.gz;name=archive \
            file://fixed-include.patch"
 
 S = "${WORKDIR}/zuc_V${PV}"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=393a5ca445f6965873eca0259a17f833 \
+                    file://zuc.cpp;beginline=7;endline=19;md5=3e5b2ee42c18a2c66e6674de61dfa7bd"
 
 inherit opie
 

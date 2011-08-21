@@ -1,6 +1,6 @@
 DESCRIPTION = "A traditional (german?) boardgame"
 SECTION = "opie/games"
-LICENSE     = "GPL"
+LICENSE     = "GPLv2+"
 AUTHOR      = "Helge Plehn"
 HOMEPAGE    = "http://hexatrolic.i-networx.de/"
 APPNAME     = "labyrinth"
@@ -9,6 +9,8 @@ APPNAME     = "labyrinth"
 SRC_URI = "http://sources.openembedded.org/labyrinth-0.7-zecke1.tar.gz"
 
 S = "${WORKDIR}/${APPNAME}"
+
+LIC_FILES_CHKSUM = "file://labyrinth.cpp;beginline=8;endline=11;md5=34fa96606fe174b0bc9d6f39dd117f65"
 
 do_install () {
 	install -d ${D}${palmtopdir}/apps/Games/

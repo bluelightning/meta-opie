@@ -1,12 +1,15 @@
 DESCRIPTION = "Tx Image Viewer"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 HOMEPAGE = "http://community.zaurus.com/projects/tximage/"
 PR = "r2"
 
 SRC_URI = "http://www.openzaurus.org/mirror/tximage-${PV}.tar.gz \
            file://gcc3.patch \
            file://gcc4.patch"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=cbbd794e2a0a289b9dfcc9f513d1996e \
+                    file://tximage.cpp;beginline=7;endline=20;md5=6227398c467a07965e07127f15bf4ef8"
 
 inherit palmtop
 

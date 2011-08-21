@@ -1,6 +1,6 @@
 DESCRIPTION = "Alarm Clock"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 AUTHOR = "Dafydd Walters & Anton Maslovsky"
 HOMEPAGE = "http://my-zaurus.narod.ru/"
 
@@ -12,6 +12,9 @@ SRC_URI = "http://my-zaurus.narod.ru/downloads/qpealarmclock-1.0.9.tar.gz \
            file://fix-compile.patch "
 
 S = "${WORKDIR}/qpealarmclock"
+
+LIC_FILES_CHKSUM = "file://gpl.txt;md5=393a5ca445f6965873eca0259a17f833 \
+                    file://main.cpp;beginline=7;endline=13;md5=5a2bcc91f648d652c626c8d3447213ab"
 
 inherit palmtop
 

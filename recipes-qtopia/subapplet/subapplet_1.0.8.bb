@@ -2,7 +2,7 @@ DESCRIPTION = "Applet for the Qtopia environment taskbar that provides an extens
 for the taskbar that let's you load lot's of applet's without taking up space \
 in the normal taskbar."
 SECTION = "opie/applets"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 HOMEPAGE = "http://sourceforge.net/projects/subapplet/"
 PR = "r7"
 
@@ -10,6 +10,8 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/subapplet/subapplet-1.0.8.tar.gz \
 	file://toolbar-resize-fix.patch"
 
 S = "${WORKDIR}/SubApplet-1.0.8"
+
+LIC_FILES_CHKSUM = "file://subapplet.cpp;beginline=7;endline=19;md5=e83a46579dfd50db1e6649c247a7cf09"
 
 inherit palmtop
 

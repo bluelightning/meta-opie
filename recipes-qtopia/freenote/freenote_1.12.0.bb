@@ -1,6 +1,6 @@
 DESCRIPTION = "Auto-Correction Paint Program for Opie/Qtopia"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 APPNAME = "FreeNote"
 APPTYPE = "binary"
 APPDESKTOP = "apps/Applications"
@@ -8,6 +8,8 @@ APPDESKTOP = "apps/Applications"
 SRC_URI = "http://www.urban.ne.jp/home/kanemori/zaurus/FreeNote_1.12.0.tar.gz \
            file://FreeNote"
 S = "${WORKDIR}/FreeNote"
+
+LIC_FILES_CHKSUM = "file://subdir1/main.cpp;beginline=4;endline=16;md5=1f0a42ec48e7a3fdf869e49b1e939adc"
 
 inherit opie
 

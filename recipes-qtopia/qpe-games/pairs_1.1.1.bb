@@ -1,6 +1,6 @@
 DESCRIPTION = "Pairs"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "Rober Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Pairs.html"
 
@@ -8,6 +8,9 @@ SRC_URI = "http://sources.openembedded.org/pairs_V1.1.1.tar.gz \
            file://pairs.patch"
 
 S = "${WORKDIR}/pairs_V${PV}"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \
+                    file://Pairs.cpp;beginline=4;endline=12;md5=865e24c089f008b0e12624a42687cac4"
 
 APPNAME = "pairs"
 APPTYPE = "binary"

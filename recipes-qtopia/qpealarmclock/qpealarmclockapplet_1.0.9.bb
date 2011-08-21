@@ -1,6 +1,6 @@
 DESCRIPTION = "Alarm Clock Applet"
 SECTION = "opie/applets"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "Anton Maslovsky"
 HOMEPAGE = "http://my-zaurus.narod.ru/"
 RDEPENDS_${PN} = "qpealarmclock"
@@ -17,6 +17,8 @@ SRC_URI = "http://my-zaurus.narod.ru/downloads/clockapplet.tar.gz \
 	   file://fix-compile.patch "
 
 S = "${WORKDIR}/clockapplet"
+
+LIC_FILES_CHKSUM = "file://clockappletimpl.cpp;beginline=6;endline=14;md5=f2ed6543478c351305caf0337285d513"
 
 inherit palmtop
 

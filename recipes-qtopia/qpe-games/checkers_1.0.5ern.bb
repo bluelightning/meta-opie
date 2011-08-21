@@ -13,6 +13,7 @@ APPNAME = "checkers"
 APPTYPE = "binary"
 APPDESKTOP = "${S}"
 
+LIC_FILES_CHKSUM = "file://LICENSE;md5=33994abd59dbf0ac2baa657e9f174dae"
 
 do_install () {
 	install -d ${D}${palmtopdir}/pics/${APPNAME}/

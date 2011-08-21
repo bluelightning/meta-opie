@@ -1,12 +1,14 @@
 DESCRIPTION = "Benchmark for Opie/Qtopia"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 HOMEPAGE = "http://www.aa.alpha-net.ne.jp/satoshic/dw_zbnch.htm"
 PR = "r1"
 
 SRC_URI = "http://sources.openembedded.org/zbench-${PV}.tar.bz2"
 
 inherit palmtop
+
+LIC_FILES_CHKSUM = "file://zbench.cpp;beginline=13;endline=25;md5=42ecd4aeded75f70195e40d4a2449588"
 
 do_install() {
         install -d ${D}${palmtopdir}/bin \

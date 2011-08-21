@@ -1,10 +1,13 @@
 DESCRIPTION = "A Game with fishes, Qt/Embedded based Palmtop Environments Edition"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 PR = "r3"
 
 SRC_URI = "http://osdn.dl.sourceforge.jp/jankeyapp-z/17321/qfish2-${PV}.src.tar.gz"
 S = "${WORKDIR}/qfish2"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \
+                    file://fish.cpp;beginline=7;endline=19;md5=cd762a8dc74c0e64f2cda772a0f3dfe3"
 
 inherit palmtop
 

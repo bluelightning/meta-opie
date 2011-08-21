@@ -3,7 +3,7 @@ It handles todo, events, sketching. It can acts as a contact, password, \
 credit card manager and even more, because is highly configurable. \
 Data can be crypted by strong AES algorithm."
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 HOMEPAGE = "http://iqnotes.berlios.de"
 AUTHOR = "Peter Vrabel <kybu@kybu.org>"
 

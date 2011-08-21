@@ -5,7 +5,7 @@ to support each public transport network."
 SECTION = "opie/applications"
 AUTHOR = "Dimitri Brukakis"
 HOMEPAGE = "http://ubahnstation.net"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 APPNAME = "ubahnnav"
 APPTYPE = "binary"
 APPDESKTOP = "${S}/src/ubahnnav"
@@ -16,6 +16,9 @@ SRC_URI = "http://ubahnstation.net/source/ubahnnav-${PV}.tar.gz \
            file://gcc45-compilation-fixes.patch \
           "
 S = "${WORKDIR}/ubahnnav-${PV}"
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=393a5ca445f6965873eca0259a17f833 \
+                    file://src/ubahnnav/UBahnNavMain.cpp;beginline=8;endline=16;md5=d7c8ef91807bd7ddae4a4f3ac2b7f252"
 
 inherit opie
 

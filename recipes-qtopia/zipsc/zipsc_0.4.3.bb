@@ -8,6 +8,10 @@ SRC_URI = "http://www.warmi.net/zaurus/files/zipsc_${PV}.tar.gz \
            file://gcc3.patch"
 S = "${WORKDIR}/zipsc_${PV}"
 
+LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \
+                    file://MainWindow.cpp;beginline=15;endline=19;md5=1e2b6c4dbd3bcb988345670af91dec14"
+
+
 inherit palmtop
 
 do_install() {

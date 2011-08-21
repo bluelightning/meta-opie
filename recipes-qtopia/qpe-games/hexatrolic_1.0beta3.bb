@@ -1,6 +1,6 @@
 DESCRIPTION = "Hexatrolic a Ball Game"
 SECTION = "opie/games"
-LICENSE     = "GPL"
+LICENSE     = "GPLv2+"
 AUTHOR      = "Helge Plehn"
 HOMEPAGE    = "http://hexatrolic.i-networx.de/"
 APPNAME     = "hexatrolic"
@@ -10,7 +10,7 @@ SRC_URI = "http://sources.openembedded.org/hexatrolic-103beta3-zecke1.tar.bz2"
 
 S = "${WORKDIR}/${APPNAME}"
 
-
+LIC_FILES_CHKSUM = "file://hexatrolic.cpp;beginline=8;endline=11;md5=6125d3d8a8aea4fffc0a232ab6eb9e73"
 
 do_install () {
 	install -d ${D}${palmtopdir}/apps/Games/

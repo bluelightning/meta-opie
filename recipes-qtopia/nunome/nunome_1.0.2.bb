@@ -1,7 +1,7 @@
 DESCRIPTION = "Japanese input method plugin"
 HOMEPAGE = "http://www.sikigami.com/nunome-Qtopia-1.0/"
 SECTION = "opie/inputmethods"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 RDEPENDS_${PN} = "virtual-japanese-font"
 PR = "r5"
 
@@ -9,6 +9,9 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/gakusei/nunome-${PV}.tar.bz2 \
 	file://timer.patch \
 	file://nunome.patch"
 S = "${WORKDIR}/nunome"
+
+LIC_FILES_CHKSUM = "file://copying;md5=94d55d512a9ba36caa9b7df079bae19f \
+                    file://ui/nunome.cpp;beginline=6;endline=20;md5=ff1370557c313595b6fe076919ed6b4e"
 
 inherit opie
 

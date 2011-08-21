@@ -1,6 +1,6 @@
 DESCRIPTION = "4 wins"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "Anders Widell, Steve Dunham, Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Win4.html"
 
@@ -9,6 +9,9 @@ SRC_URI = "http://sources.openembedded.org/win4_V1.0.1.tar.gz \
            file://win4.patch"
 
 S = "${WORKDIR}/win4_V${PV}"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \
+                    file://Win4.cpp;beginline=4;endline=12;md5=865e24c089f008b0e12624a42687cac4"
 
 APPNAME = "win4"
 APPTYPE = "binary"

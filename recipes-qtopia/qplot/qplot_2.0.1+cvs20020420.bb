@@ -11,6 +11,8 @@ SRC_URI = "cvs://anonymous@qplot.cvs.sourceforge.net/cvsroot/qplot;module=qplot 
 	   file://gcc3.patch"
 S = "${WORKDIR}/qplot"
 
+LIC_FILES_CHKSUM = "file://qplotmain/qplot.cpp;beginline=10;endline=13;md5=8b55d123e7e5096eb55f2fbff1a4ba4d"
+
 inherit palmtop
 
 do_install() {

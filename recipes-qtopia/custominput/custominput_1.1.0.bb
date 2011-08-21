@@ -7,6 +7,9 @@ AUTHOR = "Jesper Kjaer Pedersen <blackie@blackie.dk>"
 
 SRC_URI = "http://www.blackie.dk/Zaurus/custominput/custominput-1.1.0.tgz"
 
+# This is thin but it's all we've got to go on...
+LIC_FILES_CHKSUM = "file://custominput.control;beginline=8;endline=8;md5=cced8b49901709fa7b9968bb88dac559"
+
 inherit palmtop
 
 QMAKE_PROFILES = "custominput.pro"

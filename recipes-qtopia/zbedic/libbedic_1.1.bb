@@ -2,7 +2,7 @@ DESCRIPTION = "Library to handle bedic dictionary"
 HOMEPAGE = "http://bedic.sourceforge.net/"
 AUTHOR = "Rafal Mantiuk <rafm@users.sourceforge.net>"
 SECTION = "opie/libs"
-LICENSE = "GPL"
+LICENSE = "GPLv2+"
 DEPENDS = "sqlite3"
 APPTYPE = "binary"
 APPDESKTOP = "${WORKDIR}/zbedic/misc"
@@ -12,6 +12,8 @@ PR = "r5"
 SRC_URI = "${SOURCEFORGE_MIRROR}/bedic/libbedic_${PV}-0.tgz;subdir=${BPN}-${PV} \
            file://include-cstdio.patch \
           "
+
+LIC_FILES_CHKSUM = "file://src/dictionary_impl.cpp;beginline=10;endline=22;md5=e977bcc6493c4dff8f273ffe2e458582"
 
 inherit palmtop
 # need to override this, because bedic contains exception handling

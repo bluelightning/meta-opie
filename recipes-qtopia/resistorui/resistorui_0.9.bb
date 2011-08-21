@@ -1,6 +1,6 @@
 DESCRIPTION = "A tool to calculate Ohm resistor values"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 HOMEPAGE = "http://www.pellicosystems.com/zaurus/applications/index.html"
 APPNAME = "resistorUI"
 APPTYPE = "binary"
@@ -9,6 +9,8 @@ PR = "r1"
 
 SRC_URI = "http://www.pellicosystems.com/zaurus/applications/resistorUI_1.5.0-0.9_armSRC.zip"
 S = "${WORKDIR}/ResistorUI"
+
+LIC_FILES_CHKSUM = "file://mainwin.ui;beginline=8;endline=16;md5=16eb84e98dce724b78e7abc8457c06a2"
 
 inherit opie
 

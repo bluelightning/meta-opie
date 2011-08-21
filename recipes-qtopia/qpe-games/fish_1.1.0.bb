@@ -1,6 +1,6 @@
 DESCRIPTION = "Fish Amusement"
 SECTION = "opie/games"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 AUTHOR = "Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Fish.html"
 
@@ -11,6 +11,9 @@ SRC_URI = "http://sources.openembedded.org/fish_V1.1.0.tar.gz \
            file://fish.patch"
 
 S = "${WORKDIR}/fish_V${PV}"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=cbbd794e2a0a289b9dfcc9f513d1996e \
+                    file://Fish.cpp;beginline=4;endline=12;md5=865e24c089f008b0e12624a42687cac4"
 
 APPNAME = "fish"
 APPTYPE = "binary"

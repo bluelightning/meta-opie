@@ -1,10 +1,12 @@
 DESCRIPTION = "Inkwp - a handwriting note take application for Qt/Embedded based palmtop environments."
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 HOMEPAGE = "http://www.geocities.co.jp/SiliconValley-Oakland/4550/inkwp.html"
 
 SRC_URI = "http://www.geocities.co.jp/SiliconValley-Oakland/4550/inkwp-${PV}.tar.gz"
 S = "${WORKDIR}/inkwp"
+
+LIC_FILES_CHKSUM = "file://main.cpp;beginline=4;endline=10;md5=eb3e8332c3795a921bd7a6ea7449dc33"
 
 inherit palmtop
 
