@@ -3,7 +3,7 @@ SECTION = "opie/games"
 LICENSE = "GPL"
 PR = "r2"
 
-SRC_URI = "http://user.cs.tu-berlin.de/~karlb/zmerlin/zmerlin.tar.gz"
+SRC_URI = "http://www.linux-games.com/zmerlin/zmerlin.tar.gz"
 S = "${WORKDIR}/zmerlin"
 
 inherit palmtop
