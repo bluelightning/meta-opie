@@ -5,7 +5,7 @@ APPNAME = "militaryalphabet"
 APPTYPE = "binary"
 APPDESKTOP = "${S}"
 
-SRC_URI = "http://sickpeople.wmc-allstars.com/law/files/militaryalphabet/militaryalphabet_${PV}-r0_arm.tar.bz2"
+SRC_URI = "http://sources.openembedded.org/militaryalphabet_0.2.1-r0_arm.tar.bz2"
 S = "${WORKDIR}/militaryalphabet"
 
 inherit opie
