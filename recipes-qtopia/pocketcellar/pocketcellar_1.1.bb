@@ -5,7 +5,7 @@ SECTION = "opie/applications"
 LICENSE = "GPL"
 PR = "r3"
 
-SRC_URI = "http://www.staikos.net/~staikos/pocketcellar/pocketcellar-${PV}.tar.gz \
+SRC_URI = "http://sources.openembedded.org/pocketcellar-1.1.tar.gz \
            file://winedb.patch \
            file://cellardb.patch \
            file://pocketcellar.patch \
