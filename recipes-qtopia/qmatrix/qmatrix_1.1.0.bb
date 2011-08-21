@@ -1,7 +1,7 @@
 DESCRIPTION = "A matrix Game, Qt/Embedded based Palmtop Environments Edition"
 SECTION = "opie/games"
 LICENSE = "GPL"
-PR = "r2"
+PR = "r3"
 
 SRC_URI = "http://www.geocities.co.jp/SiliconValley-Oakland/8074/src/qmatrix-${PV}.tar.gz"
 S = "${WORKDIR}/qmatrix"
@@ -15,16 +15,12 @@ MACHTYPE_tosa    = "sl700"
 do_configure_append() {
         ln -v -f -s config/config-${MACHTYPE}.h config.h
         ln -v -f -s config/config.mk-${MACHTYPE} config.mk
-        if [ "${MACHTYPE}" = "sl300" ]
-        then
-                ln -vfs bigFishSize.h areaSize.h
-        else
-                ln -vfs smallFishSize.h areaSize.h
-        fi
-        ln -v -f -s HiScoreRegConfig-${MACHTYPE}.h HiScoreRegConfig.h
 }
 
 do_compile_prepend() {
+	# This binary gets shipped, but should actually be built during compilation
+	rm -f tools/bin2c
+
 	cd images && oe_runmake && cd ${S}
 }
 
