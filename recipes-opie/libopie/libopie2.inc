@@ -1,5 +1,5 @@
 DESCRIPTION = "Base libraries for the Open Palmtop Integrated Environment"
-HOMEPAGE = "http://opie.handhelds.org"
+HOMEPAGE = "http://opie.sourceforge.net"
 SECTION = "opie/libs"
 LICENSE = "LGPL"
 # FIXME stopgap until split archives have license files included

@@ -1,5 +1,5 @@
 DESCRIPTION = "Qt/Embedded 2 Auxilliary libraries"
-HOMEPAGE = "http://opie.handhelds.org"
+HOMEPAGE = "http://opie.sourceforge.net"
 SECTION = "opie/libs"
 LICENSE = "GPL"
 # FIXME stopgap until split archives have license files included
