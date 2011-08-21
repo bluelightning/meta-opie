@@ -5,9 +5,10 @@ RCONFLICTS_${PN}  = "opie-zsafe"
 APPNAME     = "zsafe"
 APPTYPE     = "binary"
 APPDESKTOP  = "${WORKDIR}"
-SRC_URI     = "http://z-soft.z-portal.info/zsafe/zsafe_2.1.3.tgz"
+SRC_URI     = "http://zcarsten.dyndns.org/carsten/zaurus/zsafe/zsafe_2.1.3.tgz \
+               file://stream_h.patch"
 S           = "${WORKDIR}"
-PR = "r1"
+PR = "r2"
 
 inherit opie
 

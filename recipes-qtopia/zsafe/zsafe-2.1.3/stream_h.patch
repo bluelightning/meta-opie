@@ -1,0 +1,17 @@
+Replace legacy header usage to fix compilation
+
+stream.h is no longer provided on modern systems, use iostream instead.
+
+Signed-off-by: Paul Eggleton <paul.eggleton@linux.intel.com>
+
+--- zsafe-2.1.3-r1.orig/zsafe.h
++++ zsafe-2.1.3-r1/zsafe.h
+@@ -16,7 +16,7 @@
+ 
+ #ifndef WIN32
+ #ifndef DESKTOP
+-#include <stream.h>
++#include <iostream>
+ #else
+ #include <sstream>
+ #endif
