@@ -6,7 +6,7 @@ APPNAME = "zuc"
 APPDESKTOP = "${S}"
 PR = "r4"
 
-SRC_URI = "http://www.linux-solutions.at/projects/zaurus/source/zuc_V${PV}.tar.gz;name=archive \
+SRC_URI = "http://sources.openembedded.org/zuc_V${PV}.tar.gz;name=archive \
            http://nick.kreucher.net/zuc/zuc_units;name=units \
            file://fixed-include.patch"
 
