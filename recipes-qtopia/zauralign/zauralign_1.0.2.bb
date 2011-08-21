@@ -3,10 +3,14 @@ board fighting against new pieces which appear after each move."
 SECTION = "opie/games"
 LICENSE = "GPL"
 
+PR = "r1"
+
 SRC_URI = "http://sources.openembedded.org/zauralign-${PV}.tar.gz"
 S = "${WORKDIR}/zauralign"
 
 inherit palmtop
+
+TARGET_CFLAGS += "-DNO_DEBUG"
 export OE_QMAKE_LINK="${CXX}"
 
 do_install() {
