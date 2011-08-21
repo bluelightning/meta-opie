@@ -1,10 +1,10 @@
 DESCRIPTION = "A Game with fishes, Qt/Embedded based Palmtop Environments Edition"
 SECTION = "opie/games"
 LICENSE = "GPL"
-PR = "r2"
+PR = "r3"
 
-SRC_URI = "http://taiga0818.hp.infoseek.co.jp/rpms/qfish2-${PV}.tar.gz"
-S = "${WORKDIR}/qfish"
+SRC_URI = "http://osdn.dl.sourceforge.jp/jankeyapp-z/17321/qfish2-${PV}.src.tar.gz"
+S = "${WORKDIR}/qfish2"
 
 inherit palmtop
 
@@ -25,6 +25,9 @@ do_configure_append() {
 }
 
 do_compile_prepend() {
+	# This binary gets shipped, but should actually be built during compilation
+	rm -f tools/bin2c
+
 	cd images && oe_runmake && cd ${S}
 }
 
@@ -41,5 +44,5 @@ do_install() {
 	install -m 0644 desktop/qfish.html ${D}${palmtopdir}/help/html/qfish2.html
 }
 
-SRC_URI[md5sum] = "2a8219bcb375fac66cea66394c3c36fa"
-SRC_URI[sha256sum] = "1e097fdccda0fc914c8229aab7d83964c5944cc95eb053fd69e357dca69461b9"
+SRC_URI[md5sum] = "7f028932317fc41f53e0ef68e98b110b"
+SRC_URI[sha256sum] = "d28e8abc5d87ce3bdb4066b5b7785fdfa51aef474fe511fafab78c023af1e2c4"
