@@ -10,7 +10,7 @@ PR = "r0"
 
 inherit opie
 
-SRC_URI = "http://zaurus.colognearts.de/qpphoto/qpPhoto_1.0.2_src.tar.gz \
+SRC_URI = "http://sources.openembedded.org/qpPhoto_1.0.2_src.tar.gz \
            file://draw.patch \
            file://drawview.patch \
            file://drawwidget.patch "
