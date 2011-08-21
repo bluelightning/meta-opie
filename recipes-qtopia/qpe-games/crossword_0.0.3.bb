@@ -9,7 +9,6 @@ SRC_URI = "http://sources.openembedded.org/crossword_V0.0.3.tar.gz \
 
 PR = "r1"
 
-PV = "0.0.3"
 S = "${WORKDIR}/crossword_V${PV}"
 
 APPNAME = "crossword"

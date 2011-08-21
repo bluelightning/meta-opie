@@ -8,7 +8,6 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-PDA-Maze.html"
 SRC_URI = "http://sources.openembedded.org/pdamaze_V1.0.0.tar.gz \
            file://Makefile.patch"
 
-PV = "1.0.0"
 S = "${WORKDIR}/pdamaze_V${PV}"
 
 APPNAME = "pdamaze"

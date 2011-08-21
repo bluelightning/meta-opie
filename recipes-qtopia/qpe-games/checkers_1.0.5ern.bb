@@ -8,7 +8,6 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Checkers.html"
 SRC_URI = "http://sources.openembedded.org/checkers_V1.0.5ern.tar.gz \
            file://checkers.patch"
 
-PV = "1.0.5ern"
 S = "${WORKDIR}/checkers_V${PV}"
 APPNAME = "checkers"
 APPTYPE = "binary"

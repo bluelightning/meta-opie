@@ -9,7 +9,6 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Maki.html"
 SRC_URI = "http://sources.openembedded.org/maki_V1.0.4ern.tar.gz \
 	   file://maki.patch"
 
-PV = "1.0.4ern"
 S = "${WORKDIR}/maki_V${PV}"
 
 APPNAME = "maki"

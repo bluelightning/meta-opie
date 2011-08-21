@@ -10,7 +10,6 @@ SRC_URI = "http://sources.openembedded.org/atomic_V1.0.1.tar.gz \
 	   file://atomic.patch"
 
 
-PV = "1.0.1"
 S = "${WORKDIR}/atomic_V${PV}"
 APPNAME = "atomic"
 APPTYPE = "binary"

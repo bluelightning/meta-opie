@@ -7,7 +7,6 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Pairs.html"
 SRC_URI = "http://sources.openembedded.org/pairs_V1.1.1.tar.gz \
            file://pairs.patch"
 
-PV = "1.1.1"
 S = "${WORKDIR}/pairs_V${PV}"
 
 APPNAME = "pairs"

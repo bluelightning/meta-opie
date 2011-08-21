@@ -7,7 +7,6 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-ZSubhunt.html"
 
 SRC_URI = "http://sources.openembedded.org/zsubhunt_V1.0.0ern.tar.gz "
 
-PV = "1.0.0ern"
 S = "${WORKDIR}/zsubhunt_V${PV}"
 
 

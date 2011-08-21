@@ -8,7 +8,6 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Win4.html"
 SRC_URI = "http://sources.openembedded.org/win4_V1.0.1.tar.gz \
            file://win4.patch"
 
-PV = "1.0.1"
 S = "${WORKDIR}/win4_V${PV}"
 
 APPNAME = "win4"

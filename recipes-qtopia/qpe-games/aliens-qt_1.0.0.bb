@@ -9,7 +9,6 @@ SRC_URI = "http://sources.openembedded.org/aliens_V1.0.0.tar.gz \
 	   file://Makefile.patch \
            file://aliens.patch"
 
-PV = "1.0.0"
 S = "${WORKDIR}/aliens_V${PV}"
 
 APPNAME = "aliens"

@@ -9,7 +9,6 @@ SRC_URI = "http://sources.openembedded.org/icebloxx_V1.0.0.tar.gz \
            file://Makefile.patch \
 	   file://icebloxx.patch"
 
-PV = "1.0.0"
 S = "${WORKDIR}/icebloxx_V${PV}"
 
 APPNAME = "icebloxx"

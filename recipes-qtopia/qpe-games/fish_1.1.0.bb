@@ -10,7 +10,6 @@ SRC_URI = "http://sources.openembedded.org/fish_V1.1.0.tar.gz \
            file://Makefile.patch \
            file://fish.patch"
 
-PV = "1.1.0"
 S = "${WORKDIR}/fish_V${PV}"
 
 APPNAME = "fish"

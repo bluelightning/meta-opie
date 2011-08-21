@@ -8,7 +8,6 @@ SRC_URI = "http://sources.openembedded.org/nmm_V0.0.2.tar.gz \
            file://Makefile.patch \
 	   file://nmm.patch"
 
-PV = "0.0.2"
 S = "${WORKDIR}/nmm_V${PV}"
 
 APPNAME = "nmm"

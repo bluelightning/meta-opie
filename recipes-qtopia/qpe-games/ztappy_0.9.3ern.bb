@@ -8,7 +8,6 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-ZTappy.html"
 
 SRC_URI = "http://sources.openembedded.org/ztappy_V0.9.3ern.tar.gz "
 
-PV = "0.9.3ern"
 S = "${WORKDIR}/ztappy_V${PV}"
 
 

@@ -8,7 +8,6 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-ZIQ.html"
 SRC_URI = "http://sources.openembedded.org/ziq_V1.1ern.tar.gz \
            file://ziq.patch"
 
-PV = "1.1ern"
 PR = "r1"
 S = "${WORKDIR}/ziq_V${PV}"
 

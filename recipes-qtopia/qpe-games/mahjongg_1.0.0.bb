@@ -10,7 +10,6 @@ SRC_URI = "http://sources.openembedded.org/mahjongg_V1.0.0.tar.gz \
 	   file://mahjongg.patch"
 
 
-PV = "1.0.0"
 S = "${WORKDIR}/mahjongg_V${PV}"
 
 APPNAME = "mahjongg"

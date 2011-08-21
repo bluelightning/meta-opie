@@ -8,7 +8,6 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-PDA-Pipeman.html
 SRC_URI = "http://sources.openembedded.org/pipeman_V1.0.0.tar.gz \
            file://pipe.patch"
 
-PV = "1.0.0"
 S = "${WORKDIR}/pipeman_V${PV}"
 
 APPNAME = "pipeman"

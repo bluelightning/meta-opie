@@ -9,7 +9,6 @@ SRC_URI = "http://sources.openembedded.org/glider_V1.0.0.tar.gz \
            file://Makefile.patch \
 	   file://glider.patch"
 
-PV = "1.0.0"
 S = "${WORKDIR}/glider_V${PV}"
 
 APPNAME = "glider"
