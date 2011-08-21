@@ -1,4 +1,4 @@
-DESCRIPTION = "Pairs"
+DESCRIPTION = "Sokoban"
 SECTION = "opie/games"
 LICENSE = "GPL"
 AUTHOR = "Anders Widell, Steve Dunham, Robert Ernst"
