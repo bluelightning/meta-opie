@@ -7,7 +7,7 @@ PR = "r2"
 APPTYPE = "binary"
 APPDESKTOP = "${S}"
 
-SRC_URI = "http://homepage3.nifty.com/cam/slcalc_1.2.1_arm.tar.gz \
+SRC_URI = "http://zaufan.net/file_arc/slcalc_1.2.1_arm.tar.gz \
            file://slcalc2.png"
 
 inherit opie
