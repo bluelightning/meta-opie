@@ -6,7 +6,7 @@ LICENSE = "GPL"
 DEPENDS = "sqlite3"
 APPTYPE = "binary"
 APPDESKTOP = "${WORKDIR}/zbedic/misc"
-FILESPATHPKG .= ":zbedic"
+FILESEXTRAPATHS_prepend := "${THISDIR}/zbedic:"
 PR = "r5"
 
 SRC_URI = "${SOURCEFORGE_MIRROR}/bedic/libbedic_${PV}-0.tgz;subdir=${BPN}-${PV} \
