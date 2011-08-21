@@ -4,7 +4,7 @@ LICENSE = "GPL"
 AUTHOR = "Rober Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Pairs.html"
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/pairs_V1.1.1.tar.gz \
+SRC_URI = "http://sources.openembedded.org/pairs_V1.1.1.tar.gz \
            file://pairs.patch"
 
 PV = "1.1.1"

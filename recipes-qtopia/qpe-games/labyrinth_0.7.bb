@@ -6,7 +6,7 @@ HOMEPAGE    = "http://hexatrolic.i-networx.de/"
 APPNAME     = "labyrinth"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/labyrinth-0.7-zecke1.tar.gz"
+SRC_URI = "http://sources.openembedded.org/labyrinth-0.7-zecke1.tar.gz"
 
 S = "${WORKDIR}/${APPNAME}"
 

@@ -5,7 +5,7 @@ AUTHOR = "Bill Kendrick"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Aliens.html"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/aliens_V1.0.0.tar.gz \
+SRC_URI = "http://sources.openembedded.org/aliens_V1.0.0.tar.gz \
 	   file://Makefile.patch \
            file://aliens.patch"
 

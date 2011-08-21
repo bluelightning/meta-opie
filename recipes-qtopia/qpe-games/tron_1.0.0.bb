@@ -5,7 +5,7 @@ AUTHOR = "Matthias Kiefer"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Tron.html"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/tron_V1.0.0.tar.gz \
+SRC_URI = "http://sources.openembedded.org/tron_V1.0.0.tar.gz \
            file://tron.patch"
 
 PV = "1.0.0"

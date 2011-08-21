@@ -5,7 +5,7 @@ AUTHOR = "Dafydd Walters"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/applications-TimeSleuth.html"
 PR = "r1"
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/timesleuth_V1.05ern.tar.gz "
+SRC_URI = "http://sources.openembedded.org/timesleuth_V1.05ern.tar.gz "
 
 PV = "1.05ern"
 S = "${WORKDIR}/timesleuth_V${PV}"

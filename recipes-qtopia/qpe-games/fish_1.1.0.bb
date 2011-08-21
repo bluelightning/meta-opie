@@ -6,7 +6,7 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Fish.html"
 
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/fish_V1.1.0.tar.gz \
+SRC_URI = "http://sources.openembedded.org/fish_V1.1.0.tar.gz \
            file://Makefile.patch \
            file://fish.patch"
 

@@ -5,7 +5,7 @@ AUTHOR = "Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Glider.html"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/glider_V1.0.0.tar.gz \
+SRC_URI = "http://sources.openembedded.org/glider_V1.0.0.tar.gz \
            file://Makefile.patch \
 	   file://glider.patch"
 

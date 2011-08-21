@@ -5,7 +5,7 @@ AUTHOR = "Kart Bartel, Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-ZSubhunt.html"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/zsubhunt_V1.0.0ern.tar.gz "
+SRC_URI = "http://sources.openembedded.org/zsubhunt_V1.0.0ern.tar.gz "
 
 PV = "1.0.0ern"
 S = "${WORKDIR}/zsubhunt_V${PV}"

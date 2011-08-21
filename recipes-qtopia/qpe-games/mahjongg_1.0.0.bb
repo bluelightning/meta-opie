@@ -5,7 +5,7 @@ AUTHOR = "Mario Weilguni, Port by Rober Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Mahjongg.html"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/mahjongg_V1.0.0.tar.gz \
+SRC_URI = "http://sources.openembedded.org/mahjongg_V1.0.0.tar.gz \
            file://Makefile.patch \
 	   file://mahjongg.patch"
 

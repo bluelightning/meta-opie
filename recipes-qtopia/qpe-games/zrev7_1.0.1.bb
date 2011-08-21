@@ -5,7 +5,7 @@ AUTHOR = "Mario Weilguni"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-ZRev7.html"
 PR = "r1"
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/zrev7_V1.0.1.tar.gz \
+SRC_URI = "http://sources.openembedded.org/zrev7_V1.0.1.tar.gz \
            file://zrev.patch"
 S = "${WORKDIR}/zrev7_V${PV}"
 

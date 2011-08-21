@@ -6,7 +6,7 @@ HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Maki.html"
 
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/maki_V1.0.4ern.tar.gz \
+SRC_URI = "http://sources.openembedded.org/maki_V1.0.4ern.tar.gz \
 	   file://maki.patch"
 
 PV = "1.0.4ern"

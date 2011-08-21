@@ -4,7 +4,7 @@ LICENSE = "GPL"
 AUTHOR = "Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Crossword.html"
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/crossword_V0.0.3.tar.gz \
+SRC_URI = "http://sources.openembedded.org/crossword_V0.0.3.tar.gz \
 	   file://crossword.patch"
 
 PR = "r1"

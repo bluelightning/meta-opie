@@ -6,7 +6,7 @@ HOMEPAGE    = "http://hexatrolic.i-networx.de/"
 APPNAME     = "hexatrolic"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/hexatrolic-103beta3-zecke1.tar.bz2"
+SRC_URI = "http://sources.openembedded.org/hexatrolic-103beta3-zecke1.tar.bz2"
 
 S = "${WORKDIR}/${APPNAME}"
 

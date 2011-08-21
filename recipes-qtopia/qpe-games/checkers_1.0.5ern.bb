@@ -5,7 +5,7 @@ AUTHOR = "Walter Rawdanik"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Checkers.html"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/checkers_V1.0.5ern.tar.gz \
+SRC_URI = "http://sources.openembedded.org/checkers_V1.0.5ern.tar.gz \
            file://checkers.patch"
 
 PV = "1.0.5ern"

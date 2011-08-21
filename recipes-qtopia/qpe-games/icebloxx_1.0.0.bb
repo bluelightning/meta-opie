@@ -5,7 +5,7 @@ AUTHOR = "Robert Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-IceBloxx.html"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/icebloxx_V1.0.0.tar.gz \
+SRC_URI = "http://sources.openembedded.org/icebloxx_V1.0.0.tar.gz \
            file://Makefile.patch \
 	   file://icebloxx.patch"
 

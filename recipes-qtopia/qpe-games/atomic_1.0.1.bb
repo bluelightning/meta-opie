@@ -6,7 +6,7 @@ AUTHOR = "Andre Wuest"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Atomic.html"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/atomic_V1.0.1.tar.gz \
+SRC_URI = "http://sources.openembedded.org/atomic_V1.0.1.tar.gz \
 	   file://atomic.patch"
 
 

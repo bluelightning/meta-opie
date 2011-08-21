@@ -5,7 +5,7 @@ AUTHOR = "Bill Kendrick, Port by Rober Ernst"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-PDA-Maze.html"
 
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/pdamaze_V1.0.0.tar.gz \
+SRC_URI = "http://sources.openembedded.org/pdamaze_V1.0.0.tar.gz \
            file://Makefile.patch"
 
 PV = "1.0.0"

@@ -4,7 +4,7 @@ LICENSE = "GPL"
 AUTHOR = "Mario Weilguni"
 HOMEPAGE = "http://www.linux-solutions.at/projects/zaurus/games-Shisen-Sho.html"
 
-SRC_URI = "http://handhelds.org/~zecke/oe_packages/shisensho_V1.0.0.tar.gz \
+SRC_URI = "http://sources.openembedded.org/shisensho_V1.0.0.tar.gz \
            file://shisen.patch"
 
 PV = "1.0.0"
