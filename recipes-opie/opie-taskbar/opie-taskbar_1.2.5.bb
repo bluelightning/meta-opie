@@ -1,5 +1,5 @@
 require ${PN}.inc
-PR = "r1"
+PR = "r2"
 
 SRC_URI = "http://sources.openembedded.org/opie-1.2.5-split_core_apps_calibrate.tar.bz2;name=split_core_apps_calibrate \
            http://sources.openembedded.org/opie-1.2.5-split_noncore_settings_mediummount.tar.bz2;name=split_noncore_settings_mediummount \
@@ -15,6 +15,7 @@ SRC_URI = "http://sources.openembedded.org/opie-1.2.5-split_core_apps_calibrate.
            file://server-pro-125.patch \
            file://firstuse-path.patch \
            file://force-firstuse-calibrate.patch \
+           file://fix-crypt-reference.patch \
           "
 SRC_URI[split_core_apps_calibrate.md5sum] = "ee5e06b781e92f01271d883f91f101b0"
 SRC_URI[split_core_apps_calibrate.sha256sum] = "5e0164a195a166fd15451164edf8a44d8f3a9f81dcf3edc3a8975f24bd4b45b6"

@@ -1,0 +1,21 @@
+Index: launcher/server.pro
+===================================================================
+--- launcher.orig/server.pro	2011-09-05 01:45:20.000000000 +0400
++++ launcher/server.pro	2011-09-05 01:46:39.000000000 +0400
+@@ -80,14 +80,12 @@
+ INCLUDEPATH += mediummount
+ DEPENDPATH  += mediummount
+
+-LIBS         = -lqpe -lopiecore2 -lopieui2 -lopiesecurity2 -lqrsync -lsysfs
++LIBS         = -lqpe -lopiecore2 -lopieui2 -lopiesecurity2 -lopiepim2 -lqrsync -lsysfs
+ TARGET       = qpe
+
+ ## not ready for use yet
+ # DEFINES += QPE_HAVE_DIRECT_ACCESS
+
+-contains( $(CONFIG_TARGET_MACOSX), y ) {
+-  LIBS += -lcrypt
+-}
++LIBS += -lcrypt -lm
+
+ include( //home/users/mitya/OE/setup-scripts/build/tmp-angstrom_2010_x-eglibc/sysroots/tosa/usr/lib/opie/include.pro )
