@@ -1,6 +1,7 @@
 DESCRIPTION = "Opie Login Manager (similar to gdm, xdm or kdm)"
 SECTION = "opie/base"
-LICENSE = "GPL"
+# opie-login is GPLv2+, core/apps/calibrate and core/launcher are GPLv2
+LICENSE = "GPLv2"
 # FIXME stopgap until split archives have license files included
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 RRECOMMENDS_${PN} = "opie-logoutapplet"
@@ -29,4 +30,4 @@ do_configure() {
 	install -d "${WORKDIR}/apps"
 	ln -s "${WORKDIR}/calibrate" "${WORKDIR}/apps/calibrate"
 	palmtop_do_configure
-}
++}

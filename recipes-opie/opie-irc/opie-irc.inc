@@ -1,6 +1,6 @@
 DESCRIPTION = "The Opie IRC client lets you chat on your favorite IRC server using your handheld computer"
 SECTION = "opie/applications"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 # FIXME stopgap until split archives have license files included
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 I18N_FILES = "opieirc.ts"
