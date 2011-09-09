@@ -3,7 +3,7 @@
 QTE_VERSION ?= "2.3.10"
 PALMTOP_USE_MULTITHREADED_QT ?= "yes"
 
-OPIE_SRCREV ?= "8c3beef263bc9c34443eacfc821e99813e17554f"
+OPIE_SRCREV ?= "78a7707cd6d2e65fc02b76461caa98aa7e992d37"
 
 OPIE_VERSION = "1.2.5+gitr${OPIE_SRCREV}"
 OPIE_GIT_PV = "${OPIE_VERSION}"
@@ -23,6 +23,7 @@ SRCREV_pn-libopietooth1 ?= "${OPIE_SRCREV}"
 SRCREV_pn-libqpe-opie ?= "${OPIE_SRCREV}"
 SRCREV_pn-libqtaux2 ?= "${OPIE_SRCREV}"
 SRCREV_pn-libmailwrapper ?= "${OPIE_SRCREV}"
+SRCREV_pn-libdbus-qt2 ?= "${OPIE_SRCREV}"
 #
 # Opie applications
 #
