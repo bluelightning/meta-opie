@@ -2,7 +2,7 @@ DESCRIPTION = "Tasks for OPIE stuff"
 SECTION = "opie/base"
 LICENSE = "MIT"
 
-PR = "r14"
+PR = "r15"
 
 inherit task
 
@@ -96,6 +96,6 @@ RDEPENDS_task-opie-base-pim = "opie-addressbook opie-datebook opie-drawpad \
                       opie-datebook-birthdayplugin"
 
 RDEPENDS_task-opie-bluetooth = "bluez4 obexftp obexpush libopieobex0 \
-                       opie-bluepin opie-bluetoothmanager opie-bluetoothapplet"
+                       opie-bluetoothmanager opie-bluetoothapplet"
 
 RDEPENDS_task-opie-irda = "irda-utils libopieobex0 obexftp obexpush"
