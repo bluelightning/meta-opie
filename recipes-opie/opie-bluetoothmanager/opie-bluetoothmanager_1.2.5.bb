@@ -1,5 +1,9 @@
 require ${PN}.inc
 
+RDEPENDS_${PN} += "opie-bluepin"
+
+PR = "r1"
+
 SRC_URI = "http://sources.openembedded.org/opie-1.2.5-split_noncore_net_opietooth_manager.tar.bz2;name=split_noncore_net_opietooth_manager \
            http://sources.openembedded.org/opie-1.2.5-split_apps.tar.bz2;name=split_apps \
            http://sources.openembedded.org/opie-1.2.5-split_pics.tar.bz2;name=split_pics"
