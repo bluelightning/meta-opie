@@ -13,7 +13,7 @@ SRC_URI = "${OPIE_GIT};protocol=git;subpath=core/apps/calibrate \
            file://no-builtin-qss-startup-2.patch \
            file://kbdlocks-runtime.patch \
            file://restart-from-bindir.patch \
-           file://server-pro-cvs.patch \
+           file://server-pro-git.patch \
            file://firstuse-path.patch \
            file://force-firstuse-calibrate.patch \
           "

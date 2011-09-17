@@ -12,7 +12,7 @@ SRC_URI = "http://sources.openembedded.org/opie-1.2.5-split_core_apps_calibrate.
            file://no-builtin-qss-startup-2.patch \
            file://kbdlocks-runtime.patch \
            file://restart-from-bindir.patch \
-           file://server-pro-cvs.patch \
+           file://server-pro-125.patch \
            file://firstuse-path.patch \
            file://force-firstuse-calibrate.patch \
           "
