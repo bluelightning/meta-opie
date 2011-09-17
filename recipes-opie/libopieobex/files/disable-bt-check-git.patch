@@ -1,0 +1,18 @@
+--- obex/obex.pro
++++ obex/obex.pro
+@@ -13,11 +13,11 @@ VERSION		= 0.0.4
+ include( $(OPIEDIR)/include.pro )
+ target.path = $$prefix/plugins/applets
+ 
+-#FIXME: These parameters are used if bluetooth is used
+-CONFTEST = $$system( echo $CONFIG_LIBOPIETOOTH )
+-contains( CONFTEST, y ){
++#FIXME: This test does not work under OE. Instead, just always enable bluetooth.
++#CONFTEST = $$system( echo $CONFIG_LIBOPIETOOTH )
++#contains( CONFTEST, y ){
+ HEADERS     += btobex.h btobexpush.h
+ SOURCES     += btobex.cpp btobexpush.cpp
+ LIBS        += -lopiebluez2
+ DEFINES     += BLUETOOTH
+-}
++#}
