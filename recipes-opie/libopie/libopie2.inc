@@ -8,6 +8,8 @@ I18N_FILES = "libopiecore2.ts libopiesecurity2.ts"
 DEPENDS = "libqpe-opie libpcap sqlite3 bluez4"
 PROVIDES = "libopiecore2 libopiedb2 libopiemm2 libopiesecurity2 libopienet2 libopiepim2 libopieui2"
 
+INC_PR = "r15"
+
 S = "${WORKDIR}/libopie2"
 
 inherit opie

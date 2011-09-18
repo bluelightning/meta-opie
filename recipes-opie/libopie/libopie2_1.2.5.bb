@@ -1,6 +1,6 @@
 require ${PN}.inc
 
-PR = "r3"
+PR = "${INC_PR}.0"
 
 SRC_URI = "http://sources.openembedded.org/opie-1.2.5-split_libopie2.tar.bz2;name=split_libopie2 \
            file://gcc45_opiemm_include.patch \
