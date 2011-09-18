@@ -1,12 +1,11 @@
 DESCRIPTION = "Password manager program for Opie."
 SECTION = "opie/applications"
 LICENSE = "GPLv2"
-# FIXME stopgap until split archives have license files included
-LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 APPNAME = "zsafe"
 
-
 S = "${WORKDIR}/${APPNAME}"
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=cbbd794e2a0a289b9dfcc9f513d1996e"
 
 inherit opie
 
