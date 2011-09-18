@@ -13,3 +13,7 @@ do_install() {
         install -d ${D}${includedir}/
         install -m 0644 qrsync.h ${D}${includedir}/
 }
+
+# opie doesn't use staticdev packages and .a libraries
+# This package is an exception, so include .a in -dev
+FILES_${PN}-dev += "${libdir}/libqrsync.a"
