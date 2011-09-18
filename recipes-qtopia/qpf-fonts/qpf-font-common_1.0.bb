@@ -1,5 +1,5 @@
 DESCRIPTION = "Common files for Qt/Embedded fonts"
-LICENSE = "GPL QPL"
+LICENSE = "GPLv2 | QPL"
 PR = "r4"
 
 SRC_URI = "file://update-qtfontdir"

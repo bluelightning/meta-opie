@@ -1,7 +1,7 @@
 require qpf.inc
 
 DESCRIPTION = "Unicode fonts - QPF Edition"
-LICENSE = "GPL QPL"
+LICENSE = "GPLv2 | QPL"
 RPROVIDES_${PN} = "virtual-japanese-font"
 PR = "r3"
 

@@ -1,7 +1,7 @@
 DESCRIPTION = "User Interface Generator and Meta Object Compiler (moc) for Qt(E) 2.x"
 HOMEPAGE = "http://www.trolltech.com"
 SECTION = "devel"
-LICENSE = "GPL QPL"
+LICENSE = "GPLv2 | QPL"
 PR = "r6"
 
 SRC_URI = "ftp://ftp.trolltech.com/pub/qt/source/qt-embedded-${PV}-free.tar.gz \

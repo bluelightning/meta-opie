@@ -2,7 +2,7 @@ require qpf.inc
 
 DESCRIPTION = "Qt/Embedded fonts version ${PV}"
 HOMEPAGE = "http://www.trolltech.com"
-LICENSE = "GPL QPL"
+LICENSE = "GPLv2 | QPL"
 PR = "r2"
 
 PROVIDES  = "qte-font-helvetica-100 qte-font-helvetica-120"
