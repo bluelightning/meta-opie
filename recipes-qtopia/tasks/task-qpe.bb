@@ -27,7 +27,6 @@ RDEPENDS_task-qpe-applications = "\
     ktimetrackerpi \
     mileage \
     militaryalphabet \
-    notez \
     petitepainture \
     pocketcellar \
     poqetpresenter \
@@ -36,7 +35,7 @@ RDEPENDS_task-qpe-applications = "\
     qpealarmclock \
     qpe-gaim \
     qpegps \
-    qpenmapfe \
+    qpe-nmap \
     qplot \
     qpphoto \
     resistorui \
