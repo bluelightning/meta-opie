@@ -2,7 +2,7 @@ DESCRIPTION = "User Interface Generator and Meta Object Compiler (moc) for Qt(E)
 HOMEPAGE = "http://www.trolltech.com"
 SECTION = "devel"
 LICENSE = "GPL QPL"
-PR = "r5"
+PR = "r6"
 
 SRC_URI = "ftp://ftp.trolltech.com/pub/qt/source/qt-embedded-${PV}-free.tar.gz \
            file://fix-makefile.patch \
@@ -47,8 +47,9 @@ do_compile() {
 
 do_install() {
     install -d ${D}${bindir}
-    install -m 0755 bin/moc ${D}${bindir}
-    install -m 0755 bin/uic ${D}${bindir}
+    install -m 0755 bin/moc ${D}${bindir}/moc2
+    install -m 0755 bin/uic ${D}${bindir}/uic2
+    install -m 0755 tools/qvfb/qvfb ${D}${bindir}/qvfb2
     install -m 0755 tools/makeqpf/makeqpf ${D}${bindir}
 }
 
