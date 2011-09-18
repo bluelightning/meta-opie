@@ -108,8 +108,8 @@ export SYSCONF_CXXFLAGS = "${CXXFLAGS} -pipe -DQWS -fno-exceptions -frtti -DNO_D
 # enable if gcc supports visibility
 #export SYSCONF_CXXFLAGS = "${CXXFLAGS} -pipe -DQWS -fno-exceptions -frtti -fvisibility=hidden -DGCC_SUPPORTS_VISIBILITY -DNO_DEBUG ${EXTRA_DEFINES} -DUSE_BIDI"
 export SYSCONF_LFLAGS = "${LDFLAGS} -lts"
-export SYSCONF_MOC = "${STAGING_BINDIR_NATIVE}/moc"
-export SYSCONF_UIC = "${STAGING_BINDIR_NATIVE}/uic"
+export SYSCONF_MOC = "${STAGING_BINDIR_NATIVE}/moc2"
+export SYSCONF_UIC = "${STAGING_BINDIR_NATIVE}/uic2"
 
 # generate uclibc, eabi and powerpc configurations
 do_configure() {
