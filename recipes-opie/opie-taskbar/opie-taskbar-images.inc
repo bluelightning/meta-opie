@@ -75,3 +75,6 @@ RPROVIDES_${PN}-480x320 = "opie-taskbar-images"
 RPROVIDES_${PN}-480x640 = "opie-taskbar-images"
 RPROVIDES_${PN}-640x480 = "opie-taskbar-images"
 RPROVIDES_${PN}-800x600 = "opie-taskbar-images"
+
+# Add dummy packages so that the WxH + HxW RRECOMMENDS line in task-opie.bb works
+PACKAGES += "${PN}-320x240 ${PN}-600x800"
