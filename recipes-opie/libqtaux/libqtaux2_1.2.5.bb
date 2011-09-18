@@ -1,6 +1,6 @@
 require ${PN}.inc
 
-PR = "r0"
+PR = "${INC_PR}.0"
 
 SRC_URI = "http://sources.openembedded.org/opie-1.2.5-split_libqtaux.tar.bz2;name=split_libqtaux"
 SRC_URI[split_libqtaux.md5sum] = "4d9148573545948870358e3612be18ba"
