@@ -5,14 +5,14 @@ LICENSE = "GPL"
 # FIXME stopgap until split archives have license files included
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
-INC_PR = "r2"
+INC_PR = "r3"
 
 S = "${WORKDIR}/libqtaux"
 
 inherit opie
 
 do_compile() {
-        oe_runmake MOC=${STAGING_BINDIR_NATIVE}/moc UIC=${STAGING_BINDIR_NATIVE}/uic DESTDIR=${S}
+        oe_runmake DESTDIR=${S}
 }
 
 do_install() {

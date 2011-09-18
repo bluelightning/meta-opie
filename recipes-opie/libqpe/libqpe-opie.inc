@@ -7,7 +7,7 @@ LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 DEPENDS = "uicmoc-native virtual/libqte2 sysfsutils"
 PROVIDES = "virtual/libqpe1"
-INC_PR = "r9"
+INC_PR = "r10"
 S = "${WORKDIR}/library"
 
 inherit palmtop
@@ -45,7 +45,7 @@ do_compile() {
                 install -m 0644 $i ${STAGING_INCDIR}/qtopia/private/`basename $i`
         done
         rm -f ${STAGING_INCDIR}/qtopia/*_p.h # remove private stuff out of qtopia
-        oe_runmake MOC=${STAGING_BINDIR_NATIVE}/moc UIC=${STAGING_BINDIR_NATIVE}/uic
+        oe_runmake
 }
 
 do_install() {
