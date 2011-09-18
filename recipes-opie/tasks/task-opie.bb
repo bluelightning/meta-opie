@@ -31,6 +31,8 @@ PACKAGES += "task-opie-everything"
 RDEPENDS_task-opie-base = "opie-init opie-alarm opie-qcop opie-qss opie-quicklauncher \
                            opie-taskbar opie-pics opie-sounds opie-freetype \
                            ttf-dejavu-sans ttf-dejavu-sans-mono"
+MACHINE_DISPLAY_WIDTH_PIXELS ?= "320"
+MACHINE_DISPLAY_HEIGHT_PIXELS ?= "240"
 # Recommend both landscape and portrait backgrounds
 RRECOMMENDS_task-opie-base = "opie-taskbar-images-${MACHINE_DISPLAY_WIDTH_PIXELS}x${MACHINE_DISPLAY_HEIGHT_PIXELS} \
                               opie-taskbar-images-${MACHINE_DISPLAY_HEIGHT_PIXELS}x${MACHINE_DISPLAY_WIDTH_PIXELS}"
