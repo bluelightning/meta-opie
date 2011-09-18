@@ -63,7 +63,7 @@
 +DEPENDPATH  += mediummount
  
 -LIBS        += -lqpe -lopiecore2 -lopieui2 -lopiesecurity2 -lqrsync -lsysfs -lcrypt -lm
-+LIBS         = -lqpe -lopiecore2 -lopieui2 -lopiesecurity2 -lqrsync -lsysfs -lcrypt -lm
++LIBS         = -lqpe -lopiecore2 -lopieui2 -lopiesecurity2 -lopiepim2 -lqrsync -lsysfs -lcrypt -lm
  TARGET       = qpe
  
  ## not ready for use yet
