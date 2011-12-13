@@ -16,11 +16,16 @@ S = "${WORKDIR}/qt-${PV}"
 LIC_FILES_CHKSUM = "file://LICENSE.GPL;md5=aea7d119b7f7d798464fa2b1aae005f8 \
                     file://README;beginline=1;endline=7;md5=d3e237af71522cc2a3c89dbaf48b345d"
 
-inherit native qmake_base
+inherit qmake_base
+BBCLASSEXTEND = "native nativesdk"
+UICMOCNATIVE = "uicmoc-native"
+UICMOCNATIVE_virtclass-native = ""
+DEPENDS_prepend = "${UICMOCNATIVE}"
 
 export QTDIR = "${S}"
-EXTRA_OEMAKE = 'SYSCONF_CXX="${CXX}" SYSCONF_LINK="${CXX}"'
-CXXFLAGS += " -DQWS"
+SYSUICMOC = 'SYSCONF_MOC="${STAGING_BINDIR_NATIVE}/moc2" SYSCONF_UIC="${STAGING_BINDIR_NATIVE}/uic2"'
+SYSUICMOC_virtclass-native = ""
+EXTRA_OEMAKE = 'SYSCONF_CC="${CC}" SYSCONF_CXX="${CXX}" SYSCONF_CFLAGS="${CFLAGS}" SYSCONF_CXXFLAGS="${CXXFLAGS} -DQWS" SYSCONF_LINK="${CXX}" ${SYSUICMOC}'
 
 QT_CONFIG_FLAGS = "-depths 8,16 -no-qvfb -no-g++-exceptions -no-jpeg -no-mng \
                    -qt-zlib -qt-libpng -no-xft -no-xkb -no-vnc -no-sm \
