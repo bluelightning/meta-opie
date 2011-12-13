@@ -18,7 +18,7 @@ do_install() {
 }
 
 PACKAGES_prepend = "opie-button-settings-pics "
-PACKAGE_ARCH_opie-button-settings-pics = "${MACHINE_ARCH}"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 FILES_opie-button-settings-pics = "${palmtopdir}/pics/devicebuttons/z*" 
 FILES_opie-button-settings-pics_h1910 = "${palmtopdir}/pics/devicebuttons/ipaq*"
 FILES_opie-button-settings-pics_h1940 = "${palmtopdir}/pics/devicebuttons/ipaq*"
