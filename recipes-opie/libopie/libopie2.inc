@@ -8,7 +8,7 @@ I18N_FILES = "libopiecore2.ts libopiesecurity2.ts"
 DEPENDS = "libqpe-opie libpcap sqlite3 bluez4"
 PROVIDES = "libopiecore2 libopiedb2 libopiemm2 libopiesecurity2 libopienet2 libopiepim2 libopieui2"
 
-INC_PR = "r16"
+INC_PR = "r17"
 
 S = "${WORKDIR}/libopie2"
 
@@ -98,7 +98,9 @@ do_install() {
 
 FILES_${PN}-dev += "${palmtopdir}/include.pro"
 
-PACKAGES_prepend = " libopiecore2 libopiedb2 libopiesecurity2 libopiemm2 libopienet2 libopiepim2 libopieui2 libopiebluez2 "
+OPIE_LIBS = " libopiecore2 libopiedb2 libopiesecurity2 libopiemm2 libopienet2 libopiepim2 libopieui2 libopiebluez2 "
+PACKAGES_prepend = "${OPIE_LIBS}"
+RDEPENDS_${PN}-dev = "${OPIE_LIBS}"
 
 DESCRIPTION_libopiecore2 = "Opie Development Platform 1.x Core Library"
 FILES_libopiecore2 = "${libdir}/libopiecore2.so.*"
