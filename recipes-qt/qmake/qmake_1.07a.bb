@@ -13,10 +13,11 @@ S = "${WORKDIR}/${QTEVER}"
 LIC_FILES_CHKSUM = "file://LICENSE.GPL;md5=629178675a7d49c9fa19dfe9f43ea256 \
                     file://README;beginline=1;endline=7;md5=a85582a7befb26735438461afd8559af"
 
-inherit autotools native
+inherit qmake_base
+BBCLASSEXTEND = "native nativesdk"
 
 export QTDIR = "${S}"
-EXTRA_OEMAKE = "-e"
+EXTRA_OECONF += "-platform ${HOST_OS}-oe-g++"
 
 do_configure() {
 	# Install the OE build templates
@@ -26,9 +27,6 @@ do_configure() {
 		install -m 0644 ${WORKDIR}/linux-oe-qmake.conf ${S}/mkspecs/$template/qmake.conf
 		ln -sf ../linux-g++/qplatformdefs.h ${S}/mkspecs/$template/qplatformdefs.h
 	done
-	QMAKESPEC=
-	PLATFORM=${HOST_OS}-oe-g++
-	export PLATFORM
 	bbnote ./configure ${EXTRA_OECONF}
 	echo yes | ./configure ${EXTRA_OECONF} || die "Configuring qt failed"
 }
