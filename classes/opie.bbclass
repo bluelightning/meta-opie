@@ -1,11 +1,11 @@
 #
-# This oeclass takes care about some of the itchy details of installing parts
+# This bbclass takes care about some of the itchy details of installing parts
 # of Opie applications. Depending on quicklaunch or not, plugin or not, the
 # TARGET is either a shared object, a shared object with a link to quicklauncher,
 # or a usual binary.
 # 
 # You have to provide two things: 1.) A proper SECTION field, and 2.) a proper APPNAME
-# Then opie.oeclass will:
+# Then opie.bbclass will:
 #    * create the directory for the binary and install the binary file(s)
 #    * for applications: create the directory for the .desktop and install the .desktop file
 #    * for quicklauncher applications: create the startup symlink to the quicklauncher

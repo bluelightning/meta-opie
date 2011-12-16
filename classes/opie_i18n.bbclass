@@ -1,4 +1,4 @@
-# classes/opie_i18n.oeclass 		Matthias 'CoreDump' Hentges			16-10-2004          
+# classes/opie_i18n.bbclass 		Matthias 'CoreDump' Hentges			16-10-2004
 #
 # Automatically builds i18n ipks for opie packages. It downloads opie-i18n from opie CVS
 # and tries to guess the name of the .ts file based on the package name:
@@ -126,7 +126,7 @@ do_build_opie_i18n () {
 	then
 		echo "NOTE: FILES was set to ${palmtopdir} which would include the i18n directory"
 		printf "\n\nI'll remove ${palmtopdir} from FILES and replace it with all directories\n"
-		echo "below QtPalmtop, except i18n ($qt_dirs). See classes/opie_i18n.oeclass for details"
+		echo "below QtPalmtop, except i18n ($qt_dirs). See classes/opie_i18n.bbclass for details"
 
 		# Removes /opt/QtPalmtop from FILES but keeps /opt/QtPalmtop/$some_dir
 		FILES="`echo "$FILES"| sed "s#${palmtopdir}[/]\?\$\|${palmtopdir}[/]\? ##"`"
@@ -134,7 +134,7 @@ do_build_opie_i18n () {
 		echo "${PN}#$FILES $dir_" >> "${WORKDIR}/FILES.tmp"
 	fi
 
-	# This is the common case for OPIE apps which are installed by opie.oeclass magic
+	# This is the common case for OPIE apps which are installed by opie.bbclass magic
 	if test -z "${FILES}"
 	then
 		echo "NOTE:"
