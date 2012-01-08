@@ -12,7 +12,7 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/prboom/prboom-${PV}.tar.gz \
            file://prboom.png \
            file://prboom.desktop"
 
-inherit autotools
+inherit autotools palmtop-defs
 
 EXTRA_OECONF = "--without-x --disable-sdltest"
 

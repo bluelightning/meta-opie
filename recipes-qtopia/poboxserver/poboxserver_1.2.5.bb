@@ -13,7 +13,7 @@ SRC_URI = "${SOURCEFORGE_MIRROR}/gakusei/pobox-${PV}.tar.bz2;name=archive \
 
 S = "${WORKDIR}/OpenPOBox"
 
-inherit autotools update-rc.d
+inherit autotools update-rc.d palmtop-defs
 
 INITSCRIPT_NAME = "pbserver"
 INITSCRIPT_PARAMS = "start 99 5 . stop 01 0 ."

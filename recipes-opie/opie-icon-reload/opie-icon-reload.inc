@@ -10,6 +10,8 @@ SRC_URI = "file://icon-reload.desktop \
 	   file://icon-reload.sh \
 	   file://reload.png"
 
+inherit palmtop-defs
+
 FILES_${PN} += "${palmtopdir}"
 
 do_install() {		

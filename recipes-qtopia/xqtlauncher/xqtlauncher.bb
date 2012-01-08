@@ -14,6 +14,8 @@ SRC_URI = "file://dot.directory \
 	file://cleanup.desktop \
 	file://xqtlauncher "
         
+inherit palmtop-defs
+
 do_install() {
 	cd ${WORKDIR}
 	install -d ${D}${bindir}

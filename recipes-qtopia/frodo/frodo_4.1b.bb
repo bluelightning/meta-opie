@@ -12,7 +12,7 @@ SRC_URI = "http://frodo.cebix.net/downloads/FrodoV4_1b.Src.tar.gz \
            file://frodo.desktop"
 S = "${WORKDIR}/Frodo-${PV}/Src"
 
-inherit autotools
+inherit autotools palmtop-defs
 
 EXTRA_OECONF = "--disable-sdltest --enable-qtopia"
 

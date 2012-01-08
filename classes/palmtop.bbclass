@@ -7,7 +7,7 @@
 # inherit opie if you want to build programs against libopie2
 # don't override EXTRA_QMAKEVARS_POST, if you use inherit this class
 
-inherit qmake
+inherit qmake palmtop-defs
 
 # special case for DISTRO = sharprom
 CPP_SUPPORT_LIB = "LIBS-=-lstdc++ LIBS+=-lsupc++"

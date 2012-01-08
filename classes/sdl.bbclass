@@ -2,6 +2,8 @@
 # (C) Michael 'Mickey' Lauer <mickey@Vanille.de>
 #
 
+inherit palmtop-defs
+
 DEPENDS += "virtual/libsdl libsdl-mixer libsdl-image"
 
 APPDESKTOP ?= "${WORKDIR}/${PN}.desktop"

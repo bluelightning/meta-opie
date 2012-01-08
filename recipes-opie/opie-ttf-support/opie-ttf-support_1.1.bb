@@ -10,6 +10,8 @@ S = "${WORKDIR}"
 
 LIC_FILES_CHKSUM = "file://update-qtttffontdir.c;beginline=4;endline=7;md5=84d4335f8f9e85774e2a15b2dff91401"
 
+inherit palmtop-defs
+
 # Seems to break linking
 ASNEEDED = ""
 

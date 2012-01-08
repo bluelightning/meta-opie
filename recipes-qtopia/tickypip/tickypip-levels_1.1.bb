@@ -11,6 +11,8 @@ SRC_URI = "http://www.openzaurus.org/download/3.5.4/sources/tickypip-levels_${PV
 
 S = "${WORKDIR}/"
 
+inherit palmtop-defs
+
 #
 # Authors response to LICENSE question:
 #

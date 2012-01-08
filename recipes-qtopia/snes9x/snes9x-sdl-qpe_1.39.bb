@@ -10,7 +10,7 @@ S = "${WORKDIR}/snes9x-sdl-${PV}"
 
 FILESPATHPKG .= ":snes9x-sdl"
 
-inherit qmake_base
+inherit qmake_base palmtop-defs
 
 QT_LIBRARY = '${@base_conditional("PALMTOP_USE_MULTITHREADED_QT", "yes", "qte-mt", "qte",d)}'
 

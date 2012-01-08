@@ -7,6 +7,8 @@ PR = "r2"
 
 S = "${WORKDIR}"
 
+inherit palmtop-defs
+
 SHIP_INLINE_PICS = "yes"
 INLINE_PICS = '${@base_conditional("GUI_MACHINE_CLASS", "bigscreen", "pics-hires/inline", "pics/inline", d)}'
 

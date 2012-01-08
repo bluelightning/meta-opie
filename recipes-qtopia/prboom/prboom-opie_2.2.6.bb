@@ -8,7 +8,7 @@ SRC_URI_append = " file://prboom.png \
                    file://prboom.desktop \
 		   file://prboom.sh "
 
-
+inherit palmtop-defs
 
 do_install_append() {
         install -d ${D}${palmtopdir}/apps/Games \

@@ -7,7 +7,7 @@ PR = "r3"
 
 # this Konqueror needs the KDEDIR set and the font helvetica installed on the target
 
-inherit autotools
+inherit autotools palmtop-defs
 
 SRC_URI = "svn://anonsvn.kde.org/home/kde/tags/KDE/3.5.1;module=kdelibs;date=${PV} \
            svn://anonsvn.kde.org/home/kde/trunk;module=kdenox;date=${PV} \

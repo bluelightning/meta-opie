@@ -23,7 +23,7 @@ SRC_URI = "http://devel-home.kde.org/~hausmann/snapshots/Attic/konqueror-embedde
            file://konq-embedrc"
 S = "${WORKDIR}/konqueror-embedded-snapshot-${PV}"
 
-inherit autotools
+inherit autotools palmtop-defs
 
 FILES_${PN} = "${palmtopdir}"
 

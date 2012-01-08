@@ -8,6 +8,8 @@
 # Todo:
 #
 
+inherit palmtop-defs
+
 I18N_STATS = "1"
 SRC_URI += "${OPIE_GIT};protocol=git;subpath=i18n" 
 DEPENDS += "opie-i18n"

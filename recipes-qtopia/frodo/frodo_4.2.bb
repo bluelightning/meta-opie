@@ -13,7 +13,7 @@ SRC_URI = "cvs://anoncvs:anoncvs@cvs.cebix.net/home/cvs/cebix;module=Frodo4 \
 
 S = "${WORKDIR}/Frodo4/Src"
 
-inherit autotools
+inherit autotools palmtop-defs
 
 EXTRA_OECONF = "--disable-sdltest --enable-qtopia"
 

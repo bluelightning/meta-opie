@@ -7,7 +7,7 @@ PR = "r7"
 
 # this Konqueror needs the KDEDIR set and the font helvetica installed on the target
 
-inherit autotools
+inherit autotools palmtop-defs
 
 SRC_URI = "http://www.basyskom.de/uploads/175/37/kdenox_snapshot_qt2_20070316.tar.bz2 \
 	   file://dont-use-kde-config.patch \

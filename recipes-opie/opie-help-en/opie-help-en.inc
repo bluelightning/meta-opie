@@ -11,6 +11,8 @@ RDEPENDS_${PN} = "opie-helpbrowser"
 
 S = "${WORKDIR}/html"
 
+inherit palmtop-defs
+
 do_install() {
         install -d ${D}${palmtopdir}/help/en/html/
         install -m 0644 ${WORKDIR}/html/*.html ${D}${palmtopdir}/help/en/html/
