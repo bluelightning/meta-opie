@@ -15,7 +15,7 @@ SRC_URI_OVERRIDES_PACKAGE_ARCH = "1"
 
 # Make this a plugin enabled build. Bigger binary, less memory usage. Makes more games run on lower end platforms.
 # These plugins are not normal Linux shared libs so will fall foul of the sanity checker.
-INSANE_SKIP_${PN} = True
+INSANE_SKIP_${PN} = "1"
 EXTRA_OECONF += " --enable-plugins --default-dynamic "
 
 # Workaround, because some env variables aren't recognised correctly
