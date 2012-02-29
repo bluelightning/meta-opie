@@ -11,7 +11,7 @@ S = "${WORKDIR}/${APPNAME}"
 inherit opie
 
 EXTRA_QMAKEVARS_PRE += "LIBIPK_INC_DIR=${STAGING_INCDIR}/libopkg"
-export CONFIG_LIBOPK_DEP=y
+export CONFIG_LIBOPK_DEP="y"
 
 do_install() {
     install -d ${D}${palmtopdir}/pics/${APPNAME}
