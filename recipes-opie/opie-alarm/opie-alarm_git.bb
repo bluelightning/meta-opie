@@ -1,8 +1,8 @@
 require ${PN}.inc
 
 PV = "${OPIE_GIT_PV}"
-PR = "r4"
+PR = "r5"
 
 SRC_URI = "${OPIE_GIT};protocol=git;subpath=core/opiealarm \
            file://01opiealarm \
-	   file://dirdefines-2.patch "
+	   file://dirdefines-git.patch "
