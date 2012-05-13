@@ -7,7 +7,8 @@ DEPENDS = "task-base task-opie"
 IMAGE_FEATURES = "ssh-server-dropbear"
 
 ANGSTROM_EXTRA_INSTALL ?= ""
-IMAGE_INSTALL = "task-core-boot ${ROOTFS_PKGMANAGE} task-opie-base task-opie-base-applets \
+IMAGE_INSTALL = "task-core-boot task-base ${ROOTFS_PKGMANAGE} \
+		    task-opie-base task-opie-base-applets \
 		    task-opie-base-inputmethods task-opie-base-apps \
 		    task-opie-base-settings task-opie-base-decorations \
 		    task-opie-base-styles task-opie-base-pim \
