@@ -1,6 +1,6 @@
 DESCRIPTION = "IrDA obex support library"
 SECTION = "opie/libs"
-LICENSE = "LGPL"
+LICENSE = "LGPLv2"
 # FIXME stopgap until split archives have license files included
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/LGPL-2.0;md5=9427b8ccf5cf3df47c29110424c9641a"
 DEPENDS = "libopietooth1 opie-taskbar openobex"

@@ -1,6 +1,6 @@
 require ${PN}.inc
 
-PR = "r0"
+PR = "r1"
 
 SRC_URI = "http://sources.openembedded.org/opie-1.2.5-split_core_multimedia_opieplayer.tar.bz2;name=split_core_multimedia_opieplayer"
 SRC_URI[split_core_multimedia_opieplayer.md5sum] = "173a82f9eda1800a394e7596ad13563c"

@@ -1,7 +1,7 @@
 DESCRIPTION = "Qt/Embedded Version ${PV}"
 SECTION = "libs"
 HOMEPAGE = "http://www.trolltech.com"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 DEPENDS = "zlib libpng jpeg tslib uicmoc-native"
 #DEPENDS_append_c7x0 = " sharp-aticore-oss"
 PROVIDES = "virtual/libqte2"
