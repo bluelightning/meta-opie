@@ -10,7 +10,7 @@ SRCDATE = "20070601"
 PV = "1.2.2opie+cvs${SRCDATE}"
 PR = "r4"
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/apps/opie-reader \
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/apps/opie-reader;name=first \
            ${OPIE_GIT};protocol=git;subpath=pics \
            ${OPIE_GIT};protocol=git;subpath=apps \
 	   file://qt4.patch"

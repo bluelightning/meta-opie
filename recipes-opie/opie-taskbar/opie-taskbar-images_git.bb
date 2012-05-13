@@ -1,5 +1,5 @@
 require ${PN}.inc
 
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 PR = "r8"
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=pics"
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=pics;name=first"

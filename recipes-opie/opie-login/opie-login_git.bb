@@ -1,8 +1,8 @@
 require ${PN}.inc
 
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=core/${APPNAME} \
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=core/${APPNAME};name=first \
 	   ${OPIE_GIT};protocol=git;subpath=core/apps/calibrate \
 	   ${OPIE_GIT};protocol=git;subpath=core/launcher \
 	   file://opie-session \

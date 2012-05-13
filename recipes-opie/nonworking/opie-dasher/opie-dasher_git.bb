@@ -1,7 +1,7 @@
 require ${PN}.inc
 PR = "r2"
 
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=inputmethods/dasher \
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=inputmethods/dasher;name=first \
            ${OPIE_GIT};protocol=git;subpath=share "

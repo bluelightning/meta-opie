@@ -1,4 +1,4 @@
 require ${PN}.inc
 
-PV = "${OPIE_GIT_PV}"
+PV = "${OPIE_GIT_PV}0-${OPIE_SRCREV}"
 PR = "r2"

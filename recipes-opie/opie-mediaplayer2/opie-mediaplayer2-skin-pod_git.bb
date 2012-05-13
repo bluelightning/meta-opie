@@ -1,8 +1,8 @@
 SKINNAME = "Pod"
 require opie-mediaplayer2-skin.inc
 
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 PR = "r4"
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=pics"
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=pics;name=first"
 

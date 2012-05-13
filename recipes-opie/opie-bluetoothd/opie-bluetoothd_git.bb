@@ -1,4 +1,4 @@
 require ${PN}.inc
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/net/opietooth/opiebluetoothd"
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/net/opietooth/opiebluetoothd;name=first"

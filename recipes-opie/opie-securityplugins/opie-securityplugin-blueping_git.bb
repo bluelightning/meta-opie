@@ -1,7 +1,7 @@
 require opie-securityplugin-blueping.inc
 
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/securityplugins/blueping \
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/securityplugins/blueping;name=first \
            ${OPIE_GIT};protocol=git;subpath=pics "
 

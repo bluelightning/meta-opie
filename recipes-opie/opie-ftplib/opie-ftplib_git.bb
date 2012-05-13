@@ -1,5 +1,5 @@
 require ${PN}.inc
 
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/net/ftplib"
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/net/ftplib;name=first"

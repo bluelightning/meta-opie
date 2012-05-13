@@ -5,11 +5,11 @@ LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 DEPENDS = "opie-mediaplayer1"
 RDEPENDS_${PN} = "opie-mediaplayer1"
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 PR = "r2"
 APPNAME = "mpeg3plugin"
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=core/multimedia/opieplayer"
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=core/multimedia/opieplayer;name=first"
 
 S = "${WORKDIR}/opieplayer/libmpeg3"
 

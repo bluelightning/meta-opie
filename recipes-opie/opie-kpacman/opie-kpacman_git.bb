@@ -1,8 +1,8 @@
 require ${PN}.inc
 
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/games/kpacman \
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/games/kpacman;name=first \
            ${OPIE_GIT};protocol=git;subpath=pics \
            ${OPIE_GIT};protocol=git;subpath=share \
            ${OPIE_GIT};protocol=git;subpath=apps"

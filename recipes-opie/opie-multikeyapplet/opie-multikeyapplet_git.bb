@@ -1,7 +1,7 @@
 require ${PN}.inc
 
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 PR = "r1"
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=core/applets/multikeyapplet \
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=core/applets/multikeyapplet;name=first \
            ${OPIE_GIT};protocol=git;subpath=apps"

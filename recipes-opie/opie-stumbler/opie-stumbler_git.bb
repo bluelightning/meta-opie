@@ -1,7 +1,7 @@
 require ${PN}.inc
 
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/net/opiestumbler \
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/net/opiestumbler;name=first \
            ${OPIE_GIT};protocol=git;subpath=apps \
 	   file://opiestumbler.png"

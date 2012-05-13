@@ -1,6 +1,6 @@
 require ${PN}.inc
 
-PV = "${OPIE_GIT_PV}"
+inherit opie_git
 
-SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/todayplugins/weather \
+SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/todayplugins/weather;name=first \
            ${OPIE_GIT};protocol=git;subpath=pics"
