@@ -35,72 +35,72 @@ do_configure_prepend() {
 #
 
 python opie_do_opie_install() {
-	import os, shutil
-	section = bb.data.getVar( "SECTION", d ).split( '/' )[1] or "Applications"
-	section = section.title()
-	if section in ( "Base", "Libs" ):
-		bb.note( "Section = Base or Libs. Target won't be installed automatically." )
-		return
+    import os, shutil
+    section = bb.data.getVar( "SECTION", d ).split( '/' )[1] or "Applications"
+    section = section.title()
+    if section in ( "Base", "Libs" ):
+        bb.note( "Section = Base or Libs. Target won't be installed automatically." )
+        return
 
-	#               SECTION         : BINDIR			DESKTOPDIR
-	dirmap = { 	"Applets" 	: ( "/plugins/applets",		None 			),
-			"Applications" 	: ( "<BINDIR>",			"/apps/Applications" 	),
-			"Multimedia"	: ( "<BINDIR>",			"/apps/Applications"	),
-			"Games"		: ( "<BINDIR>",			"/apps/Games"		),
-			"Settings"	: ( "<BINDIR>",			"/apps/Settings"	),
-			"Pim"		: ( "<BINDIR>",			"/apps/1Pim"		),
-			"Examples"	: ( "<BINDIR>",			"/apps/Examples"	),
-			"Shell"		: ( "/bin",			"/apps/Opie-SH"		),
-			"Codecs"	: ( "/plugins/codecs",		None			),
-			"Decorations"	: ( "/plugins/decorations",	None			),
-			"Inputmethods"	: ( "/plugins/inputmethods",	None			),
-			"Fontfactories" : ( "/plugins/fontfactories",	None			),
-			"Security"	: ( "/plugins/security",	None			),
-			"Styles"	: ( "/plugins/styles",		None			),
-			"Today"		: ( "/plugins/today",		None			),
-			"Datebook"	: ( "/plugins/holidays",	None			),
-		"Networksettings"	: ( "/plugins/networksettings", None			) }
+    #           SECTION         : BINDIR                        DESKTOPDIR
+    dirmap = {  "Applets"       : ( "/plugins/applets",         None                 ),
+                "Applications"  : ( "<BINDIR>",                 "/apps/Applications" ),
+                "Multimedia"    : ( "<BINDIR>",                 "/apps/Applications" ),
+                "Games"         : ( "<BINDIR>",                 "/apps/Games"        ),
+                "Settings"      : ( "<BINDIR>",                 "/apps/Settings"     ),
+                "Pim"           : ( "<BINDIR>",                 "/apps/1Pim"         ),
+                "Examples"      : ( "<BINDIR>",                 "/apps/Examples"     ),
+                "Shell"         : ( "/bin",                     "/apps/Opie-SH"      ),
+                "Codecs"        : ( "/plugins/codecs",          None                 ),
+                "Decorations"   : ( "/plugins/decorations",     None                 ),
+                "Inputmethods"  : ( "/plugins/inputmethods",    None                 ),
+                "Fontfactories" : ( "/plugins/fontfactories",   None                 ),
+                "Security"      : ( "/plugins/security",        None                 ),
+                "Styles"        : ( "/plugins/styles",          None                 ),
+                "Today"         : ( "/plugins/today",           None                 ),
+                "Datebook"      : ( "/plugins/holidays",        None                 ),
+            "Networksettings"   : ( "/plugins/networksettings", None                 ) }
 
-	if section not in dirmap:
-		raise ValueError, "Unknown section '%s'. Valid sections are: %s" % ( section, dirmap.keys() )
-	
-	bindir, desktopdir = dirmap[section]
-	APPNAME = bb.data.getVar( "APPNAME", d, True ) or bb.data.getVar( "PN", d, True )
-	APPTYPE = bb.data.getVar( "APPTYPE", d, True )
-	if not APPTYPE:
-		if bindir == "<BINDIR>":
-			APPTYPE = "quicklaunch"
-		else:
-			APPTYPE = "plugin"
+    if section not in dirmap:
+        raise ValueError, "Unknown section '%s'. Valid sections are: %s" % ( section, dirmap.keys() )
 
-	appmap = { "binary":"/bin", "quicklaunch":"/plugins/application" }
-	if bindir == "<BINDIR>": bindir = appmap[APPTYPE]
-	
-	bb.note( "Section='%s', bindir='%s', desktopdir='%s', name='%s', type='%s'" %
+    bindir, desktopdir = dirmap[section]
+    APPNAME = bb.data.getVar( "APPNAME", d, True ) or bb.data.getVar( "PN", d, True )
+    APPTYPE = bb.data.getVar( "APPTYPE", d, True )
+    if not APPTYPE:
+        if bindir == "<BINDIR>":
+            APPTYPE = "quicklaunch"
+        else:
+            APPTYPE = "plugin"
+
+    appmap = { "binary":"/bin", "quicklaunch":"/plugins/application" }
+    if bindir == "<BINDIR>": bindir = appmap[APPTYPE]
+
+    bb.note( "Section='%s', bindir='%s', desktopdir='%s', name='%s', type='%s'" %
                ( section, bindir, desktopdir, APPNAME, APPTYPE ) )
 
-	S = bb.data.getVar( "S", d, 1 )
-	D = "%s/image" % bb.data.getVar( "WORKDIR", d, True )
-	WORKDIR = bb.data.getVar( "WORKDIR", d, True )
-	palmtopdir = bb.data.getVar( "palmtopdir", d, True )
-	gnubindir = bb.data.getVar( "bindir", d, True )
-	APPDESKTOP = bb.data.getVar( "APPDESKTOP", d, True ) or "%s/%s" % ( WORKDIR, desktopdir )
+    S = bb.data.getVar( "S", d, 1 )
+    D = "%s/image" % bb.data.getVar( "WORKDIR", d, True )
+    WORKDIR = bb.data.getVar( "WORKDIR", d, True )
+    palmtopdir = bb.data.getVar( "palmtopdir", d, True )
+    gnubindir = bb.data.getVar( "bindir", d, True )
+    APPDESKTOP = bb.data.getVar( "APPDESKTOP", d, True ) or "%s/%s" % ( WORKDIR, desktopdir )
 
-	if desktopdir is not None:
-		os.system( "install -d %s%s%s/" % ( D, palmtopdir, desktopdir ) )
-		os.system( "install -m 0644 %s/%s.desktop %s%s%s/" % ( APPDESKTOP, APPNAME, D, palmtopdir, desktopdir ) )
+    if desktopdir is not None:
+        os.system( "install -d %s%s%s/" % ( D, palmtopdir, desktopdir ) )
+        os.system( "install -m 0644 %s/%s.desktop %s%s%s/" % ( APPDESKTOP, APPNAME, D, palmtopdir, desktopdir ) )
 
-	os.system( "install -d %s%s%s/" % ( D, palmtopdir, bindir ) )
+    os.system( "install -d %s%s%s/" % ( D, palmtopdir, bindir ) )
 
-	if APPTYPE == "binary":
-		os.system( "install -d %s%s/" % ( D, gnubindir ) )
-		os.system( "install -m 0755 %s/%s %s%s/" % ( S, APPNAME, D, gnubindir ) )
-	elif APPTYPE == "quicklaunch":
-		os.system( "install -m 0755 %s/lib%s.so %s%s%s/" % ( S, APPNAME, D, palmtopdir, bindir ) )
-		os.system( "install -d %s%s/" % ( D, gnubindir ) )
-		os.system( "ln -sf %s/quicklauncher %s%s/%s" % ( gnubindir, D, gnubindir, APPNAME ) )
-	elif APPTYPE == "plugin":
-		os.system( "install -m 0755 %s/lib%s.so %s%s%s/" % ( S, APPNAME, D, palmtopdir, bindir ) )
+    if APPTYPE == "binary":
+        os.system( "install -d %s%s/" % ( D, gnubindir ) )
+        os.system( "install -m 0755 %s/%s %s%s/" % ( S, APPNAME, D, gnubindir ) )
+    elif APPTYPE == "quicklaunch":
+        os.system( "install -m 0755 %s/lib%s.so %s%s%s/" % ( S, APPNAME, D, palmtopdir, bindir ) )
+        os.system( "install -d %s%s/" % ( D, gnubindir ) )
+        os.system( "ln -sf %s/quicklauncher %s%s/%s" % ( gnubindir, D, gnubindir, APPNAME ) )
+    elif APPTYPE == "plugin":
+        os.system( "install -m 0755 %s/lib%s.so %s%s%s/" % ( S, APPNAME, D, palmtopdir, bindir ) )
 }
 
 EXPORT_FUNCTIONS do_opie_install

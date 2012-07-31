@@ -13,45 +13,45 @@ inherit palmtop-defs
 I18N_STATS = "1"
 SRC_URI += "${OPIE_GIT};protocol=git;subpath=i18n" 
 DEPENDS += "opie-i18n"
-	
+
 die () {
 	printf "opie_18n: ERROR: $1\n"
 	exit 1
-}	
+}
 
 python do_build_opie_i18n_data() {
 
-	import os, bb, re
-	workdir = bb.data.getVar("WORKDIR", d, 1)
-	packages = bb.data.getVar("PACKAGES", d, 1)
-	files = bb.data.getVar("FILES", d, 1)
-	section = bb.data.getVar("SECTION", d, 1)
-	pn = bb.data.getVar("PN", d, 1)
-	rdepends =  bb.data.getVar("RDEPENDS", d, 1)
-	
-	if os.path.exists(workdir + "/PACKAGES.tmp"):
-		fd = open(workdir + "/PACKAGES.tmp", 'r')
-		lines = fd.readlines()
-		fd.close()
-	
-		bb.data.setVar('PACKAGES', " ".join(lines).lower() + " " + packages, d)	
+    import os, bb, re
+    workdir = bb.data.getVar("WORKDIR", d, 1)
+    packages = bb.data.getVar("PACKAGES", d, 1)
+    files = bb.data.getVar("FILES", d, 1)
+    section = bb.data.getVar("SECTION", d, 1)
+    pn = bb.data.getVar("PN", d, 1)
+    rdepends =  bb.data.getVar("RDEPENDS", d, 1)
 
-		fd = open(workdir + "/FILES.tmp", 'r')
-		lines = fd.readlines()
-		fd.close()
+    if os.path.exists(workdir + "/PACKAGES.tmp"):
+        fd = open(workdir + "/PACKAGES.tmp", 'r')
+        lines = fd.readlines()
+        fd.close()
 
-		for l in lines:			
-			x = re.split("\#", l)
-			bb.data.setVar('FILES_%s' % x[0].lower(), " " + x[1].strip('\n'), d)
-			bb.data.setVar('SECTION_%s' % x[0].lower(), "opie/translations", d)
-			bb.data.setVar('RDEPENDS_%s' % x[0].lower(), pn, d)
+        bb.data.setVar('PACKAGES', " ".join(lines).lower() + " " + packages, d)
 
-		bb.data.setVar('SECTION_%s' % pn, section, d)
-		bb.data.setVar('RDEPENDS', rdepends, d)
-	else:
-		bb.note("No translations found for package " + pn)
+        fd = open(workdir + "/FILES.tmp", 'r')
+        lines = fd.readlines()
+        fd.close()
+
+        for l in lines:
+            x = re.split("\#", l)
+            bb.data.setVar('FILES_%s' % x[0].lower(), " " + x[1].strip('\n'), d)
+            bb.data.setVar('SECTION_%s' % x[0].lower(), "opie/translations", d)
+            bb.data.setVar('RDEPENDS_%s' % x[0].lower(), pn, d)
+
+            bb.data.setVar('SECTION_%s' % pn, section, d)
+            bb.data.setVar('RDEPENDS', rdepends, d)
+    else:
+        bb.note("No translations found for package " + pn)
 }
-	
+
 do_build_opie_i18n () {
 
 	cd "${WORKDIR}/i18n" || die "ERROR:\nCouldn't find Opies i18n sources in ${PN}/i18n\nMake sure that <inherit opie_i18n> or <inherit opie> is *below* <SRC_URIS =>!"
@@ -65,7 +65,7 @@ do_build_opie_i18n () {
 		printf "I18N Datafiles: ${I18N_FILES} (auto-detected)\nYou can overide the auto-detection by setting I18N_FILES in your .oe file\n"
 	else
 		echo "I18N Datafiles: ${I18N_FILES} (provided by .bb)"
-	fi	
+	fi
 	
 	rm -f "${WORKDIR}/FILES.tmp" "${WORKDIR}/PACKAGES.tmp"
 	
@@ -78,7 +78,7 @@ do_build_opie_i18n () {
 		do
 			printf "\tCompiling [$ts_file]\n"
 			cd "${WORKDIR}/i18n/`dirname $ts_file`" || die "[${WORKDIR}/i18n/`dirname $ts_file`] not found"
-			opie-lrelease "`basename $ts_file`" || die "lrelease failed! Make sure that <inherit opie_i18n> or <inherit opie> is *below* <DEPENDS =>!"							
+			opie-lrelease "`basename $ts_file`" || die "lrelease failed! Make sure that <inherit opie_i18n> or <inherit opie> is *below* <DEPENDS =>!"
 			
 			# $lang is the language as in de_DE, $lang_sane replaces "_" with "-"
 			# to allow packaging as "_" is not allowed in a package name
@@ -86,15 +86,15 @@ do_build_opie_i18n () {
 			lang_sane="`echo "$ts_file" | sed -n "s#\(.*\)/\(.*\)#\1#p"|sed s/\_/\-/`"
 			printf "\tPackaging [`basename $ts_file`] for language [$lang]\n"
 			
-			install -d ${D}${palmtopdir}/i18n/$lang			
+			install -d ${D}${palmtopdir}/i18n/$lang
 			install -m 0644 ${WORKDIR}/i18n/$lang/.directory ${D}${palmtopdir}/i18n/$lang/
 			install -m 0644 ${WORKDIR}/i18n/$lang/*.qm "${D}${palmtopdir}/i18n/$lang/"
-						
+			
 			# As it is not possible to modify OE vars from within a _shell_ function,
 			# some major hacking was needed. These two files will be read by the python 
 			# function do_build_opie_i18n_data() which sets the variables FILES_* and
 			# PACKAGES as needed. 
-			echo -n "${PN}-${lang_sane} " >> "${WORKDIR}/PACKAGES.tmp"						
+			echo -n "${PN}-${lang_sane} " >> "${WORKDIR}/PACKAGES.tmp"
 			printf "${PN}-${lang_sane}#${palmtopdir}/i18n/$lang" >> "${WORKDIR}/FILES.tmp\n"
 			
 			ts_found_something=1
@@ -107,12 +107,12 @@ do_build_opie_i18n () {
 			ts_found_something=""
 			ts_found="$ts_found $file"
 		fi
-				
+		
 		# Only used for debugging purposes
-		test "${I18N_STATS}" = 1 && cd "${WORKDIR}/i18n"	
+		test "${I18N_STATS}" = 1 && cd "${WORKDIR}/i18n"
 
 		printf "Completed [$file]\n\n\n"
-	done	
+	done
 
 	qt_dirs="apps  bin  etc  lib  pics  plugins  share  sounds"
 
@@ -123,7 +123,7 @@ do_build_opie_i18n () {
 
 	
 	# If we don't adjust FILES to exclude the i18n directory, we will end up with
-	# _lots_ of empty i18n/$lang directories in the original .ipk.	
+	# _lots_ of empty i18n/$lang directories in the original .ipk.
 	if (echo "${FILES}" | egrep "${palmtopdir}/? |${palmtopdir}/?$") &>/dev/null
 	then
 		echo "NOTE: FILES was set to ${palmtopdir} which would include the i18n directory"
@@ -142,7 +142,7 @@ do_build_opie_i18n () {
 		echo "NOTE:"
 		printf "Since FILES is empty, i'll add all directories below ${palmtopdir} to it,\nexcluding i18n: ( $qt_dirs )\n"
 		echo "${PN}#$FILES $dir_" >> "${WORKDIR}/FILES.tmp"
-	fi	
+	fi
 	
 	if ! test -e "${WORKDIR}/PACKAGES.tmp" -a "${I18N_STATS}" = 1
 	then

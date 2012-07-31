@@ -24,7 +24,7 @@ do_install() {
 }
 
 python populate_packages_prepend () {
-	help_dir = bb.data.expand('${palmtopdir}/help/en/html/', d)
-	
-	do_split_packages(d, help_dir, file_regex='^(.*)\.html$', output_pattern='opie-%s-help-en', description='Opie Help for %s - English', aux_files_pattern=help_dir + '%s/*')
+    help_dir = bb.data.expand('${palmtopdir}/help/en/html/', d)
+
+    do_split_packages(d, help_dir, file_regex='^(.*)\.html$', output_pattern='opie-%s-help-en', description='Opie Help for %s - English', aux_files_pattern=help_dir + '%s/*')
 }

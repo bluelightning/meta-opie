@@ -53,13 +53,13 @@ do_install() {
 }
 
 python populate_packages_prepend () {
-        print "opie-reader:", bb.data.getVar( 'RDEPENDS_opie-reader', d )
-        plugindir = bb.data.expand('${palmtopdir}/plugins/reader', d)                                     
-        for dir, type in [ ( 'codecs', 'codec' ), ( 'filters', 'filter' ), ( 'outcodecs', 'output' ) ]:
-            dir = plugindir + '/' + dir
-            do_split_packages(d, dir,
-                              '^lib(.*)\.so$', 'opie-reader-' + type + '-%s',
-                              'Opie reader %s ' + type,
-                              prepend=True)
+    print "opie-reader:", bb.data.getVar( 'RDEPENDS_opie-reader', d )
+    plugindir = bb.data.expand('${palmtopdir}/plugins/reader', d)
+    for dir, type in [ ( 'codecs', 'codec' ), ( 'filters', 'filter' ), ( 'outcodecs', 'output' ) ]:
+        dir = plugindir + '/' + dir
+        do_split_packages(d, dir,
+                          '^lib(.*)\.so$', 'opie-reader-' + type + '-%s',
+                          'Opie reader %s ' + type,
+                          prepend=True)
 
 }

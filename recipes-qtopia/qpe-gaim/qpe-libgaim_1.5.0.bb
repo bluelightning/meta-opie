@@ -45,8 +45,8 @@ PACKAGES_DYNAMIC = "libgaim-protocol-*"
 
 #FIXME: use do_packages to create individual packages for each of the plugins
 python populate_packages_prepend () {
-	plugindir = bb.data.expand('${libdir}/gaim', d)
-	do_split_packages(d, plugindir, '^lib(.*)\.so$', 'libgaim-protocol-%s', 'GAIM plugin for %s protocol', extra_depends='' )
+    plugindir = bb.data.expand('${libdir}/gaim', d)
+    do_split_packages(d, plugindir, '^lib(.*)\.so$', 'libgaim-protocol-%s', 'GAIM plugin for %s protocol', extra_depends='' )
 }
 
 PACKAGES += "libgaim-plugins"
