@@ -17,3 +17,4 @@ do_install() {
 # opie doesn't use staticdev packages and .a libraries
 # This package is an exception, so include .a in -dev
 FILES_${PN}-dev += "${libdir}/libqrsync.a"
+INSANE_SKIP_${PN}-dev += "staticdev"
