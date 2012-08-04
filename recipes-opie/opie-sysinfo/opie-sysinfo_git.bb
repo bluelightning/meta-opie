@@ -1,5 +1,7 @@
 require ${PN}.inc
 
+PR = "r1"
+
 inherit opie_git
 
 SRC_URI = "${OPIE_GIT};protocol=git;subpath=noncore/settings/sysinfo;name=first \

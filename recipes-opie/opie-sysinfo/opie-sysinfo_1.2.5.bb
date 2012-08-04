@@ -1,5 +1,7 @@
 require ${PN}.inc
 
+PR = "r1"
+
 SRC_URI = "http://sources.openembedded.org/opie-1.2.5-split_noncore_settings_sysinfo.tar.bz2;name=split_noncore_settings_sysinfo \
            http://sources.openembedded.org/opie-1.2.5-split_pics.tar.bz2;name=split_pics \
            http://sources.openembedded.org/opie-1.2.5-split_apps.tar.bz2;name=split_apps \

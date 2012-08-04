@@ -5,13 +5,18 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 APPNAME = "sysinfo"
 
+RRECOMMENDS_${PN} += "opie-sysinfo-images"
+
 S = "${WORKDIR}/${APPNAME}"
 
 inherit opie
 
 do_install() {
         install -d ${D}${palmtopdir}/pics/${APPNAME}/
-        install -m 0644 ${WORKDIR}/pics/${APPNAME}/*.png ${D}${palmtopdir}/pics/${APPNAME}/
+        install -m 0644 ${WORKDIR}/pics/${APPNAME}/SystemInfo.png ${D}${palmtopdir}/pics/${APPNAME}/
+        install -m 0644 ${WORKDIR}/pics/${APPNAME}/*icon.png ${D}${palmtopdir}/pics/${APPNAME}/
+        install -m 0644 ${WORKDIR}/pics/${APPNAME}/pattern.png ${D}${palmtopdir}/pics/${APPNAME}/
+        install -m 0644 ${WORKDIR}/pics/${APPNAME}/pda.png ${D}${palmtopdir}/pics/${APPNAME}/
         install -d ${D}${palmtopdir}/share/sysinfo/
         install -m 0644 ${WORKDIR}/share/sysinfo/results ${D}${palmtopdir}/share/sysinfo/results
 }
