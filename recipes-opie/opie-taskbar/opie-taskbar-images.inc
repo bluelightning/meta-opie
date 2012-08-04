@@ -39,8 +39,10 @@ do_install() {
         install -d ${D}${palmtopdir}/pics/launcher
 	
         # Allow us to be lazy with the loop below
-        mv ${WORKDIR}/pics/launcher/firstuse.jpg ${WORKDIR}/pics/launcher/firstuse-240x320.jpg
-        mv ${WORKDIR}/pics/launcher/opie-background.jpg ${WORKDIR}/pics/launcher/opie-background-240x320.jpg
+        if [ -f ${WORKDIR}/pics/launcher/firstuse.jpg ] ; then
+                mv ${WORKDIR}/pics/launcher/firstuse.jpg ${WORKDIR}/pics/launcher/firstuse-240x320.jpg
+                mv ${WORKDIR}/pics/launcher/opie-background.jpg ${WORKDIR}/pics/launcher/opie-background-240x320.jpg
+        fi
 
         for res in ${AVAILABLE_SIZES}; do
                 install -m 0644 ${WORKDIR}/pics/launcher/firstuse-${res}.jpg ${D}${palmtopdir}/pics/launcher/firstuse-${res}.jpg
