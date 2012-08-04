@@ -8,7 +8,7 @@ SRC_URI = "http://sources.openembedded.org/snes9x-sdl-${PV}.tar.bz2 \
 	   file://compile.patch"
 S = "${WORKDIR}/snes9x-sdl-${PV}"
 
-FILESPATHPKG .= ":snes9x-sdl"
+FILESEXTRAPATHS_prepend := "${THISDIR}/snes9x-sdl:"
 
 inherit qmake_base palmtop-defs
 
