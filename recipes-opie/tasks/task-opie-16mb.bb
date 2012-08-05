@@ -2,7 +2,7 @@ DESCRIPTION = "Tasks for small OPIE image"
 SECTION = "opie/base"
 LICENSE = "MIT"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
-PR = "r4"
+PR = "r5"
 
 inherit task
 
@@ -20,7 +20,7 @@ PACKAGES = "task-opie-16mb-base \
 # Dependencies to get the launcher up and running
 #
 RDEPENDS_task-opie-16mb-base = "opie-init opie-alarm opie-qcop opie-qss opie-quicklauncher \
-                           opie-taskbar opie-pics opie-sounds opie-freetype opie-taskbar-images-320x240 \
+                           opie-taskbar opie-pics opie-sounds opie-freetype opie-taskbar-images-240x320 \
                            ttf-dejavu-sans ttf-dejavu-sans-mono"
 
 #
