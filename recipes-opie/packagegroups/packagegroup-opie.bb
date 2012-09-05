@@ -3,7 +3,7 @@ SECTION = "opie/base"
 LICENSE = "MIT"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-PR = "r16"
+PR = "r17"
 
 inherit packagegroup
 
@@ -96,3 +96,13 @@ RDEPENDS_packagegroup-opie-bluetooth = "bluez4 obexftp obexpush libopieobex0 \
                        opie-bluetoothmanager opie-bluetoothapplet"
 
 RDEPENDS_packagegroup-opie-irda = "irda-utils libopieobex0 obexftp obexpush"
+
+python __anonymous() {
+    # For backwards compatibility after rename
+    packages = d.getVar("PACKAGES", True).split()
+    for pkg in packages:
+        d.appendVar("RPROVIDES_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+        d.appendVar("RREPLACES_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+        d.appendVar("RCONFLICTS_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+}
+

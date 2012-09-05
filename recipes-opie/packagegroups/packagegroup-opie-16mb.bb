@@ -2,7 +2,7 @@ DESCRIPTION = "Tasks for small OPIE image"
 SECTION = "opie/base"
 LICENSE = "MIT"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
-PR = "r5"
+PR = "r6"
 
 inherit packagegroup
 
@@ -54,3 +54,14 @@ RDEPENDS_packagegroup-opie-16mb-apps = "opie-console opie-clock opie-backup opie
 
 RDEPENDS_packagegroup-opie-16mb-pim = "opie-addressbook opie-datebook opie-drawpad \
                       opie-search opie-textedit opie-today opie-todo"
+
+
+python __anonymous() {
+    # For backwards compatibility after rename
+    packages = d.getVar("PACKAGES", True).split()
+    for pkg in packages:
+        d.appendVar("RPROVIDES_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+        d.appendVar("RREPLACES_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+        d.appendVar("RCONFLICTS_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+}
+

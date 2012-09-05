@@ -1,7 +1,7 @@
 DESCRIPTION = "Tasks for OPIE stuff"
 SECTION = "opie/base"
 LICENSE = "MIT"
-PR = "r1"
+PR = "r2"
 
 inherit packagegroup
 
@@ -21,4 +21,13 @@ RDEPENDS_packagegroup-opie-games = "opie-backgammon opie-bounce opie-buzzword op
 
 RDEPENDS_packagegroup-opie-extra-games = "opie-parashoot opie-mindbreaker opie-fifteen opie-tictac \
                          opie-tetrix"
+
+python __anonymous() {
+    # For backwards compatibility after rename
+    packages = d.getVar("PACKAGES", True).split()
+    for pkg in packages:
+        d.appendVar("RPROVIDES_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+        d.appendVar("RREPLACES_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+        d.appendVar("RCONFLICTS_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+}
 

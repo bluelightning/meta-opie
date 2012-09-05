@@ -1,7 +1,7 @@
 DESCRIPTION = "Tasks for OPIE stuff"
 SECTION = "opie/base"
 LICENSE = "MIT"
-PR = "r3"
+PR = "r4"
 
 inherit packagegroup
 
@@ -67,4 +67,13 @@ RDEPENDS_packagegroup-opie-todayplugins = "opie-today-addressbookplugin opie-tod
                           opie-today-weatherplugin"
 
 RDEPENDS_packagegroup-opie-wlan = "wireless-tools opie-wellenreiter opie-networksettings-wlanplugin"
+
+python __anonymous() {
+    # For backwards compatibility after rename
+    packages = d.getVar("PACKAGES", True).split()
+    for pkg in packages:
+        d.appendVar("RPROVIDES_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+        d.appendVar("RREPLACES_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+        d.appendVar("RCONFLICTS_%s" % pkg, pkg.replace("packagegroup-", "task-"))
+}
 
