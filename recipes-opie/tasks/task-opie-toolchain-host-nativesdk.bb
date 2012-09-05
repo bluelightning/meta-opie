@@ -1,4 +1,4 @@
-require recipes-core/tasks/nativesdk-task-sdk-host.bb
+require recipes-core/packagegroups/nativesdk-packagegroup-sdk-host.bb
 
 DESCRIPTION = "Host packages for Opie SDK"
 PR = "r3"
