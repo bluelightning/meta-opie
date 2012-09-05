@@ -4,13 +4,13 @@ LICENSE = "MIT"
 
 PR = "r1"
 
-inherit task
+inherit packagegroup
 
 LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=3f40d7994397109285ec7b81fdeb3b58"
 
-PACKAGES = "task-opie-apps task-opie-extra-apps"
+PACKAGES = "packagegroup-opie-apps packagegroup-opie-extra-apps"
 
-RDEPENDS_task-opie-apps = "opie-advancedfm opie-bartender opie-calculator \
+RDEPENDS_packagegroup-opie-apps = "opie-advancedfm opie-bartender opie-calculator \
                   opie-checkbook opie-clock \
                   opie-console opie-embeddedkonsole \
                   opie-eye opie-ftp opie-gutenbrowser \
@@ -23,7 +23,7 @@ RDEPENDS_task-opie-apps = "opie-advancedfm opie-bartender opie-calculator \
 # additional things for a >= 24mb distribution
 #
 
-RDEPENDS_task-opie-extra-apps = "opie-calculator opie-checkbook opie-mail opie-eye \
+RDEPENDS_packagegroup-opie-extra-apps = "opie-calculator opie-checkbook opie-mail opie-eye \
                         opie-rdesktop opie-wellenreiter opie-irc \
                         opie-mediaplayer2 \
                         qpdf2"

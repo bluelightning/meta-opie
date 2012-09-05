@@ -1,7 +1,7 @@
 require opie-image.bb
 
-DEPENDS += "task-xqtlauncher"
+DEPENDS += "packagegroup-xqtlauncher"
 
 export IMAGE_BASENAME = "opie-xqtlauncher-image"
 
-IMAGE_INSTALL += "task-xqtlauncher task-xqtlauncher-blackbox"
+IMAGE_INSTALL += "packagegroup-xqtlauncher packagegroup-xqtlauncher-blackbox"

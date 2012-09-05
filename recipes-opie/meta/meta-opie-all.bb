@@ -4,13 +4,13 @@ LICENSE = "MIT"
 PR = "r4"
 
 RDEPENDS_${PN} = " \
-    task-qpe-applets \
-    task-qpe-games \
-    task-qpe-inputmethods \
-    task-qpe-multimedia \
-    task-qpe-emulators \
-    task-qpe-applications \
-    task-qpe-fonts \
-    task-qpe-settings"
+    packagegroup-qpe-applets \
+    packagegroup-qpe-games \
+    packagegroup-qpe-inputmethods \
+    packagegroup-qpe-multimedia \
+    packagegroup-qpe-emulators \
+    packagegroup-qpe-applications \
+    packagegroup-qpe-fonts \
+    packagegroup-qpe-settings"
 
 inherit meta

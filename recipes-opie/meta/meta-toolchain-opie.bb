@@ -1,6 +1,6 @@
 PR = "r3"
-TOOLCHAIN_HOST_TASK = "task-opie-toolchain-host-nativesdk task-cross-canadian-${TRANSLATED_TARGET_ARCH}"
-TOOLCHAIN_TARGET_TASK = "task-opie-toolchain-target"
+TOOLCHAIN_HOST_TASK = "packagegroup-opie-toolchain-host-nativesdk packagegroup-cross-canadian-${TRANSLATED_TARGET_ARCH}"
+TOOLCHAIN_TARGET_TASK = "packagegroup-opie-toolchain-target"
 TOOLCHAIN_OUTPUTNAME = "${SDK_NAME}-toolchain-opie-${DISTRO_VERSION}"
 
 require recipes-core/meta/meta-toolchain.bb

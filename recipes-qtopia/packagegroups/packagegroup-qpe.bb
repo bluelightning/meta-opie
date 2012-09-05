@@ -3,17 +3,17 @@ SECTION = "opie/base"
 LICENSE = "MIT"
 PR = "r10"
 
-inherit task
+inherit packagegroup
 
-PACKAGES = "task-qpe-applets task-qpe-games task-qpe-inputmethods \
-	task-qpe-multimedia task-qpe-emulators task-qpe-applications \
-	task-qpe-fonts task-qpe-settings"
+PACKAGES = "packagegroup-qpe-applets packagegroup-qpe-games packagegroup-qpe-inputmethods \
+	packagegroup-qpe-multimedia packagegroup-qpe-emulators packagegroup-qpe-applications \
+	packagegroup-qpe-fonts packagegroup-qpe-settings"
 
-RDEPENDS_task-qpe-applets = "\
+RDEPENDS_packagegroup-qpe-applets = "\
     subapplet \
     tasklistapplet"
 
-RDEPENDS_task-qpe-applications = "\
+RDEPENDS_packagegroup-qpe-applications = "\
     camera-assistant \
     cumulus \
     dviviewer \
@@ -55,12 +55,12 @@ RDEPENDS_task-qpe-applications = "\
     zroadmap \
     zshopi"
 
-RDEPENDS_task-opie-decorations = "\
+RDEPENDS_packagegroup-opie-decorations = "\
     opie-deco-flat \
     opie-deco-liquid \
     opie-deco-polished"
 
-RDEPENDS_task-qpe-games = "\
+RDEPENDS_packagegroup-qpe-games = "\
     aliens \
     aliens-qt \
     atomic \
@@ -105,25 +105,25 @@ RDEPENDS_task-qpe-games = "\
     ztappy \
     zudoku"
 
-RDEPENDS_task-qpe-inputmethods = "\
+RDEPENDS_packagegroup-qpe-inputmethods = "\
     custominput \
     flexis-zaurus \
     irk-targus \
     irk-belkin"
 
-RDEPENDS_task-qpe-multimedia = "\
+RDEPENDS_packagegroup-qpe-multimedia = "\
     mplayer \
     sidplayer \
     xmms-embedded"
 
-RDEPENDS_task-kdepim = "\
+RDEPENDS_packagegroup-kdepim = "\
     kopi \
     kapi \
     kopi-applet"
 
-RDEPENDS_task-qpe-emulators = "scummvm"
+RDEPENDS_packagegroup-qpe-emulators = "scummvm"
 
-RDEPENDS_task-qpe-fonts = "\
+RDEPENDS_packagegroup-qpe-fonts = "\
     qpf-bitstream-vera-large \
     qpf-bitstream-vera-sans-mono-huge \
     qpf-freemono \
@@ -137,6 +137,6 @@ RDEPENDS_task-qpe-fonts = "\
     qpf-utopia \
     qpf-terminus"
 
-RDEPENDS_task-qpe-settings += "\
+RDEPENDS_packagegroup-qpe-settings += "\
     qclockchange"
 

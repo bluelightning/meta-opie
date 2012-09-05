@@ -2,17 +2,17 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=3f40d7994397109285ec7b81fdeb3
 
 IMAGE_LINGUAS = ""
 
-DEPENDS = "task-boot task-opie-16mb"
+DEPENDS = "packagegroup-boot packagegroup-opie-16mb"
 
 ANGSTROM_EXTRA_INSTALL ?= ""
-IMAGE_INSTALL = "task-boot \
+IMAGE_INSTALL = "packagegroup-core-boot \
                     dropbear \
-                    task-opie-16mb-base \
-                    task-opie-16mb-applets \
-                    task-opie-16mb-inputmethods \
-                    task-opie-16mb-settings \
-                    task-opie-16mb-apps \
-                    task-opie-16mb-pim \
+                    packagegroup-opie-16mb-base \
+                    packagegroup-opie-16mb-applets \
+                    packagegroup-opie-16mb-inputmethods \
+                    packagegroup-opie-16mb-settings \
+                    packagegroup-opie-16mb-apps \
+                    packagegroup-opie-16mb-pim \
                     ${ANGSTROM_EXTRA_INSTALL} "
 
 inherit image
