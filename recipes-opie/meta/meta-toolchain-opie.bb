@@ -1,5 +1,5 @@
 PR = "r3"
-TOOLCHAIN_HOST_TASK = "packagegroup-opie-toolchain-host-nativesdk packagegroup-cross-canadian-${TRANSLATED_TARGET_ARCH}"
+TOOLCHAIN_HOST_TASK = "nativesdk-packagegroup-opie-toolchain-host packagegroup-cross-canadian-${TRANSLATED_TARGET_ARCH}"
 TOOLCHAIN_TARGET_TASK = "packagegroup-opie-toolchain-target"
 TOOLCHAIN_OUTPUTNAME = "${SDK_NAME}-toolchain-opie-${DISTRO_VERSION}"
 
