@@ -2,7 +2,7 @@ require qpf.inc
 
 DESCRIPTION = "Bitstream Vera Monospaced Font, QPF for Qt/Embedded"
 LICENSE = "Bitstream Vera"
-PR = "r4"
+PR = "r5"
 
 PROVIDES += "qpf-bitstream-vera-sans-mono-small"
 PROVIDES += "qpf-bitstream-vera-sans-mono-larger"
@@ -27,7 +27,7 @@ ${palmqtdir}/lib/fonts/verasansmono_10* \
 	${palmqtdir}/lib/fonts/verasansmono_13* \
 	${palmqtdir}/lib/fonts/verasansmono_14*"
 FILES_qpf-bitstream-vera-sans-mono-large = "\
-	${palmqtdir}/lib/fonts/verasansmono_15*" \
+	${palmqtdir}/lib/fonts/verasansmono_15* \
 	${palmqtdir}/lib/fonts/verasansmono_16* \
 	${palmqtdir}/lib/fonts/verasansmono_17* \
 	${palmqtdir}/lib/fonts/verasansmono_18* \
