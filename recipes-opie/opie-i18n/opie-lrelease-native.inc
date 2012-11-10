@@ -18,4 +18,3 @@ do_install() {
         install -m 0755 opie-lrelease ${D}${bindir}/
 }
 
-NATIVE_INSTALL_WORKS = "1"
