@@ -30,10 +30,6 @@ LIBS+=-L${S}/dest/ \
 LIBS-=-lzlib \
 LIBS+=-lz \
 "
-# That changes will be needed for KMicroMail/PI to get it build with OE libs
-#
-#             LIBS-=-lkmicromailwrapper LIBS+=-lmailwrapper LIBS+=-lopiecore2 \
-
 QMAKE_PROFILES= "all.pro"
 
 SUBDIRS="qtcompat libical/src/libical libical/src/libicalss microkde libkcal libkdepim \
@@ -42,11 +38,6 @@ SUBDIRS="qtcompat libical/src/libical libical/src/libicalss microkde libkcal lib
         gammu/emb/common \
         gammu/emb/gammu \
         "
-#        pwmanager/libcrypt/mpi  \
-#        pwmanager/libcrypt/error  \
-#        pwmanager/libcrypt/cipher  \
-#        pwmanager/libcrypt/zlib \
-#        pwmanager/pwmanager \
 
 inherit palmtop
 
