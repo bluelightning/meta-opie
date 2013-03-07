@@ -22,7 +22,7 @@ do_install() {
     oe_libinstall -so -C rel/opt/Qtopia/plugins/applets libtasklistapplet ${D}${palmtopdir}/plugins/applets/
 }
 
-pkg_postinst() {
+pkg_postinst_${PN}() {
 #!/bin/sh
 if pidof -s qpe >/dev/null; then
   /usr/bin/qcop QPE/TaskBar "reloadApplets()"
@@ -32,7 +32,7 @@ fi
  if [ -n "$D" ]; then false; fi
 }
 
-pkg_postrm() {
+pkg_postrm_${PN}() {
 #!/bin/sh
 /usr/bin/qcop QPE/TaskBar "reloadApplets()"
  if [ -n "$D" ]; then false; fi

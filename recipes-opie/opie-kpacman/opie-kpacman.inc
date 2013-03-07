@@ -10,7 +10,7 @@ S = "${WORKDIR}/${APPNAME}"
 
 inherit opie
 
-pkg_postinst() {
+pkg_postinst_${PN}() {
 #!/bin/sh
 if [ -n "$D" ]; then exit 1; fi
 

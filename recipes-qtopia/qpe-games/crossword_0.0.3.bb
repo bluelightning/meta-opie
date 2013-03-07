@@ -24,7 +24,7 @@ do_install () {
 
 }
 
-pkg_postinst() {
+pkg_postinst_${PN}() {
 #!/bin/sh
 
 MIMEFILE=/opt/QtPalmtop/etc/mime.types

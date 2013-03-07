@@ -10,7 +10,7 @@ S = "${WORKDIR}/dasher"
 
 inherit opie
 
-pkg_postinst() {
+pkg_postinst_${PN}() {
 #!/bin/sh
 if [ -n "$D" ]; then exit 1; fi
 if pidof -s qpe >/dev/null; then
@@ -21,7 +21,7 @@ fi
 
 }
 
-pkg_postrm() {
+pkg_postrm_${PN}() {
 #!/bin/sh
 if [ -n "$D" ]; then exit 1; fi
 /opt/QtPalmtop/bin/qcop QPE/TaskBar "reloadInputMethods()"

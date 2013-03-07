@@ -18,7 +18,7 @@ CXXFLAGS_append += " -DSHOPPER_DATADIR='"${SHOPPER_DATADIR}"' "
 
 QMAKE_PROFILES = "Shopper.pro"
 
-pkg_postinst() {
+pkg_postinst_${PN}() {
 	/opt/QtPalmtop/bin/qcop QPE/System "linkChanged(QString)" 2>/dev/null
 	if [ -n "$D" ]; then false; fi
 }

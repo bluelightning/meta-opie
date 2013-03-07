@@ -48,7 +48,7 @@ do_install() {
 }
 
 
-pkg_postinst() {
+pkg_postinst_${PN}() {
 #!/bin/sh
 
 NEWTYPE=application/portabase

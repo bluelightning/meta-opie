@@ -29,6 +29,6 @@ do_install() {
         sed -i 's!@@DATADIR@@!${datadir}!g' ${D}${sysconfdir}/update-fonts-common.d/02qtttffont-update
 }
 
-pkg_postinst() {
+pkg_postinst_${PN}() {
         ${sysconfdir}/update-fonts-common.d/02qtttffont-update
 }

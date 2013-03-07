@@ -9,7 +9,7 @@ S = "${WORKDIR}/pickboard"
 
 inherit opie
 
-pkg_postinst() {
+pkg_postinst_${PN}() {
 #!/bin/sh
 if [ -n "$D" ]; then exit 1; fi
 if pidof -s qpe >/dev/null; then
@@ -19,7 +19,7 @@ else
 fi
 }
 
-pkg_postrm() {
+pkg_postrm_${PN}() {
 #!/bin/sh
 if [ -n "$D" ]; then exit 1; fi
 ${bindir}/qcop QPE/TaskBar "reloadInputMethods()"
