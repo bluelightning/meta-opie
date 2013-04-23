@@ -9,6 +9,7 @@ SRC_URI = "ftp://ftp.trolltech.com/pub/qt/source/qt-embedded-${PV}-free.tar.gz \
            file://gcc3_4.patch \
            file://gcc4.patch \
            file://gcc4_1.patch \
+           file://gcc4.7.patch \
            file://64bit-cleanup.patch \
 	   file://kernel-asm-page.patch"
 S = "${WORKDIR}/qt-${PV}"
