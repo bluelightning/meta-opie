@@ -1,11 +1,26 @@
+From abaea74cc1ab0309bc7d68d7894c2d3a7609522e Mon Sep 17 00:00:00 2001
+From: Paul Eggleton <paul.eggleton@linux.intel.com>
+Date: Wed, 21 Aug 2013 21:13:39 +0100
+Subject: [PATCH 1/2] tools: fix compilation failure with modern gcc
 
-#
-# Patch managed by http://www.mn-logistik.de/unsupported/pxa250/patcher
-#
+Need to use this-> with local methods.
 
---- qt-2.3.10/src/tools/qvaluestack.h~gcc4	2005-01-23 15:00:47.000000000 +0100
-+++ qt-2.3.10/src/tools/qvaluestack.h	2006-03-19 02:32:56.000000000 +0100
-@@ -54,7 +54,7 @@
+Signed-off-by: Paul Eggleton <paul.eggleton@linux.intel.com>
+---
+ src/tools/qvaluestack.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/tools/qvaluestack.h b/src/tools/qvaluestack.h
+index 44f250f..926a269 100644
+--- a/src/tools/qvaluestack.h
++++ b/src/tools/qvaluestack.h
+@@ -49,12 +49,12 @@ class Q_EXPORT QValueStack : public QValueList<T>
+ public:
+     QValueStack() {}
+    ~QValueStack() {}
+-    void  push( const T& d ) { append(d); }
++    void  push( const T& d ) { this->append(d); }
+     T pop()
      {
  	T elem( this->last() );
  	if ( !this->isEmpty() )
@@ -14,3 +29,6 @@
  	return elem;
      }
      T& top() { return this->last(); }
+-- 
+1.8.1.2
+
