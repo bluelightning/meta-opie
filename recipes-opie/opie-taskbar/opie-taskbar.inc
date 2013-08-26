@@ -16,8 +16,8 @@ S = "${WORKDIR}/launcher"
 inherit opie
 
 do_configure_prepend() {
-        ln -s ${WORKDIR}/calibrate ${S}/calibrate
-        ln -s ${WORKDIR}/mediummount ${S}/mediummount
+        ln -sf ${WORKDIR}/calibrate ${S}/calibrate
+        ln -sf ${WORKDIR}/mediummount ${S}/mediummount
 }
 
 SECTIONS = "1Pim Applications Examples Games Opie-SH Python Settings"
