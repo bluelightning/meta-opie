@@ -16,6 +16,12 @@ branch: master
 revision: HEAD
 
 URI: git://git.openembedded.org/meta-openembedded
+subdirectory: meta-oe
+branch: master
+revision: HEAD
+
+URI: git://git.openembedded.org/meta-openembedded
+subdirectory: meta-networking
 branch: master
 revision: HEAD
 
