@@ -4,7 +4,7 @@ IMAGE_LINGUAS = ""
 
 DEPENDS = "packagegroup-base packagegroup-opie"
 
-IMAGE_FEATURES += "ssh-server-dropbear"
+IMAGE_FEATURES += "ssh-server-dropbear package-management"
 
 ANGSTROM_EXTRA_INSTALL ?= ""
 IMAGE_INSTALL = "packagegroup-core-boot packagegroup-base ${ROOTFS_PKGMANAGE} \
