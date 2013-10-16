@@ -9,26 +9,6 @@ S = "${WORKDIR}/pics"
 
 inherit opie
 
-# Wallpaper and welcome splash
-PIXMAP_SIZE 		= ""
-PIXMAP_SIZE_c7x0 	= "-640x480"
-PIXMAP_SIZE_spitz	= "-640x480"
-PIXMAP_SIZE_akita	= "-640x480"
-PIXMAP_SIZE_tosa 	= "-480x640"
-PIXMAP_SIZE_simpad 	= "-800x600"
-PIXMAP_SIZE_asus730     = "-480x640"
-PIXMAP_SIZE_htcuniversal= "-480x640"
-PIXMAP_SIZE_hx4700      = "-480x640"
-PIXMAP_SIZE_palmz31     = "-160x160"
-PIXMAP_SIZE_palmz71     = "-320x320"
-PIXMAP_SIZE_palmz72     = "-320x320"
-PIXMAP_SIZE_palmt650    = "-320x320"
-PIXMAP_SIZE_palmt680    = "-320x320"
-PIXMAP_SIZE_palmt3      = "-320x480"
-PIXMAP_SIZE_palmt5      = "-320x480"
-PIXMAP_SIZE_palmtx      = "-320x480"
-PIXMAP_SIZE_palmld      = "-320x480"
-
 AVAILABLE_SIZES         = "240x240 240x320 320x320 320x480 480x320 480x640 640x480 800x600"
 
 do_configure() {
