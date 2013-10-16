@@ -10,7 +10,7 @@ S = "${WORKDIR}"
 inherit palmtop-defs
 
 SHIP_INLINE_PICS = "yes"
-INLINE_PICS = '${@base_conditional("GUI_MACHINE_CLASS", "bigscreen", "pics-hires/inline", "pics/inline", d)}'
+INLINE_PICS = '${@base_conditional("MACHINE_GUI_CLASS", "bigscreen", "pics-hires/inline", "pics/inline", d)}'
 
 do_install() {
 	install -d ${D}${palmtopdir}/pics/addressbook/
