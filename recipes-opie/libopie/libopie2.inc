@@ -78,11 +78,9 @@ do_install() {
 	for module in ${MODULES}
 	do
 		cd $module
-		for i in `find . -name "*.h"`
+		for i in `find . -path ./private -prune -o -name "*.h" -print`
 		do
-			if [[ $i != ./private/* ]] ; then
-				install -m 0644 $i ${D}${includedir}/opie2/`basename $i`
-			fi
+			install -m 0644 $i ${D}${includedir}/opie2/`basename $i`
 		done
 		cd ..
 	done
