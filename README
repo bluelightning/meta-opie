@@ -5,6 +5,10 @@ This layer provides the metadata necessary to build Opie, Qt/Embedded 2.3.10,
 related libraries and 3rd-party Qtopia applications. Initially based on
 recipes developed within OpenEmbedded master.
 
+For more information on Opie, see the Opie website:
+
+  http://opie.sourceforge.net/
+
 
 Dependencies
 ------------
