@@ -1,0 +1,583 @@
+From 7a3ba8948e27a80a9e8a3857e298443c54c8931f Mon Sep 17 00:00:00 2001
+From: Vasily Khoruzhick <anarsoul@gmail.com>
+Date: Sun, 1 Jun 2014 20:31:39 +0300
+Subject: [PATCH] Port QSound to use ALSA
+
+ALSA is a default sound system for Linux since 2.6, and OSS is
+deprecated. Port QSound to use ALSA instead of OSS.
+
+This implementation mimics old OSS code, and may have bugs. Personally,
+I don't like to write samples in timer handler, but I don't know a way
+to integrate custom FDs into Qt/E event loop, so let's just do like it
+was with OSS.
+
+Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+---
+ configure                    |   4 +
+ src/kernel/qsoundqss_qws.cpp | 410 +++++++++++++++++++++++++------------------
+ 2 files changed, 246 insertions(+), 168 deletions(-)
+
+diff --git a/configure b/configure
+index 8e7272d..bbaea60 100755
+--- a/configure
++++ b/configure
+@@ -1478,6 +1478,10 @@ chmod -w src/tools/qmodules.h
+ 
+ # include math lib for compilers that don't automatically include it
+ QT_LIBS="${QT_LIBS} -lm"
++
++# include alsa for sound
++QT_LIBS="${QT_LIBS} -lasound"
++
+ [ "x$LIBPNG" = "xno" ] && [ ! "x$REALLY_DONT_USE_LIBPNG" = "xyes" ] && QT_LIBS="${QT_LIBS} -lpng"
+ [ "x$ZLIB" = "xno" ] && [ ! "x$REALLY_DONT_USE_LIBZ" = "xyes" ] && QT_LIBS="${QT_LIBS} -lz"
+ [ "x$JPEG" = "xyes" ] && QT_LIBS="${QT_LIBS} -ljpeg"
+diff --git a/src/kernel/qsoundqss_qws.cpp b/src/kernel/qsoundqss_qws.cpp
+index 3dde232..c1cbc78 100644
+--- a/src/kernel/qsoundqss_qws.cpp
++++ b/src/kernel/qsoundqss_qws.cpp
+@@ -48,12 +48,18 @@
+ #include <time.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+-#include <sys/ioctl.h>
+-#include <sys/soundcard.h>
++#include <alsa/asoundlib.h>
++
++#define DEFAULT_SND_DEVICE "default"
+ 
+ #define QT_QWS_SOUND_16BIT 1 // or 0, or undefined for always 0
+ #define QT_QWS_SOUND_STEREO 1 // or 0, or undefined for always 0
+ 
++#define SOUND_BUFFER_TIME 200000 /* uS */
++#define SOUND_PERIOD_TIME 50000 /* uS */
++
++static const int sound_buffer_size = (44100 * (QT_QWS_SOUND_16BIT + 1) * (QT_QWS_SOUND_STEREO + 1)) / 2;
++
+ // Zaurus SL5000D doesn't seem to return any error if setting to 44000 and it fails,
+ // however 44100 works, 44100 is more common that 44000.
+ static int sound_speed = 44100;
+@@ -62,35 +68,12 @@ extern int qws_display_id;
+ #define SOUND_PIPE	"/tmp/.qt_soundserver-%1"
+ #endif
+ 
+-static char *zeroMem = 0;
+-
+ struct QRiffChunk {
+     char id[4];
+     Q_UINT32 size;
+     char data[4/*size*/];
+ };
+ 
+-#if defined(QT_QWS_IPAQ)
+-static const int sound_fragment_size = 12;
+-#else
+-static const int sound_fragment_size = 12;
+-#endif
+-static const int sound_buffer_size = 1 << sound_fragment_size;
+-// nb. there will be an sound startup delay of
+-//        2^sound_fragment_size / sound_speed seconds.
+-// (eg. sound_fragment_size==12, sound_speed==44000 means 0.093s delay)
+-
+-#ifdef QT_QWS_SOUND_STEREO
+-static int sound_stereo = QT_QWS_SOUND_STEREO;
+-#else
+-static const int sound_stereo = 0;
+-#endif
+-#ifdef QT_QWS_SOUND_16BIT
+-static bool sound_16bit = QT_QWS_SOUND_16BIT;
+-#else
+-static const bool sound_16bit = FALSE;
+-#endif
+-
+ class QWSSoundServerClient : public QWSSocket {
+     Q_OBJECT
+ 
+@@ -253,7 +236,6 @@ void QWSSoundServerClient::sendDeviceError(int gid, int sid, int err)
+ #endif
+ 
+ static const int maxVolume = 100;
+-static const int runinLength = 2*sound_buffer_size;
+ class QWSSoundServerProvider {
+ public:
+     QWSSoundServerProvider(int w, int s)
+@@ -383,12 +365,12 @@ public:
+             if (count && samples_due >= chunkdata.samplesPerSec) {
+                 int l = getSample(0,bytesPerSample)*lVolNum/lVolDen;
+                 int r = (chunkdata.channels == 2) ? getSample(1,bytesPerSample)*rVolNum/rVolDen : l;
+-                if (!sound_stereo && chunkdata.channels == 2) 
++                if (!QT_QWS_SOUND_STEREO && chunkdata.channels == 2) 
+                     l += r;
+ 		if (sampleRunin) {
+                     while (sampleRunin && count && samples_due >= chunkdata.samplesPerSec) {
+                         mixl++;
+-                        if (sound_stereo)
++                        if (QT_QWS_SOUND_STEREO)
+                             mixr++;
+                         samples_due -= chunkdata.samplesPerSec;
+ 		        sampleRunin--;
+@@ -397,7 +379,7 @@ public:
+                 }
+                 while (count && samples_due >= chunkdata.samplesPerSec) {
+                     *mixl++ += l;
+-                    if (sound_stereo)
++                    if (QT_QWS_SOUND_STEREO)
+                         *mixr++ += r;
+                     samples_due -= chunkdata.samplesPerSec;
+                     count--;
+@@ -746,10 +728,9 @@ public:
+ 	connect(this, SIGNAL(deviceError(int, int, int)),
+ 		server, SIGNAL(deviceError(int, int, int)));
+ #endif
+-	fd = -1;
++    handle = NULL;
+ 	active.setAutoDelete(TRUE);
+ 	unwritten = 0;
+-	can_GETOSPACE = TRUE;
+     }
+ 
+ signals:
+@@ -765,7 +746,7 @@ public slots:
+ 	    QWSSoundServerStream *b = new QWSSoundServerStream(f, channels, freq, bitspersample, wid, sid);
+ 	    // check preset volumes.
+ 	    checkPresetVolumes(wid, sid, b);
+-	    b->setPriority(flags & QWSSoundClient::Priority == QWSSoundClient::Priority);
++	    b->setPriority((flags & QWSSoundClient::Priority) == QWSSoundClient::Priority);
+ 	    active.append(b);
+ 	    emit deviceReady(wid, sid);
+ 	}
+@@ -789,7 +770,7 @@ public slots:
+ 	    QWSSoundServerProvider *b = new QWSSoundServerBucket(f, wid, sid);
+ 	    checkPresetVolumes(wid, sid, b);
+ 	    b->setVolume(v, v);
+-	    b->setPriority(flags & QWSSoundClient::Priority == QWSSoundClient::Priority);
++	    b->setPriority((flags & QWSSoundClient::Priority) == QWSSoundClient::Priority);
+ 	    active.append(b);
+ 	    emit deviceReady(wid, sid);
+ 	}
+@@ -946,7 +927,7 @@ public slots:
+ 	}
+     }
+ 
+-    void feedDevice(int fd)
++    void feedDevice(void)
+     {
+ 	if ( !unwritten && active.count() == 0 ) {
+ 	    closeDevice();
+@@ -959,7 +940,7 @@ public slots:
+ 	QWSSoundServerProvider* bucket;
+ 
+ 	// find out how much audio is possible
+-	int available = sound_buffer_size;
++	int available = period_size;
+ 	QList<QWSSoundServerProvider> running;
+ 	for (bucket = active.first(); bucket; bucket = active.next()) {
+ 	    int ready = bucket->readySamples(available);
+@@ -969,73 +950,72 @@ public slots:
+ 	    }
+ 	}
+ 
+-	audio_buf_info info;
+-	if ( can_GETOSPACE && ioctl(fd,SNDCTL_DSP_GETOSPACE,&info) ) {
+-	    can_GETOSPACE = FALSE;
+-	    fcntl( fd, F_SETFL, O_NONBLOCK );
+-	}
+-	if ( !can_GETOSPACE )
+-	    info.fragments = 4; // #### configurable?
+-	if ( info.fragments > 0 ) {
+-	    if ( !unwritten ) {
+-		int left[sound_buffer_size];
+-		memset(left,0,available*sizeof(int));
+-		int right[sound_buffer_size];
+-		if ( sound_stereo )
+-		    memset(right,0,available*sizeof(int));
+-
+-		if (running.count() > 0) {
+-		    // should do volume mod here in regards to each bucket to avoid flattened/bad peaks.
+-		    for (bucket = running.first(); bucket; bucket = running.next()) {
+-			int unused = bucket->add(left,right,available);
+-			if (unused > 0) {
+-			    // this error is quite serious, as
+-			    // it will really screw up mixing.
+-			    qDebug("provider lied about samples ready");
+-			}
+-		    }
+-		    if ( sound_16bit ) {
+-			short *d = (short*)data;
+-			for (int i=0; i<available; i++) {
+-			    *d++ = (short)QMAX(QMIN(left[i],32767),-32768);
+-			    if ( sound_stereo ) 
+-			        *d++ = (short)QMAX(QMIN(right[i],32767),-32768);
+-			}
+-		    } else {
+-			signed char *d = (signed char *)data;
+-			for (int i=0; i<available; i++) {
+-			    *d++ = (signed char)QMAX(QMIN(left[i]/256,127),-128)+128;
+-			    if ( sound_stereo ) 
+-			        *d++ = (signed char)QMAX(QMIN(right[i]/256,127),-128)+128;
+-			}
+-		    }
+-		    unwritten = available*(sound_16bit+1)*(sound_stereo+1);
+-		    cursor = (char*)data;
+-		}
+-	    }
+-	    // sound open, but nothing written.  Should clear the buffer.
+-
+-	    int w;
+-	    if (unwritten) {
+-		w = ::write(fd,cursor,unwritten);
++    if ( !unwritten ) {
++        int left[period_size];
++        memset(left,0,available*sizeof(int));
++        int right[period_size];
++        if ( QT_QWS_SOUND_STEREO )
++            memset(right,0,available*sizeof(int));
++
++        if (running.count() > 0) {
++            // should do volume mod here in regards to each bucket to avoid flattened/bad peaks.
++            for (bucket = running.first(); bucket; bucket = running.next()) {
++            int unused = bucket->add(left,right,available);
++            if (unused > 0) {
++                // this error is quite serious, as
++                // it will really screw up mixing.
++                qDebug("provider lied about samples ready");
++            }
++            }
++            if (QT_QWS_SOUND_16BIT) {
++            short *d = (short*)data;
++            for (int i = 0; i < available; i++) {
++                *d++ = (short)QMAX(QMIN(left[i],32767),-32768);
++                if (QT_QWS_SOUND_STEREO) 
++                    *d++ = (short)QMAX(QMIN(right[i],32767),-32768);
++            }
++            } else {
++            signed char *d = (signed char *)data;
++            for (int i = 0; i < available; i++) {
++                *d++ = (signed char)QMAX(QMIN(left[i]/256,127),-128)+128;
++                if (QT_QWS_SOUND_STEREO) 
++                    *d++ = (signed char)QMAX(QMIN(right[i]/256,127),-128)+128;
++            }
++            }
++            unwritten = available;
++            cursor = (char*)data;
++        }
++    }
++    // sound open, but nothing written.  Should clear the buffer.
++
++    int err;
++    if (unwritten) {
++        int w = 0;
++        do {
++            err = snd_pcm_writei(handle, cursor, unwritten);
++        } while (err == -EAGAIN);
++        if (err < 0) {
++            if (err == -EPIPE) {
++                err = snd_pcm_prepare(handle);
++                if (err < 0) {
++                    qDebug("Can't recover after underrun\n");
++                }
++            } else if (err == -ESTRPIPE) {
++                do {
++                    err = snd_pcm_resume(handle);
++                } while (err == -EAGAIN);
++                err = snd_pcm_prepare(handle);
++                if (err < 0) {
++                    qDebug("Can't recover after underrun\n");
++                }
++            }
++        }
+ 
+-		if ( w < 0 )
+-		    if ( !can_GETOSPACE )
+-			w = 0;
+-		    else
+-			return;
++        w = err;
+ 
+-		cursor += w;
+-		unwritten -= w;
+-	    } else {
+-		// write some zeros to clear the buffer?
+-		if (!zeroMem)
+-		    zeroMem = (char *)calloc(sound_buffer_size, sizeof(char));
+-		w = ::write(fd, zeroMem, sound_buffer_size);
+-		if (w < 0)
+-		    w = 0;
+-	    }
+-	}
++        cursor += w;
++        unwritten -= w;
++    }
+ 
+ 	bucket = active.first(); 
+ 	while(bucket) {
+@@ -1054,11 +1034,11 @@ protected:
+     {
+ 	//qDebug("QSS: timerEvent");
+ 	if ( event->timerId() == timerId ) {	
+-	    if ( fd >= 0 )
+-		feedDevice(fd);
+-	    if ( fd < 0 ) {
+-		killTimer(event->timerId());
+-		timerId = 0;
++	    if (handle)
++            feedDevice();
++	    if (!handle) {
++            killTimer(event->timerId());
++            timerId = 0;
+ 	    }
+ 	}
+     }
+@@ -1081,79 +1061,173 @@ private:
+ 
+     bool openDevice()
+     {
+-	if ( fd < 0 ) {
+-	    //
+-	    // Don't block open right away.
+-	    //
+-            bool openOkay = false;
+-	    if ((fd = ::open("/dev/dsp", O_WRONLY|O_NONBLOCK)) != -1) {
+-		int flags = fcntl(fd, F_GETFL);
+-		flags &= ~O_NONBLOCK;
+-		openOkay = (fcntl(fd, F_SETFL, flags) == 0);
+-	    }
+-            if (!openOkay) {
+-	        qDebug("Failed opening audio device");
+-		return false;
+-            }
++    snd_pcm_format_t format;
++    snd_pcm_uframes_t size;
++    unsigned int rate;
++    int channels, dir, err;
++    unsigned int buffer_time = SOUND_BUFFER_TIME;
++    unsigned int period_time = SOUND_PERIOD_TIME;
++    snd_pcm_hw_params_t *hwparams;
++    snd_pcm_sw_params_t *swparams;
++    if (!handle) {
++        err = snd_pcm_open(&handle, DEFAULT_SND_DEVICE, SND_PCM_STREAM_PLAYBACK, SND_PCM_NONBLOCK);
++        if (err < 0) {
++            qDebug("Failed opening audio device");
++            return false;
++        }
++
++        snd_pcm_hw_params_alloca(&hwparams);
++        snd_pcm_sw_params_alloca(&swparams);
++
++        /* Setup soundcard */
++        err = snd_pcm_hw_params_any(handle, hwparams);
++        if (err < 0) {
++            qDebug("No configuration available for playback: %s\n", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
++        /* Enable alsa-lib resampling */
++        err = snd_pcm_hw_params_set_rate_resample(handle, hwparams, 1);
++        if (err < 0) {
++            qDebug("Failed to enable alsalib resample: %s\n", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
++        /* Set access type */
++        err = snd_pcm_hw_params_set_access(handle, hwparams, SND_PCM_ACCESS_RW_INTERLEAVED);
++        if (err < 0) {
++            qDebug("Failed to set access type: %s\n", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
+ 
+-	    // Setup soundcard at 16 bit mono
+-	    int v;
+-	    //v=0x00010000+sound_fragment_size;
+-	    // um the media player did this instead.
+-	    v=0x10000 * 4 + sound_fragment_size;
+-	    if ( ioctl(fd, SNDCTL_DSP_SETFRAGMENT, &v) )
+-		qWarning("Could not set fragments to %08x",v);
+ #ifdef QT_QWS_SOUND_16BIT
+-	    v=AFMT_S16_LE; if ( ioctl(fd, SNDCTL_DSP_SETFMT, &v) )
+-		qWarning("Could not set format %d",v);
+-	    if ( AFMT_S16_LE != v )
+-		qDebug("Want format %d got %d", AFMT_S16_LE, v);
++        format = SND_PCM_FORMAT_S16;
+ #else
+-	    v=AFMT_U8; if ( ioctl(fd, SNDCTL_DSP_SETFMT, &v) )
+-		qWarning("Could not set format %d",v);
+-	    if ( AFMT_U8 != v )
+-		qDebug("Want format %d got %d", AFMT_U8, v);
++        format = SND_PCM_FORMAT_S8;
+ #endif
+-	    v=sound_stereo; if ( ioctl(fd, SNDCTL_DSP_STEREO, &v) )
+-		qWarning("Could not set stereo %d",v);
+-	    if ( sound_stereo != v )
+-		qDebug("Want stereo %d got %d", sound_stereo, v);
++        err = snd_pcm_hw_params_set_format(handle, hwparams, format);
++        if (err < 0) {
++            qDebug("Failed to set format: %s\n", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
+ #ifdef QT_QWS_SOUND_STEREO
+-	    sound_stereo=v;
++        channels = 2;
++#else
++        channels = 1;
+ #endif
+-	    v=sound_speed; if ( ioctl(fd, SNDCTL_DSP_SPEED, &sound_speed) )
+-		qWarning("Could not set speed %d",v);
+-	    if ( v != sound_speed )
+-		qDebug("Want speed %d got %d", v, sound_speed);
+-
+-	    int delay = 1000*(sound_buffer_size>>(sound_stereo+sound_16bit))
+-				    /sound_speed/2;
+-	    // qDebug("QSS delay: %d", delay);
+-	    timerId = startTimer(delay);
+-
+-	    //
+-	    // Check system volume
+-	    //
+-	    int mixerHandle = ::open( "/dev/mixer", O_RDWR|O_NONBLOCK );
+-	    if ( mixerHandle >= 0 ) {
+-		int volume;
+-		ioctl( mixerHandle, MIXER_READ(0), &volume );
+-		close( mixerHandle );
+-		if ( volume < 1<<(sound_stereo+sound_16bit) )
+-		    qDebug("Want sound at %d got %d",
+-			    1<<(sound_stereo+sound_16bit), volume);
+-	    } else
+-		qDebug( "get volume of audio device failed" );
++        err = snd_pcm_hw_params_set_channels(handle, hwparams, channels);
++        if (err < 0) {
++            qDebug("Failed to set channels count: %s\n", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
++        rate = sound_speed;
++        err = snd_pcm_hw_params_set_rate_near(handle, hwparams, &rate, 0);
++        if (err < 0) {
++            qDebug("Failed to set rate %dHz: %s\n", sound_speed, snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
+ 
++        err = snd_pcm_hw_params_set_buffer_time_near(handle, hwparams, &buffer_time, &dir);
++        if (err < 0) {
++            qDebug("Failed to set buffer time %duS: %s\n", buffer_time, snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
++        err = snd_pcm_hw_params_get_buffer_size(hwparams, &size);
++        if (err < 0) {
++            qDebug("Failed to get buffer size: %s", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++        buffer_size = size;
++
++        err = snd_pcm_hw_params_set_period_time_near(handle, hwparams, &period_time, &dir);
++        if (err < 0) {
++            qDebug("Failed to set period time %duS: %s\n", period_time, snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
++        err = snd_pcm_hw_params_get_period_size(hwparams, &size, NULL);
++        if (err < 0) {
++            qDebug("Failed to get period size: %s", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++        period_size = size;
++
++        /* Write the parameters to device */
++        err = snd_pcm_hw_params(handle, hwparams);
++        if (err < 0) {
++            qDebug("Failed to apply hw params: %s\n", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
++        /* Set SW params */
++        err = snd_pcm_sw_params_current(handle, swparams);
++        if (err < 0) {
++            qDebug("Failed to determine current swparams for playback: %s\n", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
++        err = snd_pcm_sw_params_set_start_threshold(handle, swparams, (buffer_size / period_size) * period_size);
++        if (err < 0) {
++            qDebug("Failed to set start threshold: %s\n", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
++        err = snd_pcm_sw_params_set_avail_min(handle, swparams, period_size);
++        if (err < 0) {
++            qDebug("Failed to set avail min: %s\n", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
++        err = snd_pcm_sw_params(handle, swparams);
++        if (err < 0) {
++            qDebug("Failed to apply sw params: %s\n", snd_strerror(err));
++            snd_pcm_close(handle);
++            handle = NULL;
++            return false;
++        }
++
++	    timerId = startTimer(period_time / 2000);
+ 	}
+ 	return TRUE;
+     }
+ 
+     void closeDevice()
+     {
+-	if ( fd >= 0 ) {
+-	    ::close(fd);
+-	    fd = -1;
++	if ( handle ) {
++        snd_pcm_drain(handle);
++        snd_pcm_close(handle);
++        handle = NULL;
+ 	}
+     }
+ 
+@@ -1175,12 +1249,12 @@ private:
+ 	int soundId;
+     };
+     QValueList<CompletedInfo> completed;
+-
+-    int fd;
++    snd_pcm_t *handle;
++    snd_pcm_uframes_t buffer_size;
++    snd_pcm_uframes_t period_size;
+     int unwritten;
+     char* cursor;
+     short data[sound_buffer_size*2];
+-    bool can_GETOSPACE;
+ #ifndef QT_NO_SOUNDSERVER
+     QWSSoundServerSocket *server;
+ #endif
+-- 
+1.9.3
+

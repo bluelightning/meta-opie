@@ -49,6 +49,7 @@ SRC_URI = "ftp://ftp.trolltech.com/pub/qt/source/qt-embedded-${PV}-free.tar.gz;m
 	   file://fix-qte-asm-include.patch \
 	   file://support_18bpp.patch \
 	   file://libpng15.patch \
+	   file://qss-alsa.patch \
 	   file://sharp_char.h \
 	   file://switches.h "
 
