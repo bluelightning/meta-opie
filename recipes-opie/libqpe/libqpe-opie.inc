@@ -20,6 +20,7 @@ python __anonymous() {
 }
 
 OE_QMAKE_CXXFLAGS := "${@oe_filter_out('-fno-rtti', '${OE_QMAKE_CXXFLAGS}', d)}"
+OE_QMAKE_CXXFLAGS += "-I${S}/include"
 QMAKE_PROFILES = "library.pro"
 EXTRA_QMAKEVARS_PRE += "CONFIG+=LIBQPE_WITHROHFEEDBACK"
 EXTRA_QMAKEVARS_POST += "DESTDIR= DEFINES+=LIBQPE_NO_INLINE_IMAGES"
@@ -27,24 +28,25 @@ EXTRA_QMAKEVARS_POST += "DESTDIR= DEFINES+=LIBQPE_NO_INLINE_IMAGES"
 CXXFLAGS_append = " -frtti -DOPIE_NO_ERASE_RECT_HACKFIX -DOPIE_NEW_MALLOC"
 
 do_compile() {
-        mkdir -p ${STAGING_INCDIR}/qpe \
-                 ${STAGING_INCDIR}/qtopia \
-                 ${STAGING_INCDIR}/opie \
-                 ${STAGING_INCDIR}/opie2 \
-                 ${STAGING_INCDIR}/qtopia/private
+        TEMP_INCDIR=${S}/include/
+        mkdir -p ${TEMP_INCDIR}/qpe \
+                 ${TEMP_INCDIR}/qtopia \
+                 ${TEMP_INCDIR}/opie \
+                 ${TEMP_INCDIR}/opie2 \
+                 ${TEMP_INCDIR}/qtopia/private
         for i in ${S}/*.h
         do
-                install -m 0644 $i ${STAGING_INCDIR}/qpe/`basename $i`
-                install -m 0644 $i ${STAGING_INCDIR}/qtopia/`basename $i`
-                install -m 0644 $i ${STAGING_INCDIR}/qtopia/private/`basename $i`
+                install -m 0644 $i ${TEMP_INCDIR}/qpe/`basename $i`
+                install -m 0644 $i ${TEMP_INCDIR}/qtopia/`basename $i`
+                install -m 0644 $i ${TEMP_INCDIR}/qtopia/private/`basename $i`
         done
         for i in ${S}/backend/*.h
         do
-                install -m 0644 $i ${STAGING_INCDIR}/qpe/`basename $i`
-                install -m 0644 $i ${STAGING_INCDIR}/qtopia/`basename $i`
-                install -m 0644 $i ${STAGING_INCDIR}/qtopia/private/`basename $i`
+                install -m 0644 $i ${TEMP_INCDIR}/qpe/`basename $i`
+                install -m 0644 $i ${TEMP_INCDIR}/qtopia/`basename $i`
+                install -m 0644 $i ${TEMP_INCDIR}/qtopia/private/`basename $i`
         done
-        rm -f ${STAGING_INCDIR}/qtopia/*_p.h # remove private stuff out of qtopia
+        rm -f ${TEMP_INCDIR}/qtopia/*_p.h # remove private stuff out of qtopia
         oe_runmake
 }
 
