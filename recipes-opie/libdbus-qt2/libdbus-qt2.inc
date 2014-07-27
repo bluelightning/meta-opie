@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=e87638276ebede5c3fd39c39e09df2db \
 
 S = "${WORKDIR}/${PN}"
 
-inherit palmtop
+inherit palmtop pkgconfig
 
 EXTRA_QMAKEVARS_POST += "DESTDIR= "
 
