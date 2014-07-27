@@ -1,7 +1,7 @@
 DESCRIPTION = "TrollTech Makefile Generator"
 HOMEPAGE = "http://www.trolltech.com"
 SECTION = "devel"
-LICENSE = "GPLv2 | QPL"
+LICENSE = "GPLv2"
 PR = "r7"
 
 QTEVER = "qt-embedded-free-3.3.5"
