@@ -4,9 +4,9 @@ LICENSE = "MIT"
 
 PR = "r18"
 
-inherit packagegroup
-
 PACKAGE_ARCH = "${MACHINE_ARCH}"
+
+inherit packagegroup
 
 PROVIDES = "packagegroup-opie-everything"
 

@@ -3,9 +3,9 @@ SECTION = "opie/base"
 LICENSE = "MIT"
 PR = "r7"
 
-inherit packagegroup
-
 PACKAGE_ARCH = "${MACHINE_ARCH}"
+
+inherit packagegroup
 
 PACKAGES = "packagegroup-opie-16mb-base \
             packagegroup-opie-16mb-applets \
