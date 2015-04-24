@@ -1,6 +1,6 @@
 DESCRIPTION = "Kaffe is a clean room implementation of the Java Virtual Machine"
 HOMEPAGE = "http://www.kaffe.org/"
-LICENSE  = "GPL LGPL W3C Classpath BSD"
+LICENSE  = "GPLv2 & LGPLv2 & W3C & Classpath & BSD"
 
 DEPENDS = "virtual/javac-native fastjar-native libffi zip-native libart-lgpl"
 RDEPENDS_${PN} = "${PN}-common (>= ${PV})"
