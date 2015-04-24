@@ -2,7 +2,7 @@ DESCRIPTION = "KDE Web Browser Konqueror, QtE based Palmtop Environments Edition
 HOMEPAGE = "http://www.konqueror.org/embedded"
 SECTION = "opie/applications"
 DEPENDS = "libqpe-opie openssl libpcre"
-LICENSE = "LGPL GPL"
+LICENSE = "LGPLv2+ & GPLv2+"
 PR = "r5"
 
 # Note if this .bb files fails with the error:
