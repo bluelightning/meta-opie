@@ -5,7 +5,8 @@ LICENSE = "LGPLv2"
 # FIXME stopgap until split archives have license files included
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/LGPL-2.0;md5=9427b8ccf5cf3df47c29110424c9641a"
 I18N_FILES = "libopiecore2.ts libopiesecurity2.ts"
-DEPENDS = "libqpe-opie libpcap sqlite3 bluez4"
+DEPENDS = "libqpe-opie libpcap sqlite3"
+DEPENDS += "${@bb.utils.contains('DISTRO_FEATURES','bluez5','bluez5','bluez4',d)}"
 PROVIDES = "libopiecore2 libopiedb2 libopiemm2 libopiesecurity2 libopienet2 libopiepim2 libopieui2"
 
 INC_PR = "r17"
