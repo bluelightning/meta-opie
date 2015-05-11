@@ -2,7 +2,8 @@ DESCRIPTION = "Obex Push Utilities"
 HOMEPAGE = "http://www.caside.lancs.ac.uk/java_bt.php"
 SECTION = "console/network"
 LICENSE = "GPLv2+"
-DEPENDS = "glib-2.0 openobex bluez4"
+DEPENDS = "glib-2.0 openobex"
+DEPENDS += "${@bb.utils.contains('DISTRO_FEATURES','bluez5','bluez5','bluez4',d)}"
 PR = "r7"
 
 SRC_URI = "http://www.caside.lancs.ac.uk/bt/obexpush.tar.gz \
