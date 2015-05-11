@@ -8,6 +8,7 @@ PR = "r7"
 
 SRC_URI = "http://www.caside.lancs.ac.uk/bt/obexpush.tar.gz \
            file://add-obextool.patch \
+           file://fix-open.patch \
            file://init \
            file://opd_args"
 S = "${WORKDIR}/obexpush"

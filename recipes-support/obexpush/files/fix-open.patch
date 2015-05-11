@@ -1,0 +1,18 @@
+Index: obexpush/opd/main.c
+===================================================================
+--- obexpush.orig/opd/main.c
++++ obexpush/opd/main.c
+@@ -562,11 +562,11 @@ int main(int argc, char **argv,char *env
+ 			dup2(fd, 0);
+ 			close(fd);
+ 
+-			fd = open("_opd_msgs.txt", O_RDWR | O_CREAT);
++			fd = open("_opd_msgs.txt", O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+ 			dup2(fd, 1);
+ 			close(fd);
+ 
+-			fd = open("_opd_errs.txt", O_RDWR | O_CREAT);
++			fd = open("_opd_errs.txt", O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+ 			dup2(fd, 2);
+ 			close(fd);
+ 
