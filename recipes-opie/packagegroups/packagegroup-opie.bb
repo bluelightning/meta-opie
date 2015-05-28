@@ -91,7 +91,8 @@ RDEPENDS_packagegroup-opie-base-pim = "opie-addressbook opie-datebook opie-drawp
                       packagegroup-opie-base-todayplugins \
                       opie-datebook-birthdayplugin"
 
-RDEPENDS_packagegroup-opie-bluetooth = "bluez4 obexftp obexpush libopieobex0 \
+BLUEZ = "${@bb.utils.contains('DISTRO_FEATURES','bluez5','bluez5','bluez4',d)}"
+RDEPENDS_packagegroup-opie-bluetooth = "${BLUEZ} obexftp obexpush libopieobex0 \
                        opie-bluetoothmanager opie-bluetoothapplet"
 
 RDEPENDS_packagegroup-opie-irda = "irda-utils libopieobex0 obexftp obexpush"
