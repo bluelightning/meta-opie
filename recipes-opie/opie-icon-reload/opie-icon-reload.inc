@@ -10,6 +10,8 @@ SRC_URI = "file://icon-reload.desktop \
 	   file://icon-reload.sh \
 	   file://reload.png"
 
+S = "${WORKDIR}"
+
 inherit palmtop-defs
 
 FILES_${PN} += "${palmtopdir}"
