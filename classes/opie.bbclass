@@ -34,7 +34,7 @@ do_configure_prepend() {
 # qmake should care about all the details then. qmake can do that, i know it :)
 #
 
-python opie_do_opie_install() {
+fakeroot python opie_do_opie_install() {
     import os, shutil
     section = bb.data.getVar( "SECTION", d ).split( '/' )[1] or "Applications"
     section = section.title()
@@ -105,3 +105,8 @@ python opie_do_opie_install() {
 
 EXPORT_FUNCTIONS do_opie_install
 addtask opie_install after do_install before do_populate_sysroot do_package
+
+python() {
+    # FIXME apparently it's not enough to set fakeroot on the exported function
+    d.setVarFlag('do_opie_install', 'fakeroot', '1')
+}
