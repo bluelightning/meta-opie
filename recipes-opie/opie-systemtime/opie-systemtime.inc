@@ -19,5 +19,3 @@ do_install() {
         install -m 0644 ${WORKDIR}/pics/netsystemtime/*.png ${D}${palmtopdir}/pics/netsystemtime/
 				install -m 0644 ${WORKDIR}/etc/ntpservers ${D}${palmtopdir}/etc
 }
-
-FILES_opie-systemtime_append = " /etc/ntpservers"
