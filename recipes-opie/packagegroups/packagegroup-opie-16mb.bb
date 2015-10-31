@@ -43,7 +43,8 @@ RDEPENDS_packagegroup-opie-16mb-applets_append_akita  = " opie-autorotateapplet"
 
 RDEPENDS_packagegroup-opie-16mb-inputmethods = "opie-multikey"
 
-RDEPENDS_packagegroup-opie-16mb-settings = "opie-packagemanager opie-light-and-power opie-appearance \
+# FIXME opie-packagemanager should be here but it doesn't build at the moment
+RDEPENDS_packagegroup-opie-16mb-settings = "opie-light-and-power opie-appearance \
                            opie-systemtime opie-networksettings opie-button-settings \
                            opie-icon-reload opie-launcher-settings opie-security \
                            opie-securityplugin-pin"

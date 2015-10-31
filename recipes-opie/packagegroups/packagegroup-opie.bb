@@ -61,7 +61,8 @@ RDEPENDS_packagegroup-opie-base-inputmethods = "opie-multikey opie-handwriting o
 RDEPENDS_packagegroup-opie-base-apps = "opie-console opie-clock opie-citytime opie-backup opie-sysinfo \
                        opie-advancedfm opie-textedit"
 
-RDEPENDS_packagegroup-opie-base-settings = "opie-packagemanager opie-light-and-power opie-appearance \
+# FIXME opie-packagemanager should be here but doesn't build at the moment
+RDEPENDS_packagegroup-opie-base-settings = "opie-light-and-power opie-appearance \
                            opie-systemtime opie-networksettings opie-button-settings \
                            opie-icon-reload opie-launcher-settings opie-security \
                            opie-securityplugin-pin"
