@@ -9,6 +9,10 @@
 
 inherit qmake palmtop-defs
 
+# A header from Qt/Embedded that almost all Opie code includes contains
+# casts that fail to build with modern GCC without this set
+CXXFLAGS += "-fpermissive"
+
 # special case for DISTRO = sharprom
 CPP_SUPPORT_LIB = "LIBS-=-lstdc++ LIBS+=-lsupc++"
 CPP_SUPPORT_LIB_sharprom-compatible = "LIBS+=-lstdc++"
