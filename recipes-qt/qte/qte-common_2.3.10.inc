@@ -15,7 +15,7 @@ FILESDIR = "${@os.path.dirname(bb.data.getVar('FILE',d,1))}/qte-${PV}"
 # Laibsch: Remove -fno-visibility-inlines-hidden instead of negating it
 # Laibsch: Fixes bug 1631
 #CXXFLAGS += "-fno-visibility-inlines-hidden"
-CXXFLAGS := "${@oe_filter_out('-fvisibility-inlines-hidden', '${CXXFLAGS}', d)}"
+CXXFLAGS := "${@oe_filter_out('-fvisibility-inlines-hidden', '${CXXFLAGS}', d)} -fpermissive"
 
 SRC_URI = "ftp://ftp.trolltech.com/pub/qt/source/qt-embedded-${PV}-free.tar.gz;md5sum=1f7ad30113afc500cab7f5b2f4dec0d7 \
    	   file://qpe.patch \
