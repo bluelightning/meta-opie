@@ -62,5 +62,3 @@ do_install() {
         install -m 0755 ${WORKDIR}/etc/03opiesignal ${D}${sysconfdir}/apm/event.d/
         install -m 0644 ${WORKDIR}/etc/opie_sysevents.conf ${D}${sysconfdir}/
 }
-
-FILES_opie-taskbar_append = " ${sysconfdir} ${palmtopdir}/apps ${palmtopdir}/pics"
