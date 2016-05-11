@@ -25,6 +25,8 @@ export GLIBLIB = "-I${STAGING_LIBDIR} -lglib-2.0"
 export OBEXINC = "-I${STAGING_INCDIR}"
 export OBEXLIB = "${LDFLAGS} -lopenobex"
 
+EXTRA_OEMAKE = "-e MAKEFLAGS="
+
 do_configure() {
 	rm -f client/*.o client/ussp-push
 	rm -f opd/*.o opd/opd
