@@ -17,6 +17,8 @@ FILESDIR = "${@os.path.dirname(bb.data.getVar('FILE',d,1))}/qte-${PV}"
 #CXXFLAGS += "-fno-visibility-inlines-hidden"
 CXXFLAGS := "${@oe_filter_out('-fvisibility-inlines-hidden', '${CXXFLAGS}', d)} -fpermissive"
 
+DISABLE_STATIC = ""
+
 SRC_URI = "ftp://ftp.trolltech.com/pub/qt/source/qt-embedded-${PV}-free.tar.gz;md5sum=1f7ad30113afc500cab7f5b2f4dec0d7 \
    	   file://qpe.patch \
 	   file://vt-switch.patch \
