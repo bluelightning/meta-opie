@@ -62,7 +62,7 @@ fakeroot python opie_do_opie_install() {
             "Networksettings"   : ( "/plugins/networksettings", None                 ) }
 
     if section not in dirmap:
-        raise ValueError, "Unknown section '%s'. Valid sections are: %s" % ( section, dirmap.keys() )
+        raise ValueError("Unknown section '%s'. Valid sections are: %s" % ( section, dirmap.keys() ))
 
     bindir, desktopdir = dirmap[section]
     APPNAME = bb.data.getVar( "APPNAME", d, True ) or bb.data.getVar( "PN", d, True )
