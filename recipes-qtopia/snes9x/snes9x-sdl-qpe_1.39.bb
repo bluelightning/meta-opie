@@ -10,7 +10,7 @@ S = "${WORKDIR}/snes9x-sdl-${PV}"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/snes9x-sdl:"
 
-inherit qmake_base palmtop-defs
+inherit qmake_base_legacy palmtop-defs
 
 QT_LIBRARY = '${@base_conditional("PALMTOP_USE_MULTITHREADED_QT", "yes", "qte-mt", "qte",d)}'
 

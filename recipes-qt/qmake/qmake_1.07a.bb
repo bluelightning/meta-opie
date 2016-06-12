@@ -13,7 +13,7 @@ S = "${WORKDIR}/${QTEVER}"
 LIC_FILES_CHKSUM = "file://LICENSE.GPL;md5=629178675a7d49c9fa19dfe9f43ea256 \
                     file://README;beginline=1;endline=7;md5=a85582a7befb26735438461afd8559af"
 
-inherit qmake_base
+inherit qmake_base_legacy
 BBCLASSEXTEND = "native nativesdk"
 
 export QTDIR = "${S}"

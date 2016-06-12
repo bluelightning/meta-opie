@@ -1,5 +1,5 @@
 #
-# override variables set by qmake_base to compile Qt/X11 apps
+# override variables set by qmake_base_legacy to compile Qt/X11 apps
 #
 export QTDIR="${STAGING_DIR_HOST}/qte3"
 export QTEDIR="${STAGING_DIR_HOST}/qte3"
