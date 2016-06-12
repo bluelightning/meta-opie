@@ -17,8 +17,8 @@ PACKAGES = "packagegroup-opie-base \
             packagegroup-opie-base-styles packagegroup-opie-base-todayplugins \
             packagegroup-opie-extra-settings \
             packagegroup-opie-extra-styles \
-  ${@base_contains("COMBINED_FEATURES", "bluetooth", "packagegroup-opie-bluetooth", "",d)} \
-  ${@base_contains("COMBINED_FEATURES", "irda", "packagegroup-opie-irda", "",d)} \
+  ${@bb.utils.contains("COMBINED_FEATURES", "bluetooth", "packagegroup-opie-bluetooth", "",d)} \
+  ${@bb.utils.contains("COMBINED_FEATURES", "irda", "packagegroup-opie-irda", "",d)} \
            "
 
 RDEPENDS_packagegroup-opie-everything := "${PACKAGES}"
@@ -44,10 +44,10 @@ RDEPENDS_packagegroup-opie-base-applets = "opie-aboutapplet opie-clockapplet opi
                                    opie-homeapplet opie-rotateapplet \
 		                   opie-brightnessapplet opie-volumeapplet \
                                    opie-screenshotapplet \
-    ${@base_contains("COMBINED_FEATURES", "irda", "opie-irdaapplet", "",d)} \
-    ${@base_contains("MACHINE_FEATURES", "apm", "opie-batteryapplet", "",d)} \
-    ${@base_contains("COMBINED_FEATURES", "pcmcia", "opie-cardapplet", "",d)} \
-    ${@base_contains("MACHINE_FEATURES", "keyboard", "opie-vtapplet opie-logoutapplet", "",d)}"
+    ${@bb.utils.contains("COMBINED_FEATURES", "irda", "opie-irdaapplet", "",d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "apm", "opie-batteryapplet", "",d)} \
+    ${@bb.utils.contains("COMBINED_FEATURES", "pcmcia", "opie-cardapplet", "",d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "keyboard", "opie-vtapplet opie-logoutapplet", "",d)}"
 
 #
 # clamshell models can benefit from the autorotate applet
@@ -71,8 +71,8 @@ RDEPENDS_packagegroup-opie-base-settings = "opie-light-and-power opie-appearance
 # That settings can be removed and device will be still usable
 #
 RDEPENDS_packagegroup-opie-extra-settings = "opie-language opie-doctab opie-mediummount \
-    ${@base_contains("DISTRO_FEATURES", "wifi", "opie-networksettings-wlanplugin", "",d)} \
-    ${@base_contains("DISTRO_FEATURES", "ppp", "opie-networksettings-pppplugin", "",d)} \
+    ${@bb.utils.contains("DISTRO_FEATURES", "wifi", "opie-networksettings-wlanplugin", "",d)} \
+    ${@bb.utils.contains("DISTRO_FEATURES", "ppp", "opie-networksettings-pppplugin", "",d)} \
 			    "
 
 RDEPENDS_packagegroup-opie-base-decorations = "opie-deco-flat opie-deco-liquid opie-deco-polished"
